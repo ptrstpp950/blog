@@ -1,0 +1,13 @@
+<h3>Installing ZooKeeper</h3>
+<p>Because we have now everything configured we are ready to install packages. In our Vagrantfile we need to add following lines</p>
+<pre><code class="ruby">config.vm.provision :shell, :inline  => '
+	sudo yum install -y jdk
+	sudo yum install -y zookeeper
+	/bin/cp -f /vagrant/zookeeper.initd /etc/init.d/zookeeper
+	/etc/init.d/zookeeper start
+	/etc/init.d/zookeeper status'</code></pre>
+<p>We installed Java (jdk), zookeeper and create service for it (needed file is <a href="other/zookeeper.initd" target="_blank">here</a> or on <a href="https://raw.githubusercontent.com/ptrstpp950/vagrant-shell-bash/94d7ab7acbc9dda398f18169cf27345d6609cfe5/zookeeper.initd" target="_blank">github</a>). The last line is just to see in log that service is running :)</p>
+<p>If you have problem: <code>/etc/init.d/zookeeper: command not found</code> add following line to script:</p>
+<pre><code> chmod 755 /etc/init.d/zookeeper </code></pre>
+
+<span class="commit" data-repo="vagrant-shell-bash" data-commit="94d7ab7acbc9dda398f18169cf27345d6609cfe5"></span>

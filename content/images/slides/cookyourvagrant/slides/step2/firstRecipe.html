@@ -1,0 +1,13 @@
+<h3>First recipe - yum</h3>
+<p>Create <code>local-vagrant.repo</code> file under <code>cookVagrant/vagrantchef/cookbooks/storm/templates/default</code>
+with following content (or copy it from vagrantshell folder):
+<pre><code class="txt">
+[vagrant-local]
+name=vagrant local repo
+baseurl=file:///vagrant_localrepo/
+gpgcheck=0 
+enabled=1
+</code></pre>
+</p>
+
+<span class="commit" data-repo="vagrant-chef" data-commit="f9f20ceba9d6d9b439ead203c52a9dcbce759a77"></span>

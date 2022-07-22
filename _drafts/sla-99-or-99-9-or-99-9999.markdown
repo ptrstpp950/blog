@@ -1,0 +1,67 @@
+---
+layout: post
+title: SLA - 99% or 99.9% or 99.9999%?
+---
+
+Almost every system has SLA today. SLA is every contract, even internal ones. Expectations are high. The number of "9" after a dot is so important. But the real question is that change anything for your system?
+
+##Simple SLA
+For example, Microsoft Azure SQL Web and Business Tier has following SLA statement:
+>We guarantee at least 99.9% of the time customers will have connectivity between their Web or Business Microsoft Azure SQL Database and our Internet gateway.
+
+Above quote is from [SLA summary for Azure services](https://azure.microsoft.com/en-us/support/legal/sla/summary/). Sounds cool, but 99.9% is not a time unit. To calculate it, we can use a simple formula:
+```
+30 days * 24 hours * 60 minutes * (100% - 99.9%) = 43.2 minutes
+```
+For popular SLA calculations are following:
+
+<table style="margin: 0 auto;">
+  <tr>
+    <th class="tg-yw4l">SLA</th>
+    <th class="tg-yw4l">In a year</th>
+    <th class="tg-yw4l">In a month</th>
+    <th class="tg-yw4l">In a week</th>
+  </tr>
+  <tr>
+    <td class="tg-yw4l">99,00%</td>
+    <td class="tg-yw4l">5256 minutes</td>
+    <td class="tg-yw4l">432 minutes</td>
+    <td class="tg-yw4l">100,8 minutes</td>
+  </tr>
+  <tr>
+    <td class="tg-yw4l">99,90%</td>
+    <td class="tg-yw4l">525,6 minutes</td>
+    <td class="tg-yw4l">43,2 minutes</td>
+    <td class="tg-yw4l">10,08 minutes</td>
+  </tr>
+  <tr>
+    <td class="tg-yw4l">99,99%</td>
+    <td class="tg-yw4l">52,56 minutes</td>
+    <td class="tg-yw4l">4,32 minutes</td>
+    <td class="tg-yw4l">1,008 minutes</td>
+  </tr>
+  <tr>
+    <td class="tg-yw4l">99,999%</td>
+    <td class="tg-yw4l">5,256 minutes</td>
+    <td class="tg-yw4l">0,432 minutes</td>
+    <td class="tg-yw4l">0,1008 minutes</td>
+  </tr>
+</table>
+
+The 99,9% is 43 minutes a month. Sounds quite safe, but we should always check the worst case. To calculate it I need two assumptions: 
+
+- billing month starts every 25th at 13:00. 
+- the failure started 25th November 2016 at 12:35. 
+
+It is lunch time on Friday. The failure can take around 85 minutes to fit SLA. Why so long? Because the billing month is in the middle of the failure. The company system doesn't work for 85 minutes on the Black Friday. It is a Murphy's Law:
+>If anything can go wrong, it will
+
+
+## Client side
+From the end-user perspective, SLA is not important at all. When you want to use your phone it is working or not. The same is when my mother wants to pay for Christmas presents using internet banking or mobile app. For the end-users it is binary. The system is working or the are searching for something else. The only question is if they come back. 
+
+## SLA redefinition
+I just finihed reading "Site Reliability Engineering. How Google Runs Production Systems". In the chapter three they present a much better definition of SLA for their internal systems. It is following:
+
+
+

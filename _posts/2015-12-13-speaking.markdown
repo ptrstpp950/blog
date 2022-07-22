@@ -1,0 +1,89 @@
+---
+layout: post
+title: Speaking
+image: "/content/images/2017/02/14882296_124881584651298_8515998094808576701_o.jpg"
+date: '2015-12-13 08:21:47'
+---
+
+I pretend to be an IT speaker and I really like it. In my opinion sharing knowledge is the best thing that **every developer** should do. The easiest way is to speak loud :)
+
+My goal is to share my knowledge and experience in building stuff. From time to time sharing crap to make sure that someone will learn from my mistakes.
+
+##Invitation to talk
+
+If I sound like an interesting person and you would like to invite me for a talk, then feel free to email me and I would love to attend.
+
+##Upcoming events
+1. DevConf x 3
+
+##Previous events
+1. Chmura jak alkohol - 2018-05-26 - [Rzemiosło IT](http://rzemioslo.it/schedule/)
+1. Ciemna strona krypto-walut - 2018-05-25 - [rg-dev](https://www.meetup.com/rg-dev/events/248672239/)
+1. Chmura jak alkohol - 2018-05-23 - [Infoshare](https://infoshare.pl/#outline-agenda) with Łukasz Dziekan
+1. Pogromcy mitów HTTP/2 i wydajność stron WWW - 2018-05-15 - [Akademia j-labs](http://www.itakademia.j-labs.pl/pl/harmonogram/warszawa/Pogromcy-mitow-HTTP2-i-wydajnosc-stron-WWW)
+1. Magic tricks of Azure Key Vault - 2018-04-26 -  [Microsoft Tech Summit Warsaw](https://www.microsoft.com/pl-pl/techsummit/warsaw)
+1. Od juniora do seniora czyli tam i z powrotem - 2018-04-17 -[Śląska Grupa Microsoft](https://www.meetup.com/%C5%9Al%C4%85ska-Grupa-Microsoft-Meetup/events/249646043/)
+1. Od juniora do seniora czyli tam i z powrotem - 2018-02-01 -[Software Craftsmanship Wrocław](https://www.meetup.com/SC-Wro/events/247155244/)
+1. Pogromcy mitów HTTP/2 i wydajność stron WWW - 2017-12-05 -[Code Europe in Kraków](https://www.codeeurope.pl/pl/agenda) 
+1. Chmura jak alkohol, wyciąga to co najlepsze I najgorsze w Twoim zespole - 2017-12-05 - [Public Cloud User Group](https://www.meetup.com/pl-PL/publiccloudpl/events/243543283/?eventId=243543283) with Łukasz Dziekan
+1. Pogromcy mitów HTTP/2 i wydajność stron WWW - 2017-12-07 -[Code Europe in Warszawa](https://www.codeeurope.pl/pl/agenda) 
+1. CCC conitinous, cloud, configuration - 2017-12-07 - [Code Europe in Warszawa](https://www.codeeurope.pl/pl/agenda) 
+1. Cyfrowa platforma kredytowa – PROSTA – dla banków i klientów - 2017-11-21 - [IT@Bank](http://konferencje.alebank.pl/wp-content/uploads/2017/07/Program-IT@BANK.pdf) with Łukasz Dziekan
+1. CCC conitinous, cloud, configuration - 2017-09-19 - [4developers Gdańsk](https://gdansk.4developers.org.pl/stapp.html)
+1. Od juniora do seniora czyli tam i z powrotem - 2017-05-27 -[Rzemiosło IT](http://rzemioslo.it/)
+1. Power(i)SHell - PowerShell 4 dev - 2017-05-26 -[Rzeszowska Grupa Dev rg-dev](https://www.meetup.com/rg-dev/) 
+1. HTTP/2 na ratunek wydajności - 2017-05-18 - [Infoshare](https://infoshare.pl) - [Video](https://www.youtube.com/watch?v=S6y81TMr_lA)
+1. Pogromcy mitów HTTP/2 i wydajność stron WWW - 2017-04-27 -[Rzeszowska Grupa Dev rg-dev](https://www.meetup.com/rg-dev/) 
+1. "Czwartek z .NET" (Thursday with .NET) in Channel 9 - 2017-04-06 - [Channel 9](https://channel9.msdn.com/Events/Czwartki-z-VS-2017/1-czwartek-z-VS-2017/1-czwartek-z-VS-2017)
+1. Pogromcy mitów HTTP/2 i wydajność stron WWW - 2017-04-03 - [4developers](http://2017.4developers.org.pl/pl/program/speakers/stapp-piotr/)
+1. Pogromcy mitów HTTP/2 i wydajność stron WWW - 2017-02-08 [WG.NET](https://www.meetup.com/WG-NET/events/237397950/)
+1. Pogromcy mitów HTTP/2 i wydajność stron WWW - 2017-02-07 [WarsawJS](https://www.meetup.com/WarsawJS/events/237134262/) - [Video](https://www.youtube.com/watch?v=tkjPCuuLhtc)
+1. Myth busters - HTTP/2 and web performance - 2016-11-30 [Dev@Ldz](http://www.meetup.com/dev-LDZ/)
+1. Pogromcy mitów HTTP/2 i wydajność stron WWW - 2016-11-05 [DotNetConf](http://dotnetconf.pl/) - [Video](https://www.youtube.com/watch?v=S1zSno9Pxvs)
+1. [Wydajność webowa - jak to ugryźć?](http://www.meetup.com/DEV-ZG/events/234250699/) - 2016-10-18 [Dev@ZG](http://www.meetup.com/DEV-ZG/)
+1. [Is DevOps in banking possible?](http://www.highloadstrategy.lt/) - 2016-10-14 [High Load Strategy](http://www.highloadstrategy.lt/)
+1. [Czy DevOps w bankowości jest możliwy?](http://bbq4.it/#agenda) - 2016-09-09 [BBQ4IT](http://bbq4.it/)
+1. [Czy DevOps w bankowości jest możliwy?](http://itcareersummit.pl/2016/?page_id=811) - 2016-09-08 [IT Career Summit](http://itcareersummit.pl/2016/?page_id=811)
+1. [Czy DevOps w bankowości jest możliwy?](http://www.meetup.com/SysOpsPolska/events/232280301/) - 2016-07-21 [SysOps / DevOps Polska MeetUp](http://www.meetup.com/SysOpsPolska/) - [Video](https://www.youtube.com/watch?v=8U3YO-IcW24)
+1. [Czy DevOps w bankowości jest możliwy? Czyli słów kilka o wdrażaniu oprogramowania](http://devstyle.pl/daj-sie-poznac/gala/) - 2016-06-18 [Daj się poznać](http://dajsiepoznac2016.evenea.pl/)
+1. [Czy DevOps w bankowości jest możliwy?](http://gigacon.org/devops_bankowosc/) - 2016-05-19 [IT w bankowości](http://gigacon.org/event/bankowosc_warszawa_2016/)
+1. [Is DevOps in banking possible?](https://konferencjaget.net/pl/lodz/program#65) - 2016-04-14 [Get.NET in Łódź](https://konferencjaget.net/)
+1. [PowerIsHell – czyli PowerShell dla dewelopera](http://careercon.pl/konferencja/kariera-it-warszawa-17-10-2015/) - 2015-10-17 [Kariera IT](http://careercon.pl/)
+1. [Jak dojrzewał DevOps w mBanku - teoria i praktyka :)](http://www.meetup.com/dev-LDZ/events/224955668/) - 2015-09-30 [Dev@LDZ](http://www.meetup.com/dev-LDZ/)
+1. [Unit tests workshop in .NET](http://devwarsztaty.pl/warsztaty/2015-05-30/) - 2015-05-30 [DevWarsztaty](http://devwarsztaty.pl/) 
+1. [DevOps in mBank - lesson learned](http://2015.4developers.org.pl/pl/agenda/lecture/devops-in-mbank-lesson-learned/) - 2015-05-18 [Atmosphere conference](atmosphere-conference.com) - [Video](https://www.youtube.com/watch?v=WOPI_afhYTM)  
+1. [DevOps in mBank - lesson learned](http://2015.4developers.org.pl/pl/agenda/lecture/devops-in-mbank-lesson-learned/) - 2015-04-20 [4developers](http://4developers.org.pl/) - [Video](https://www.youtube.com/watch?v=PdyJlmATdtc)
+1.[Vagrant with Windows](http://dotnetconf.pl/2015) - 2015-10-31 [dotNetConfPL](http://dotnetconf.pl) - [Video](https://www.youtube.com/watch?v=EHFpMHhUFXQ)
+1. [Vagrant with Windows](https://www.facebook.com/events/160965000911545/) - 2015-09-23 [Białostocka Grupa .NET](https://www.facebook.com/groups/bstoknet/)
+1. [Power(I)Shell - Powershell for developers](https://www.facebook.com/events/160965000911545/) - 2015-09-23 [Białostocka Grupa .NET](https://www.facebook.com/groups/bstoknet/)
+1. [Vagrant with Windows](http://www.meetup.com/WG-NET/events/222959644/) - 2015-06-11 [Warszawska grupa .NET](http://www.wg.net.pl/)
+1. [Power(I)Shell - czyli krótki snack o powershell dla developera](http://www.meetup.com/WG-NET/events/221574919/) - 2015-04-16 [Warszawska grupa .NET](http://www.wg.net.pl/) - [Video](https://www.youtube.com/watch?v=qAIiPi7wk5w)
+1. [Cook your Vagrant](http://crossweb.pl/wydarzenia/warsjawa-2014/) - 2014-04-26 [Warsjava](http://warsjawa.pl/)
+1. [about.mbank](http://wrocnet.github.io/2014/09/16/69-spotkanie-wroclawskiej-grupy-net.html) - 2014-09-16 [Wrocławska Grupa .NET](http://wrocnet.github.io/) - [Video](https://www.youtube.com/watch?v=jVrihtoGknA)
+1. [Cook your Vagrant](http://crossweb.pl/wydarzenia/warsjawa-2014/) - 2014-04-26 [Warsjava](http://warsjawa.pl/)
+1. [about.mbank](http://www.wg.net.pl/aktualnosci/zaproszeniena72spotkaniewgnet) - 2014-02-27 [Warszawska grupa .NET](http://www.wg.net.pl/)
+
+##Slides from previous events
+In random order:
+
+1. __PowerIShell - Powershell for developers__ - some useful tips&trick in PowerShell for not only developers :)
+http://stapp.space/content/images/slides/powerishell/
+1. __Myth busters: HTTP/2 and web performance__ - https://stapp.space/content/images/slides/http2andwebperf
+1. __OctopusDeploy from Zero to Hero__ 
+OctopusDeploy workshop with ASP.NET and EntityFramework
+https://stapp.space/content/images/slides/octopusdeploy-workshop/
+1. __Is DevOps in banking possible?__
+DevOps is a buzz word for last few years. It associates with other buzz words like cloud, agile, fast deployment. Moreover, in DevOps stuff, we usually talk about Linux tools. But is it possible to have DevOps in a company like the bank? Can we do all fancy stuff on Windows? Is bank really something different than Google or Facebook?
+http://stapp.space/content/images/slides/devopsinbanking/#/title
+1. __Vagrant with Windows, czyli włóczęga z oknami__
+How to use Vagrant in Windows environment for Windows boxes
+http://stapp.space/content/images/slides/vagrantwithwindows/
+2. __Cook your vagrant__ - 4-5 hours workshop about Vagrant with bash and chef-solo
+http://stapp.space/content/images/slides/cookyourvagrant/
+3. __about.mbank__ - the unique stuff mBank team did in rewriting mBank access channels
+http://stapp.space/content/images/slides/about.mbank/
+5. __Logon Workshop__ - step by step guide how to refactor your code to introduce Unit tests
+http://stapp.space/content/images/slides/logonWorkshopSlides
+6. __DevOps in mBank - lesson learned__
+http://mbankdevops.azurewebsites.net/#/
+

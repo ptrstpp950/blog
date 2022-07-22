@@ -1,0 +1,14 @@
+---
+layout: post
+title: Contact
+date: '2016-01-10 20:26:14'
+---
+
+If you're interested in contacting me for any kind of particular reason, feel free to use the information below:
+
+- Mail: piotr.stapp(at)gmail.com
+- Twitter: https://twitter.com/ptrstpp950
+- StackOverflow: http://stackoverflow.com/users/1749895/piotr-stapp
+- LinkedIn: https://www.linkedin.com/in/piotrstapp
+- GitHub: https://github.com/ptrstpp950
+

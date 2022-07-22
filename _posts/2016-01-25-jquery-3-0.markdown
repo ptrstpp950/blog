@@ -1,0 +1,48 @@
+---
+layout: post
+title: New features in  jQuery 3.0
+image: "/content/images/2016/01/jquery30.png"
+date: '2016-01-25 08:08:00'
+tags:
+- javascript
+---
+
+We received a big present for the 10th anniversary of jQuery, jQuery 3.0 has reached beta status. Let’s take a look at what’s new in jQuery and how to use it.
+
+##jQuery.Deferred Updated to be Promises/A+ Compatible
+
+Quoting https://promisesaplus.com/
+>A `promise` represents the eventual result of an asynchronous operation. The primary way of interacting with a promise is through its `then` method, which registers callbacks to receive either a promise’s eventual value or the reason why the promise cannot be fulfilled.
+
+The promises in jQuery was a problem before (more you can read on [stackoveflow](http://stackoverflow.com/questions/23744612/problems-inherent-to-jquery-deferred-jquery-1-x-2-x)). At least they are fixed.
+
+##New `.data()` implementation
+
+The new implementation is closer to [HTML5 dataset specification](https://html.spec.whatwg.org/multipage/dom.html#dom-dataset). All keys are now converted from **kebab-case** to **camelCase**, regardless of access method. One important notice: <mark>digits no longer take part in this conversion</mark>.  
+For example: `foo-bar` and `fooBar` will be same, but `foo-23` and `foo23` not. More on below image from <a class="jsbin-embed" href="https://jsbin.com/mowumodusi/edit?html,js,console,output">jsbin.com:</a>
+![](/content/images/2016/01/jsbin.png)
+
+
+##Deprecated methods `.load()`, `.unload()` and `.error()` are removed
+They were deprecated since jQuery 1.8. To handle above events correctly  we should use `on` method. For example:
+```
+$( "#element" ).on( "load", function() {
+    // implementation
+});
+```
+I'm pretty sure that a library with above extensions will be released soon :)
+
+##`.unwrap` now with selector
+The `selector` allows to be specific about which wrappers should we remove. Before it was impossible.
+
+##Speed-up for some jQuery custom selectors
+Paul Irish at Google make a huge detective work and identified some cases where a bunch of extra work can be skipped for custom selectors. For example selector `:visible` is 17 times faster now.
+
+This change actually was made in 1.12/2.2, but was reiterated for jQuery 3.0.
+
+##Better handling of error cases
+Incorrect requests which have been ignored till now. Simple example: `$("#")` now throws an error rather than returning empty collection.
+
+##Animations
+Because all modern browsers support `requestAnimationFrame` ([more on caniuse.com]( http://caniuse.com/#search=requestAnimationFrame)), jQuery will use this API when performing animations. 
+Main advantage is smoother animations and less CPU-intensive animations.

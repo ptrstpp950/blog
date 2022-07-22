@@ -1,0 +1,78 @@
+---
+layout: post
+title: Fighting with corporate proxy and modern tools like git, npm, bower (SSL problems)
+image: "/content/images/2015/10/Cegla_MOORBRAND_zolta_piaskowa_cieniowanaduze.jpg"
+date: '2015-10-06 10:19:53'
+tags:
+- git
+- nodejs
+- ssl
+- tips
+---
+
+##IT Security and safety world
+Sometimes in big companies the goal of the IT Security department is to make environment more safe. 
+Due to this security lockdown, a lot of modern development tools stop working. The most common error is caused by *self signed certificate in certificate chain* problems. So how can we make them work properly? I've attached a few suggestions bellow
+
+<b style="color:red">Remark</b>: if you find something <b>not working</b> just <b>let me know</b> in the comments. Or send me an email or tweet. If you <b>have an alternative solution</b>, send it to me please. I will be more than happy to add it.
+
+##Git
+###Git SSL Problem
+
+For error: `fatal: unable to access 'https://github.com/garris/BackstopJS.git/': SSL certificate problem: self signed certificate in certificate chain`
+Or `SSL certificate problem: unable to get local issuer certificate`
+
+Just run: `git config http.sslVerify false`
+
+
+###Git SSH Problem
+When you have: `ssh: connect to host ssh.github.com port 443: Bad file number`
+Open `.gitconfig` file and in the end put:
+```
+[url "https://github.com/"]
+	insteadOf = git://github.com/
+```
+
+##npm
+The error shows only when you add `--verbose` flag and it is something like: `will retry, error on last attempt: Error: self signed certificate in certificate chain`
+
+The solution is to change the registry to use HTTP with following command: `npm config set registry http://registry.npmjs.org/`
+
+
+##Bower
+If you have problems with git repo use above Git solution.
+
+If the error is:`Download of https://github.com/something/archive/0.7.0.tar.gz failed with SELF_SIGNED_CERT_IN_CHAIN, trying with git` 
+create `.bowerrc` file with following content:
+
+    {
+      "strict-ssl": false
+    }
+
+##VSCode - Visual Studio Code
+If you get the following error in VS Code `ETIMEDOUT 191.238.172.191:443`, there can be 2 possible solutions: 
+
+1. If you have NTLM proxy, you need to install for example cntlm (http://cntlm.sourceforge.net/), then setup a global `HTTP_PROXY` environment variable or change user settings (File->Preferences-> User Settings). See below file
+for example.
+2. If your company replaces the SSL certificate in User Settings, place following:
+```
+// Place your settings in this file to overwrite the default settings
+{
+    "http.proxyStrictSSL": false,
+    "http.proxy": "http://127.0.0.1:3128" //your CNTLM
+}
+```
+
+##Vagrant - new box
+There are following possibilities to add box behind the proxy:
+
+1. Download it by hand using browser and add it manually
+2. Putting an option in local or global `vagrantfile`(credit goes to Kevin P. Kucharczyk - more in comments): `config.vm.box_download_insecure = true`
+3. Using feature switch in command (credit goes to Kirtis Mcglynn - more in comments): `vagrant box add {your/box} --insecure`
+
+##Vagrant - plugins
+If you try to install a plugin with a command like this: `vagrant plugin install vagrant-openstack-plugin` you may get this error: `Could not verify the SSL certificate for`
+The solution to this is to use this alternative command: `vagrant plugin install vagrant-openstack-plugin --plugin-source http://rubygems.org/`
+
+##Ruby gems
+Just add the new source with the following command: `gem sources -a http://rubygems.org/`

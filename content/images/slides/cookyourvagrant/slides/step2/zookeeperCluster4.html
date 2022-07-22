@@ -1,0 +1,18 @@
+<h3>Run zookeeper</h3>
+<p>We can reuse <code>zookeeper</code> file which we copied to <code>init.d</code> in shell provisioning. File we can copy or download  from here: <a href="other/zookeeper.initd">zookeeper.initd</a>, save it in <code>templates/default</code> and add in recipe <code>template</code> directive:</p>
+<pre><code class="ruby">
+template "/etc/init.d/zookeeper" do
+	source "zookeeper.initd"
+	owner "root"
+	group "root"
+	mode "0755"
+end
+
+service "zookeeper" do
+	supports :status => true, :restart => true, :reload => true
+	action [ :enable, :restart ]
+end
+</code></pre>
+<span class="commit" data-repo="vagrant-chef" data-commit="fd446db05aa8affeb94b546fc3f1aa938627817f"></span>
+
+</p>

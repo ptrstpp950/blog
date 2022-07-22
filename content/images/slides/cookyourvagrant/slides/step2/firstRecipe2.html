@@ -1,0 +1,25 @@
+<h3>First recipe - yum c.d</h3>
+<p>Create localrepo.rb file under <code>cookVagrant/vagrantchef/cookbooks/storm/recipes</code>
+with following content
+<pre><code class="ruby">
+script "disable all yum repos" do
+	interpreter "bash"
+	user "root"
+	cwd "/tmp"
+	code <<-EOH
+		mkdir -p /etc/yum.repos.d/disabled
+		mv -f /etc/yum.repos.d/*.repo /etc/yum.repos.d/disabled/;
+	EOH
+end
+
+template "/etc/yum.repos.d/local-vagrant.repo" do
+	source "local-vagrant.repo"
+	owner "root"
+	group "root"
+	mode "0644"
+end
+
+</code></pre>
+</p>
+
+<span class="commit" data-repo="vagrant-chef" data-commit="f9f20ceba9d6d9b439ead203c52a9dcbce759a77"></span>

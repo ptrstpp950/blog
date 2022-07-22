@@ -1,0 +1,16 @@
+<h3>Setup nimbus</h3>
+<p>We just need to copy file for supervisor, which can be copied form our previous provisioning or <a href="other/supervisord-storm-nimbus.ini">here</a>: into <code>templates/default</code> directory</p>
+<p>The <code>nimbus.rb</code> recipe looks like following</p>
+<pre><code class="ruby">include_recipe "storm::stormCommon"
+
+template "/etc/supervisord.d/supervisord-storm-nimbus.ini" do
+	source "supervisord-storm-nimbus.ini"
+	owner "root"
+	group "root"
+	mode "0644"
+end
+
+service "supervisord" do
+	supports :status => true, :restart => true, :reload => true
+	action [ :enable, :restart ]
+end</code></pre>

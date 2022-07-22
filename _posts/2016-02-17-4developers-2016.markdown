@@ -1,0 +1,30 @@
+---
+layout: post
+title: 4developers is coming (CFP is open till 22.02.2016)
+image: "/content/images/2016/02/0-1.png"
+date: '2016-02-17 08:28:59'
+tags:
+- speaker
+---
+
+One of the biggest IT festival in Poland [4developers](http://2016.4developers.org.pl/en/) will be this year 11th April.
+Last year 4developers was superb. There were a lot of different paths like: .NET, Java, PHP, UX, Front-end, Application architecture and more.
+Even I have a presentation with Marcin Przekop about DevOps in mBank. It is available on YouTube (polish only):
+<iframe width="560" height="315" src="https://www.youtube.com/embed/PdyJlmATdtc" frameborder="0" style="margin: 0 auto;display:block;" allowfullscreen></iframe>
+ 
+This year is really near, but still you can send your __CFP till 22th February__.
+
+##2016 dotNet path 
+Moreover dotNET path for sure there will have 2 great sessions:
+
+- __Azure Service Fabric__ by Sebastian Gębski
+- __Lock Anatomy and Scalable Multicore Programming__ by Bartosz Adamczewski
+
+I know both speakers well and I am sure that both sessions will be essential.
+
+##15% discount
+If you want to see above sessions and much much more, I can offer you 15% discount.
+Just use promo-code: **4dev_stappspace** on [registration page](http://2016.4developers.org.pl/en/)
+Let's **Make IT Grow**. See you there. 
+
+![](/content/images/2016/02/0.png)

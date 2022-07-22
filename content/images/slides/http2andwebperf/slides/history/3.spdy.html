@@ -1,0 +1,17 @@
+<h2>New Hope: "SPeeDY"</h2>
+<p>July 2012 - SPDY augments HTTP with several speed-related features that can dramatically reduce page load time</p>
+<p>SPDY allows:
+<ul>
+	<li>client and server to compress request and response header</li>
+	<li>multiple, simultaneously multiplexed requests over a single connection</li>
+	<li>the server to actively push resources to the client</li>
+</ul>
+<aside class="notes">
+	<ul>
+		<li>SPDY allows client and server to compress request and response headers, which cuts down on bandwidth usage when the similar
+			headers (e.g. cookies) are sent over and over for multiple requests.</li>
+		<li>SPDY allows multiple, simultaneously multiplexed requests over a single connection, saving on round trips between client
+			and server, and preventing low-priority resources from blocking higher-priority requests.</li>
+		<li>SPDY allows the server to actively push resources to the client that it knows the client will need (e.g. JS and CSS)</li>
+	</ul>
+</aside>

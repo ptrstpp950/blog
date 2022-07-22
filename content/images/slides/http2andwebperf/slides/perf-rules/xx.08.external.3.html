@@ -1,0 +1,17 @@
+<h2>Prioritization</h2>
+<p>With HTTP/2 the browser is relying on the server to deliver data in an optimal way -- this is critical.</p>
+<p>
+	Good HTTP/2 server implementation:
+	<ul>
+		<li>it respects stream and connection flow control</li>
+		<li>it supports dependencies and weights in stream</li>
+		<li>it enables use of server push</li>
+	</ul>
+</p>
+<aside class="notes">
+	With HTTP/1.1 browsers “prioritizes” resources by holding a priority queue on the client and taking educated guesses for
+	how to make the best use of available TCP connections… which delays request dispatch.
+	<br/> With HTTP/2 browsers prioritize requests based on type/context, and immediately dispatch the request as soon as the
+	resource is discovered. The priority is communicated to the server as weights + dependencies.
+
+</aside>

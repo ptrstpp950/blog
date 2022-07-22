@@ -1,0 +1,10 @@
+<h3>Reload and run</h3>
+<p>To "see" result of our work we need to use one more vagrant feature: port forwarding. So under the VM name add following line
+<pre><code class="ruby">config.vm.network "forwarded_port", guest: 8080, host: 9876</code></pre>
+Also we need to reconfigure or stop iptables service. I will just turn it off with:
+<pre><code class="ruby">config.vm.provision :shell, :inline  => '/etc/init.d/iptables stop'</code></pre>
+
+Now we can run <pre><code class="bash">vagrant reload --provision</code></pre> to reload machine and apply provisioning
+</p>
+
+<span class="commit" data-repo="vagrant-shell-bash" data-commit="89dbc8536571017bcbbcbfbd2290db6c30646780"></span>

@@ -1,0 +1,35 @@
+<h2>HPACK</h2>
+<p>
+    <img style="height:500px; background-color: #fff;" src="resources/img/hpack.svg" />
+    <br/>
+    <a href="https://hpbn.co/http2/#header-compression">source</a>
+</p>
+<aside class="notes">
+    <p>Each HTTP transfer carries a set of headers that describe the transferred resource and its properties. In HTTP/1.x, this
+        metadata is always sent as plain text and adds anywhere from 500–800 bytes of overhead per transfer, and sometimes
+        kilobytes more if HTTP cookies are being used; see
+        <a data-type="xref" href="https://hpbn.co/http1x/#measuring-and-controlling-protocol-overhead">Measuring and
+        Controlling Protocol Overhead</a>. To reduce this overhead and improve performance, HTTP/2 compresses request and
+        response header metadata using the HPACK compression format that uses two simple but powerful techniques:
+
+    </p>
+    <ol>
+        <li>
+            <p>It allows the transmitted header fields to be encoded via a static Huffman code, which reduces their individual
+                transfer size.
+
+            </p>
+        </li>
+        <li>
+            <p>It requires that both the client and server maintain and update an indexed list of previously seen header fields
+                (i.e., establishes a shared compression context), which is then used as a reference to efficiently encode
+                previously transmitted values.
+            </p>
+        </li>
+    </ol>
+    <p>Huffman coding allows the individual values to be compressed when transferred, and the indexed list of previously transferred
+        values allows us to encode duplicate values (<a data-type="xref" href="#hpack">Figure&nbsp;12-6</a>) by transferring
+        index values that can be used to efficiently look up and reconstruct the full header keys and values.
+
+    </p>
+</aside>

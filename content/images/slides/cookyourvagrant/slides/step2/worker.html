@@ -1,0 +1,15 @@
+<h3>Setup storm supervisor</h3>
+<p>In file <code>stormSupervisor.rb</code> code is 100% analogues to nimbus recipe, only filename changed. The template file you can download from <a href="other/supervisord-storm-supervisor.ini">here</a></p>
+<pre><code class="ruby">include_recipe "storm::stormCommon"
+
+template "/etc/supervisord.d/supervisord-storm-supervisor.ini" do
+	source "supervisord-storm-supervisor.ini"
+	owner "root"
+	group "root"
+	mode "0644"
+end
+
+service "supervisord" do
+	supports :status => true, :restart => true, :reload => true
+	action [ :enable, :restart ]
+end</code></pre>

@@ -1,0 +1,25 @@
+---
+layout: post
+title: Improve the performance of git on WSL2
+image: "/content/images/2021/05/carbon.jpg"
+date: '2021-05-19 06:10:00'
+tags:
+- windows
+- wsl2
+- git
+---
+
+I've returned to Windows after a year on the Mac. I built up pwsh and added a lot of tools, but I still need some Linux/MacOS ones, such as `envsubst`. Of course, WSL2 comes to the rescue, but you'll have to checkout the repo twice for Linux and Visual Studio. It is ridiculous.
+I set up oh-my-posh with powerline on WSL2, which is a fantastic combination. However, there is a "but": git status is quite slow. What is the reason for this? Just read [4197](https://github.com/microsoft/WSL/issues/4197)
+
+How can this be resolved? Simply replace the git command with the git function, as shown below:
+```
+function git() {
+  if [[ $(pwd -P) = /mnt/* ]]; then
+    git.exe "$@"
+  else
+    command git "$@"
+  fi
+}
+```
+And that's all 🙈🙉🙊

@@ -1,0 +1,18 @@
+<h3>Zookeeper cluster</h3>
+<p>To configure zookeeper cluster we have to set nodes in <code>zoo.cfg</code> and create <code>myid</code> with unique identifier of node<p>
+<p>Section of zoo.cfg, which specifies all nodes looks like bellow:
+<pre><code class="no-highlight"># specify all zookeeper servers
+# The fist port is used by followers to connect to the leader
+# The second one is used for leader election
+server.1=192.168.10.11:2888:3888
+server.2=192.168.10.12:2888:3888
+server.3=192.168.10.13:2888:3888
+</code></pre>
+To achieve above we can write in ruby following:
+<pre><code class="ruby"><% x = 1  %>
+<% @nodes.each do |hostname| %>
+server.<%= x %>=<%= hostname %>:2888:3888
+  <%x += 1%>
+<% end %>
+</code></pre>
+</p>
