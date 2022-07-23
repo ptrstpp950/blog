@@ -1,0 +1,15 @@
+<h3>Add chef to vagrantfile</h3>
+<p>In vagrant file include below:</p>
+<pre><code class="ruby">
+  config.vm.box = "windows2012"
+  config.vm.network "private_network", ip: "192.168.33.16"
+  config.vm.provision "chef_solo" do |chef|
+    chef.cookbooks_path = "cookbooks"
+    chef.add_recipe "iis"
+    chef.add_recipe "git::windows"
+    chef.add_recipe "mywebsite"
+  end
+
+</code></pre>
+<p>And we are ready to run</p>
+<pre><code class="shell">vagrant up</code></pre>

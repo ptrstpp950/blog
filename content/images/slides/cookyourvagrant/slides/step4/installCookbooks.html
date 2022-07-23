@@ -1,0 +1,14 @@
+<h3>Install cookbooks from supermarket</h3>
+<p>There are a lot of cookbooks to use on <a href="https://supermarket.getchef.com/">https://supermarket.getchef.com/</a>. To install download it or run:</p>
+<pre><code class="bash">cd vagrantwindows
+mkdir cookbooks
+git init
+git add .
+git commit -m "Init commit: change name and add network"
+mkdir cookbooks
+knife cookbook site install git -o ./cookbooks -b
+knife cookbook site install windows -o ./cookbooks -b
+knife cookbook site install iis -o ./cookbooks -b
+knife cookbook site install chef_handler -o ./cookbooks -b
+knife cookbook create mywebsite -o ./cookbooks
+</code></pre>

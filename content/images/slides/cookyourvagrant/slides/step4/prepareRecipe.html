@@ -1,0 +1,20 @@
+<h3>Prepare our recipe</h3>
+<p>In <code>cookbooks\mywebsite\recipes</code> just enter</p>
+<pre><code class="ruby"># stop and delete the default site
+iis_site 'Default Web Site' do
+  action [:stop, :delete]
+end
+powershell_script "git clone slides" do
+	cwd "C:/inetpub/wwwroot/"
+	code <<-EOH
+		git clone https://github.com/ptrstpp950/reveal.js.git C:/inetpub/wwwroot/slides
+	EOH
+end
+#create new site
+iis_site 'Vagrant Site' do
+  protocol :http
+  port 80
+  path "C:/inetpub/wwwroot/slides"
+  action [:add,:restart]
+end
+</code></pre>

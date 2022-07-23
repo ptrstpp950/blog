@@ -1,0 +1,481 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+
+        <title>Setup storm cluster with Vagrant and chef</title>
+
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <link rel="stylesheet" href="bower_components/reveal.js/css/reveal.min.css">
+    
+        <link rel="stylesheet" href="bower_components/reveal.js/css/theme/serif.css" id="theme">
+    
+
+        <!-- For syntax highlighting -->
+        <link rel="stylesheet" href="bower_components/highlightjs/styles/monokai_sublime.css" id="highlight-theme">
+
+        <link rel="stylesheet" href="css/custom.css">
+
+        <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+        <script>
+          if( window.location.search.match( /print-pdf/gi ) ) {
+            var link = document.createElement( 'link' );
+                link.rel = 'stylesheet';
+                link.type = 'text/css';
+                link.href = 'bower_components/reveal.js/css/print/pdf.css';
+                document.getElementsByTagName( 'head' )[0].appendChild( link );
+            }
+        </script>
+
+        <!--[if lt IE 9]>
+        <script src="lib/js/html5shiv.js"></script>
+        <![endif]-->
+
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        
+            ga('create', 'UA-53928517-1', 'auto');
+            ga('require', 'displayfeatures');
+            ga('send', 'pageview');
+
+        </script>
+    </head>
+
+    <body>
+        <div class="reveal">
+
+            <div class="slides">
+
+                
+                    
+                        
+    <section data-html="slides/slide-title.html"></section>
+
+
+                    
+                    
+                
+                    
+                    
+                        <section>
+                            
+                                
+    <section data-html="slides/prerequisites.html"></section>
+
+
+                            
+                                
+    <section data-html="slides/prerequisites2.html"></section>
+
+
+                            
+                        </section>
+                    
+                
+                    
+                    
+                        <section>
+                            
+                                
+    <section data-html="slides/step0/definition-fun.html"></section>
+
+
+                            
+                                
+    <section data-html="slides/step0/basic.html"></section>
+
+
+                            
+                                
+    <section data-html="slides/step0/whatFor.html"></section>
+
+
+                            
+                                
+    <section data-html="slides/step0/whatFor2.html"></section>
+
+
+                            
+                                
+    <section data-html="slides/step0/createEnviroment.html"></section>
+
+
+                            
+                                
+    <section data-html="slides/step0/basicCmds.html"></section>
+
+
+                            
+                                
+    <section data-html="slides/step0/basicCmds2.html"></section>
+
+
+                            
+                                
+    <section data-html="slides/step0/basicCmds3.html"></section>
+
+
+                            
+                        </section>
+                    
+                
+                    
+                    
+                        <section>
+                            
+                                
+    <section data-html="slides/step1/introduction.html"></section>
+
+
+                            
+                                
+    <section data-html="slides/step1/storm.html"></section>
+
+
+                            
+                                
+    <section data-html="slides/step1/storm2.html"></section>
+
+
+                            
+                                
+    <section data-html="slides/step1/zookeeper.html"></section>
+
+
+                            
+                                
+    <section data-html="slides/step1/whatWeWillDo.html"></section>
+
+
+                            
+                                
+    <section data-html="slides/step1/simplifiedEnviroment.html"></section>
+
+
+                            
+                                
+    <section data-html="slides/step1/yumrepos.html"></section>
+
+
+                            
+                                
+    <section data-html="slides/step1/yumrepoconfigure.html"></section>
+
+
+                            
+                                
+    <section data-html="slides/step1/vagrantFolderPrepare.html"></section>
+
+
+                            
+                                
+    <section data-html="slides/step1/configureBox.html"></section>
+
+
+                            
+                                
+    <section data-html="slides/step1/configureBox2.html"></section>
+
+
+                            
+                                
+    <section data-html="slides/step1/yumOnlyLocalRepo.html"></section>
+
+
+                            
+                                
+    <section data-html="slides/step1/yumCheck.html"></section>
+
+
+                            
+                                
+    <section data-html="slides/step1/zookeeperInstall.html"></section>
+
+
+                            
+                                
+    <section data-html="slides/step1/stormInstall.html"></section>
+
+
+                            
+                                
+    <section data-html="slides/step1/supervisorInstall.html"></section>
+
+
+                            
+                                
+    <section data-html="slides/step1/reloadAndRun.html"></section>
+
+
+                            
+                                
+    <section data-html="slides/step1/sumup.html"></section>
+
+
+                            
+                        </section>
+                    
+                
+                    
+                    
+                        <section>
+                            
+                                
+    <section data-html="slides/step2/start.html"></section>
+
+
+                            
+                                
+    <section data-html="slides/step2/chefIntroduction.html"></section>
+
+
+                            
+                                
+    <section data-html="slides/step2/vagrantFolderPrepare.html"></section>
+
+
+                            
+                                
+    <section data-html="slides/step2/createCookbook.html"></section>
+
+
+                            
+                                
+    <section data-html="slides/step2/configureMachine.html"></section>
+
+
+                            
+                                
+    <section data-html="slides/step2/configureMachine2.html"></section>
+
+
+                            
+                                
+    <section data-html="slides/step2/firstRecipe.html"></section>
+
+
+                            
+                                
+    <section data-html="slides/step2/firstRecipe2.html"></section>
+
+
+                            
+                                
+    <section data-html="slides/step2/firstRecipe3.html"></section>
+
+
+                            
+                                
+    <section data-html="slides/step2/installJava.html"></section>
+
+
+                            
+                                
+    <section data-html="slides/step2/zookeeperInstall.html"></section>
+
+
+                            
+                                
+    <section data-html="slides/step2/zookeeperCluster.html"></section>
+
+
+                            
+                                
+    <section data-html="slides/step2/zookeeperCluster2.html"></section>
+
+
+                            
+                                
+    <section data-html="slides/step2/zookeeperCluster3.html"></section>
+
+
+                            
+                                
+    <section data-html="slides/step2/zookeeperCluster4.html"></section>
+
+
+                            
+                                
+    <section data-html="slides/step2/zookeeperValidateNode.html"></section>
+
+
+                            
+                                
+    <section data-html="slides/step2/zookeeperSecondNode.html"></section>
+
+
+                            
+                                
+    <section data-html="slides/step2/zookeeperSecondNode2.html"></section>
+
+
+                            
+                                
+    <section data-html="slides/step2/stopIptables.html"></section>
+
+
+                            
+                                
+    <section data-html="slides/step2/stormCommon.html"></section>
+
+
+                            
+                                
+    <section data-html="slides/step2/nimbus.html"></section>
+
+
+                            
+                                
+    <section data-html="slides/step2/worker.html"></section>
+
+
+                            
+                                
+    <section data-html="slides/step2/stormTemplates.html"></section>
+
+
+                            
+                                
+    <section data-html="slides/step2/upAndRunning.html"></section>
+
+
+                            
+                        </section>
+                    
+                
+                    
+                    
+                        <section>
+                            
+                                
+    <section data-html="slides/step3/introduction.html"></section>
+
+
+                            
+                                
+    <section data-html="slides/step3/removeHardcoded.html"></section>
+
+
+                            
+                                
+    <section data-html="slides/step3/removeHardcoded2.html"></section>
+
+
+                            
+                                
+    <section data-html="slides/step3/demo.html"></section>
+
+
+                            
+                        </section>
+                    
+                
+                    
+                    
+                        <section>
+                            
+                                
+    <section data-html="slides/step4/introduction.html"></section>
+
+
+                            
+                                
+    <section data-html="slides/step4/setupEnviroment.html"></section>
+
+
+                            
+                                
+    <section data-html="slides/step4/installCookbooks.html"></section>
+
+
+                            
+                                
+    <section data-html="slides/step4/removeDepsFromGit.html"></section>
+
+
+                            
+                                
+    <section data-html="slides/step4/prepareRecipe.html"></section>
+
+
+                            
+                                
+    <section data-html="slides/step4/prepareVagrantfile.html"></section>
+
+
+                            
+                        </section>
+                    
+                
+                    
+                        
+    <section data-html="slides/buildBox.html"></section>
+
+
+                    
+                    
+                
+                    
+                    
+                        <section>
+                            
+                                
+    <section data-html="slides/beforeEnd.html"></section>
+
+
+                            
+                                
+    <section data-html="slides/theEnd.html"></section>
+
+
+                            
+                        </section>
+                    
+                
+            </div>
+
+        </div>
+        
+        <script src="bower_components/jquery/dist/jquery.js"></script>
+        <script src="bower_components/reveal.js/lib/js/head.min.js"></script>
+        <script src="bower_components/reveal.js/js/reveal.min.js"></script>
+        <script>
+            // Configure Reveal
+            // Full list of configuration options available here:
+            // https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                controls: true,
+                progress: true,
+                history: true,
+                center: true,
+
+                theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+                transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+                // Optional libraries used to extend on reveal.js
+                dependencies: [
+                    { src: 'bower_components/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                    { src: 'bower_components/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'bower_components/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'bower_components/highlightjs/highlight.pack.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                    { src: 'bower_components/reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+                    { src: 'bower_components/reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+                    // { src: 'bower_components/reveal.js/plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; } }
+                    //{ src: 'bower_components/reveal.js/plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+
+                    { src: 'js/loadhtmlslides.js', condition: function() { return !!document.querySelector( '[data-html]' ); } }
+                ]
+            });
+        </script>
+
+    </body>
+
+</html>

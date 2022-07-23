@@ -1,0 +1,9 @@
+<h3>Configure box</h3>
+<p>Using box called <b>base</b> can be problematic, so let's add a new one with
+<pre><code class="bash">vagrant box add "centos-6.4" file:///[FULL PATH TO DIRECTORY]/CentOS-6.4-i386-v20131103.box</code></pre>
+We can list already installed boxes with
+<pre><code class="bash">vagrant box list</code></pre>
+And remove unused onces with (they consume space under <code>$HOME/.vagrant.d/</code>):
+<pre><code class="bash">vagrant box remove [BOX NAME]</code></pre>
+</p>
+

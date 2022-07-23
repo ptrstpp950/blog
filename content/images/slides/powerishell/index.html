@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>PowerIShell - PowerShell for devs</title>
+    <link rel="stylesheet" type="text/css" href="build/build.css">
+  </head>
+  <body>
+    <article>
+      <section data-bespoke-hash="start">
+        <h1>Power<span style="color:gray">I</span>S<span style="color:red">hell</span></h1>
+        <h1>for developers</h1>
+      </section>
+      <section data-bespoke-hash="about-me">
+        <h2>Who am I?</h2>
+        <h3 class="bullet">
+          <li>User of every useful technology</li>
+          <li>DevOps and automation adept </li>
+          <li>DevWarszaty vice-CEO</li>
+          <li>Working in <img src="images/finai-logo.svg" style="vertical-align: sub;" width="107" height="40" alt="FinAi"/> as Software Architect (& DevOps ninja)</li>
+          <li>Former <img src="images/mbank-logo.png" width="107" height="40" alt="mBank"/> architecture team member</li>
+          <li>My blog is <a target="_blank" href="http://stapp.space">stapp.space</a></li>
+          <li>My Twitter is <a target="_blank" href="https://twitter.com/ptrstpp950">@ptrstpp950</a></li>
+        </h3>
+      </section>
+      <section data-bespoke-hash="whywhywhy">
+        <h2>PowerShell <br/>why? why? why?</h2>
+        <h3 class="bullet">
+          <li>It exists and guys in MS love it</li>
+          <li>It is better than cmd and git console - I will prove it</li>
+          <li>It has a lot of build and created stuff which helps in crafting software</li>
+        </h3>
+      </section>
+      <section data-bespoke-hash="demo1">
+        <h2>Demo 1</h2>
+        <h2>Let me introduce myself</h2><br>
+        <h3>Copy & paste :)</h3>
+        <pre><code class="language-javascript">$voice = New-Object -ComObject SAPI.SPVoice
+$voice.Rate = -1
+$voice.Speak("Witajcie chłopcy i dziewczęta
+      Pozwólcie że się przedstawię. 
+      Jestem PowerShell");</code></pre>
+      </section>
+      <section data-bespoke-hash="demo2-intro">
+        <h2>Rebus</h2>
+        <p><img src="images/posh.jpg" width="30%" alt="posh"/> <img src="images/minus.png" width="30%" alt="posh"/> <img width="30%" src="images/git.png" alt="git"/> </p>
+      </section>
+      <section data-bespoke-hash="demo2">
+        <h2>Demo 2</h2>
+        <h2>posh-git</h2><br>
+        <h3>How to install</h3>
+        <pre><code class="language-javascript">(new-object Net.WebClient).DownloadString(
+      "http://psget.net/GetPsGet.ps1") | iex
+      
+Install-Module posh-git
+</code></pre>
+      </section>
+      <section data-bespoke-hash="posh-modules">
+        <h2>Posh*</h2>
+        <h3 class="bullet">Thre are more posh* modules
+          <li>posh-svn and posh-hg</li>
+          <li>posh-npm - for NPM</li>
+          <li>posh-gvm - for groovy</li>
+          <li>posh-couch - for CouchDB</li>
+          <li>and much more just run: Get-PsGetModuleInfo Posh* or browse <a href="http://psget.net/directory/" target="_blank">http://psget.net/directory/</a></li>
+        </h3>
+      </section>
+      <section data-bespoke-hash="demo3-intro">
+        <h2>Work with log files</h2>
+        <h3 class="bullet">Log files form production usually:
+          <li>are on Windows/Samba share</li>
+          <li>are big and spitted into many files (rolling logs)</li>
+          <li>are in compressed format (tgz, rar, zip)</li>
+          <li>we want to <b>grep</b> them</li>
+        </h3>
+      </section>
+      <section data-bespoke-hash="demo3">
+        <h2>Demo 3 - unpack and grep log files</h2>
+        <h3>It is said but grep for log files in useful</h3>
+        <pre><code class="language-javascript">set-alias 7zip "C:\Program Files\7-Zip\7z.exe"
+pushd "$powerISHellRoot\logs"
+rm *.log
+get-childItem -Path .\gzip | foreach{7zip x $_.FullName}
+gci -Filter "*.log" | select-string "Kaczka"
+set-alias grep select-string
+gci -Filter "*.log" | grep -context 5 "Kaczka"
+</code></pre>
+      </section>
+      <section data-bespoke-hash="choco">
+        <h2>Installation</h2>
+        <h3>Installation in bash is already on Windows. We can use PowerShell for this</h3><span>For example to install <b>Chocolatey</b> we can run
+          <pre><code class="language-javascript">@powershell -NoProfile -ExecutionPolicy unrestricted 
+-Command "iex ((new-object net.webclient).DownloadString('
+https://chocolatey.org/install.ps1'))" 
+&& SET PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin
+</code></pre></span>
+      </section>
+      <section data-bespoke-hash="sudo">
+        <h2>SUDO</h2><span>I really miss sudo command from Linux. In PowerShell we can have it:</span>
+        <pre><code class="language-javascript">function sudo  {
+    $file, [string]$arguments = $args;
+    $psi = new-object System.Diagnostics.ProcessStartInfo $file;
+    $psi.Arguments = $arguments;
+    $psi.Verb = "runas";
+    $psi.WorkingDirectory = get-location;
+    [System.Diagnostics.Process]::Start($psi);
+}
+</code></pre>
+      </section>
+      <section data-bespoke-hash="sudo-example">
+        <h2>SUDO example</h2>
+        <pre><code class="language-javascript">pushd "$powerISHellRoot\Demo-VisualStudio"
+sudo devenv.exe .\Demo-VisualStudio.sln
+popd
+</code></pre>
+      </section>
+      <section data-bespoke-hash="transcript">
+        <h2>Record your actions</h2>
+        <h3>In PowerShell we can record user actions (too see if he run proper commands :) )</h3>
+        <pre><code class="language-javascript">Start-Transcript -Path .\trasnsript.txt
+ls
+sudo notepad C:\Windows\System32\drivers\etc\hosts
+Stop-Transcript</code></pre>
+      </section>
+      <section data-bespoke-hash="ide">
+        <h2>Debugging your script</h2>
+        <h3 class="bullet">
+          <li>Traditional "alert" -> Write-Host</li>
+          <li>There is a Windows PowerShell ISE</li>
+          <li>VS + <a href="https://visualstudiogallery.msdn.microsoft.com/c9eb3ba8-0c59-4944-9a62-6eee37294597" target="_blank">PowerShell Tools</a></li>
+          <li>Visual Studio Code with PowerShell plugin - the best of the best :D</li>
+        </h3>
+      </section>
+      <section data-bespoke-hash="demo-ide">
+        <h2>Debugging progress bar</h2>
+        <pre><code class="language-javascript">$wmiQuery = "Select name from win32_service where 
+                state = 'running'"
+$colItems = Get-WmiObject -Query $wmiQuery
+For($i = 1; $i -le $colItems.count; $i++){ 
+    Write-Progress -Activity "Query svc" -status "Found $i" `
+      -percentComplete ($i /$colItems.count*100)            
+}           
+$colItems | Select name
+</code></pre>
+      </section>
+      <section data-bespoke-hash="Package-Manager-Console">
+        <h2>Package Manager Console is in VS</h2>
+        <h3>It is full PowerShell with separate profile :) Allows to do interact with VS:)</h3>
+      </section>
+      <section data-bespoke-hash="Package-Manager-Console-evil-demo">
+        <h2>Package Manager Console Evil Demo</h2>
+        <h3>Run Visual Studio, open one document and paste following into Package Manager Console</h3>
+        <pre><code class="language-javascript">$dte.ActiveDocument.Selection.Insert("DROP TABLE :)")
+</code></pre>
+      </section>
+      <section data-bespoke-hash="Package-Manager-Console-list">
+        <h2>Package-Manager-Console cool stuff:</h2>
+        <h3 class="bullet">
+          <li>Insert Text into Current Document at Cursor</li>
+          <li>Copy Text to the Clipboard</li>
+          <li>Loop Through All Projects in the Solution</li>
+          <li>Delete an Item in a Project</li>
+          <li>More on: <a href="http://jameschambers.com/2011/06/powershell-script-examples-for-nuget-packages/" target="_blank">James Chamber blog</a></li>
+          <li>In mBank we have script with download framework core with all needed plugins. Then setup and run IIS Express, run standalone WCF, attach debugger to both</li>
+        </h3>
+      </section>
+      <section data-bespoke-hash="remote-demo">
+        <h2>Powershell Remote</h2>
+        <h3>WinRM</h3>
+        <pre><code class="language-javascript">Invoke-Command -ComputerName MyPC `
+  -ScriptBlock { Get-ChildItem C:\ } `
+  -credential xxx</code></pre>
+      </section>
+      <section data-bespoke-hash="remote-demo-2">
+        <h2>Powershell Remote</h2>
+        <h3>SSH</h3>
+        <pre><code class="language-javascript">set-alias ssh "C:\Program Files\Git\usr\bin\ssh.exe"
+(Get-Host).UI.RawUI.BackgroundColor = "black"
+ssh -p $port $ip;</code></pre>
+      </section>
+      <section data-bespoke-hash="remote-demo-web">
+        <h2>Powershell Remote</h2>
+        <h3>Powershell Web Access</h3>
+        <p><img src="images/web-based_console.png" width="100%" alt="pwa"/></p>
+      </section>
+      <section data-bespoke-hash="remote-demo-kudu">         
+        <h2>Powershell Remote</h2>
+        <h3>KUDU</h3>
+        <p><img src="images/azure-powershell.png" width="100%" alt="azure"/></p>
+      </section>
+      <section data-bespoke-hash="final-demo">
+        <h2>Final demo</h2>
+        <pre><code class="language-javascript">iex (New-Object Net.WebClient).DownloadString(`
+  "http://www.leeholmes.com/"+`
+  "projects/ps_html5/Invoke-PSHtml5.ps1");</code></pre>
+      </section>
+      <section data-bespoke-hash="end">
+        <h2>The end</h2>
+        <ul>
+          <li>Slides:<br/>On my blog: <a target="_blank" href="http://stapp.space">stapp.space</a></li>
+        </ul>
+      </section>
+    </article>
+    <script src="build/build.js"></script>
+  </body>
+</html>

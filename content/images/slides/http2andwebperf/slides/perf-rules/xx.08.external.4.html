@@ -1,0 +1,15 @@
+<h2>Prioritization in FF 37</h2>
+<img width="1000px" height="500px" src="resources/img/ff_stream_prioritization.jpg"/>
+<a href="http://bitsup.blogspot.com/2015/01/http2-dependency-priorities-in-firefox.html">Source</a>
+<aside class="notes">
+	http://bitsup.blogspot.com/2015/01/http2-dependency-priorities-in-firefox.html 
+	<br/>The weighting mechanisms of H2 (and SPDY)
+	can help here - and they are what are used prior to Firefox 37. Full parallelism is restored, but some unwanted bandwidth
+	sharing still goes on. 
+	<br/>
+	I've implemented a scheme for H2 using 5 fixed dependency groups (known informally as leader, follower,
+	unblocked, background, and speculative). They are created with the PRIORITY frame upon session establishment and every new
+	stream depends on one of them.
+	<br/>
+	Streams for things like js and css are dependent on the leader group and images are dependent on the follower group. The use of group nodes, rather than being dependent on the js/css directly, greatly simplifies dependency management when some streams complete and new streams of the same class are created - no reprioritization needs to be done when the group nodes are used.
+</aside>

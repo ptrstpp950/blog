@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Logon Workshop</title>
+    <link rel="stylesheet" type="text/css" href="build/build.css">
+  </head>
+  <body>
+    <article>
+      <section>
+        <h1>Logon Workshop</h1>
+      </section>
+      <section data-bespoke-hash="setup">
+        <h2>Setup</h2>
+        <h3>Run our legacy project</h3>
+        <h4 class="bullet">
+          <li class="bullet">Download git repository
+            <pre><code class="language-javascript">git clone 
+https://ptrstpp950@bitbucket.org/ptrstpp950/logonworkshop.git</code></pre>
+          </li>
+          <li>Run Visual Studio</li>
+          <li>Compile&run with CTRL+F5 and listen to the story</li>
+          <li>Example login is test and password is 123</li>
+        </h4>
+      </section>
+      <section data-bespoke-hash="about-me">
+        <h2>Who am I?</h2>
+        <h3 class="bullet">
+          <li>User of every useful technology</li>
+          <li>DevOps and automation adept </li>
+          <li>Working in <img src="images/mbank-logo.png" width="107" height="40" alt="mBank"/> as IT Expert</li>
+        </h3>
+      </section>
+      <section data-bespoke-hash="the-story">
+        <h2>The story</h2>
+        <p>Long long time ago, far far away in our company somebody created a login page :)</p>
+        <p>It has small feature: when user 3 times in a row enters bad credentials, the login is blocked for 1 minute</p>
+        <p>The users frequently create service calls about blocked account</p>
+        <p><b>The boss</b> said: <i>Do something with it!!</i></p>
+        <p>And now your are here looking into the code</p>
+      </section>
+      <section data-bespoke-hash="create-unit-test-proj">
+        <h2>Let's create a Unit test project</h2>
+        <ul class="bullet">
+          <li>Right click on solution -> Add -> New project</li>
+          <li>Visual C# -> Test</li>
+          <li>Name it as you wish</li>
+        </ul>
+      </section>
+      <section data-bespoke-hash="references">
+        <h2>References</h2>
+        <ul class="bullet">
+          <li>Add reference to LogonWorkshop project</li>
+          <li>Add reference to System.Web</li>
+          <li>Install System.Web.Mvc package from solution</li>
+        </ul>
+      </section>
+      <section data-bespoke-hash="first-test-method">
+        <h2>Our first test method</h2>
+        <h5>
+          <pre><code class="language-javascript">[TestMethod]
+public void TestMethodSuccessLogin()
+{
+    var password = "123";
+    var user = "test";
+    var controller = new HomeController();
+    controller.Index(new LoginModel() {User = user, Password = password});
+}
+</code></pre>
+        </h5>
+      </section>
+      <section data-bespoke-hash="connection-string-problem">
+        <h2>Connection string problem</h2>
+        <p>We need to add it in the constructor of HomeController</p>
+        <h5>
+          <pre><code class="language-javascript">private string connectionString;
+public HomeController() : this
+    (ConfigurationManager.ConnectionStrings["ProjectDB"].ConnectionString)
+{
+
+}
+public HomeController(string connectionString)
+{
+    this.connectionString = connectionString;
+}
+</code></pre>
+        </h5>
+      </section>
+      <section data-bespoke-hash="fix-unit-test">
+        <h2>Fix unit test</h2>
+        <h3 class="bullet">Options</h3>
+        <ul>
+          <li>Pass something in constructor</li>
+          <li>Use database in unit test - <span style="color:red">NO!!</span> until there is no other option</li>
+          <li>Mock/stub database - this needs some refactoring</li>
+        </ul>
+      </section>
+      <section data-bespoke-hash="extract-sql-methods">
+        <h2>Extract SQL methods</h2>
+        <h3 class="bullet"></h3>
+        <ul>
+          <li>Select code and press CTRL+R,M (or in context menu select Refactor->Extract method)</li>
+          <li>Change them from <code>private static</code> to <code>public</code></li>
+          <li>Move them to new class like <code>SQLrepository</code></li>
+          <li>Fix errors</li>
+          <li><span style="color:green"> If you are lost just checkout step1 branch from git with:</span>
+            <pre><code class="language-javascript">git checkout step1</code></pre>
+          </li>
+        </ul>
+      </section>
+      <section data-bespoke-hash="eliminate-SQLConnection">
+        <h2>Eliminate SQLConnection from HomeController</h2>
+        <h3 class="bullet"><span style="color:red">This is dangerous part</span></h3>
+        <ul>
+          <li>Make <code>SqlRepository</code> as <code>IDisposable</code></li>
+          <li>Move <code>SqlConnection</code> into <code>SqlRepository</code></li>
+          <li>Remove <code>SqlConnection conn</code> form extracted methods in <code>SqlRepository</code></li>
+          <li>Fill <code>Dispose</code> method</li>
+          <li>Implement <code>Open</code> method</li>
+          <li>Replace <code>SqlConnection</code> with <code>SqlRepository</code></li>
+        </ul>
+      </section>
+      <section data-bespoke-hash="SqlRepository">
+        <h2>SqlRepository code</h2>
+        <pre><code class="language-javascript">public SqlConnection conn;
+public SqlRepository(string connectionString)
+{
+    conn = new SqlConnection(connectionString);
+}
+public void Dispose()
+{
+    if (conn != null)
+        conn.Dispose();
+}
+public void Open()
+{
+    conn.Open();
+}
+</code></pre>
+      </section>
+      <section data-bespoke-hash="interface-is-better">
+        <h2>Interface is easier to stub/mock</h2>
+        <p>To convert <code>SqlRepository</code> just use Visual&nbsp;Studio right-click menu<br/><u>Refactor->Extract interface</u></p>
+        <p>Remember to make this interface inherit from <code>IDisposable</code></p>
+      </section>
+      <section data-bespoke-hash="if-you-are-lost">
+        <h2>If you are lost</h2>
+        <h4><span style="color:green"> If you are lost just checkout step2 branch from git with:</span>
+          <pre><code class="language-javascript">git checkout step2
+</code></pre>
+        </h4>
+      </section>
+      <section data-bespoke-hash="func">
+        <h2>Use Func Luke!</h2>
+        <p>The last step is to eliminate 
+          <pre><code class="language-javascript">using (var sqlRepository = new SqlRepository(connectionString))</code></pre>
+        </p>
+        <p>Easy conversion is to use Func like:
+          <pre><code class="language-javascript">public Func<ISqlRepository> CreateSqlRepository;
+public HomeController(string connectionString)
+{
+    this.connectionString = connectionString;
+    CreateSqlRepository = () => new SqlRepository(connectionString);
+}
+</code></pre>
+        </p>
+      </section>
+      <section data-bespoke-hash="stub">
+        <h2>Let's write stub</h2>
+        <h3></h3>
+        <pre><code class="language-javascript">public class SqlRepositoryStub : ISqlRepository
+{
+    public class UserInDbStub
+    {
+        public int UserId;
+        public string Username;
+        public string Password;
+        public DateTime LastBadLogin = new DateTime();
+        public int BadAttempt = 0;
+    }
+    public List<UserInDbStub> Users = new List<UserInDbStub>();
+    
+    public int GetUserId(LoginModel model)
+    {
+        var user = 
+          Users.FirstOrDefault(x => 
+            x.Username == model.User);
+        if (user == null)
+        {
+            return -1;
+        }
+        return user.UserId;
+    }
+    
+    public void TryLogin(LoginModel model, int userId,
+        out int badAttempt, out DateTime lastBadLogin, 
+        out bool successLogin)
+    {
+        var user = 
+          Users.FirstOrDefault(x => 
+            x.UserId == userId 
+            && x.Password == model.Password);
+        if (user == null)
+        {
+            lastBadLogin = DateTime.MinValue;
+            badAttempt = 0;
+            successLogin = false;
+        }
+        lastBadLogin = user.LastBadLogin;
+        badAttempt = user.BadAttempt;
+        successLogin = true;
+    }
+    
+    public void UpdateBadAttemps(int userId)
+    {
+        var user = 
+        Users.First(x => x.UserId == userId);
+        user.BadAttempt += 1;
+        user.LastBadLogin = DateTime.Now;
+    }
+    
+    public void Open()
+    {
+    }
+    public void Dispose()
+    {
+    }
+}
+
+
+</code></pre>
+      </section>
+      <section data-bespoke-hash="full-test-method">
+        <h2>Our first test method</h2>
+        <h3></h3>
+        <pre><code class="language-javascript">var password = "123";
+var user = "test";
+var controller = new HomeController("");
+controller.CreateSqlRepository = () =>
+{
+    var sqlRepositoryStub = new SqlRepositoryStub();
+    
+    sqlRepositoryStub.Users.Add(
+    new SqlRepositoryStub.UserInDbStub()
+    {
+        BadAttempt = 0,
+        UserId = 1,
+        Username = user,
+        Password = password
+    });
+    return sqlRepositoryStub;
+};
+var result = controller
+    .Index(
+      new LoginModel() {User = user, Password = password}) 
+    as RedirectToRouteResult;
+Assert.IsNotNull(result);
+Assert.AreEqual("LoginSuccess", result.RouteValues["action"]);
+</code></pre>
+      </section>
+      <section data-bespoke-hash="your-turn">
+        <h2>Now is Your turn</h2>
+        <h3 class="bullet">The code has two errors - find them wit Unit Test</h3>
+        <ul>
+          <li>Implement bad login test</li>
+          <li>Implement lock account test</li>
+          <li>Implement login after lock with more than 1 minute delay</li>
+          <li><b>!!Good luck!!</b></li>
+        </ul>
+      </section>
+    </article>
+    <script src="build/build.js"></script>
+  </body>
+</html>

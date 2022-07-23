@@ -1,0 +1,12 @@
+<h3>Install Java</h3>
+<p>To install package in chef we should use following "package" construction 
+<pre><code class="ruby">package "jdk" do
+	action :install
+end
+</code></pre>
+in new created file 
+<pre><code class="bash">vagrantchef\cookbooks\storm\recipes\java.rb</code></pre>
+
+And include it in vagrantfile with:
+<pre><code class="ruby">chef.add_recipe "storm::java"</code></pre>
+</p>

@@ -1,0 +1,13 @@
+<h3>Remove hard-coded IP</h3>
+<p>In <code>zookeeper.rb</code> recipe replace 
+<pre><code class="ruby">nodes = "192.168.33.10,192.168.33.11".split(",")
+ip = node[:network][:interfaces][:eth1][:addresses].detect{|k,v| v[:family] == "inet" }.first
+</code></pre>
+with
+<pre><code class="ruby">nodes = node[:zookeeper][:nodes].split(",")
+ip = node[:network][:interfaces][node[:zookeeper][:eth]][:addresses].detect{|k,v| v[:family] == "inet" }.first
+</code></pre>
+<br/>
+In storm.yaml replace content with:
+<pre><code class="ruby">nimbus.host: <%= node[:storm][:host]%></code></pre>
+</p>

@@ -1,0 +1,20 @@
+<h2>Server push</h2>
+<p>Intead of inlining use server push:
+	<ul>
+		<li>Delivers granular resources, which can be cached individually</li>
+		<li>Delivers granular resources, which can be mux’ed and prioritized correctly</li>
+		<li>Allows the client to opt-in / opt-out and control how and where it is used:
+			<ul>
+				<li>Server push is subject to flow control - e.g. "you can only push 5KB"</li>
+				<li>Server push is optional and can be disabled by the client</li>
+			</ul>
+		</li>
+	</ul>
+</p>
+<aside class="notes">
+	<br/>Server: "You asked for /product/123, but you’ll need app.js, product-photo-1.jpg, as well… I promise to deliver these
+	to you. That is, unless you decline or cancel."
+	<br/>Client: "I want first 20KB of photo.jpg"
+	<br/>Server: "Ok, 20KB… pausing stream until you tell me to send more."
+	<br/>Client: "Send me the rest now."
+</aside>

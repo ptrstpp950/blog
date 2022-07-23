@@ -1,0 +1,13 @@
+<h2>GZIP in headers?</h2>
+<p>
+    Early versions of HTTP/2 and SPDY used zlib, with a custom dictionary, to compress all HTTP headers, which delivered 85%–88%
+    reduction.
+</p>
+<blockquote>
+    On the lower-bandwidth DSL link, in which the upload link is only 375 Kbps, request header compression in particular, led
+    to significant page load time improvements for certain sites (i.e., those that issued large number of resource requests).
+    We found a reduction of <strong>45–1142 ms</strong> in page load time simply due to header compression.<br/>(SPDY whitepaper, chromium.org)
+</blockquote>
+
+<aside class="notes">
+</aside>

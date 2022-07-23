@@ -1,0 +1,30 @@
+.busted{
+    background-image: url(../img/busted-1000-400.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    top: 100px;
+    position: absolute;
+    width: 100%;
+    height: 400px;
+    display: block;
+}
+.confirmed{
+    background-image: url(../img/confirmed-1000-400.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    top: 100px;
+    position: absolute;
+    width: 1000px;
+    height: 400px;
+    display: block;
+}
+.plausible{
+    background-image: url(../img/plausible-1000-400.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    top: 100px;
+    position: absolute;
+    width: 100%;
+    height: 400px;
+    display: block;
+}
