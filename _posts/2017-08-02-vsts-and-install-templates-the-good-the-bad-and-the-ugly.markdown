@@ -95,5 +95,5 @@ All points from the bad part of previous ways can be crossed out. But there isn'
 ### The ugly
 It isn't easy to find. And manage it can be frustrating. But it solves a problem, which is just great.
 
-##The end
+## The end
 I don't know anything more, but maybe You know something and can share with me. If yes please contact me or write a comment below.

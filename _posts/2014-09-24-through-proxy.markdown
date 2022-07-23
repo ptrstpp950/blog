@@ -8,17 +8,17 @@ tags:
 - azure
 ---
 
-##Prerequisites
+## Prerequisites
 
 1. Install [putty](http://www.putty.org/)
 2. Install favorite Linux machine on [Azure portal](https://portal.azure.com/)
 3. Install and configure [Cntlm](http://cntlm.sourceforge.net/)
 
-##Enable endpoint
+## Enable endpoint
 In azure portal (old or new one) you need to modify SSH endpoint to port 443
 ![azure endpoints](http://res.cloudinary.com/piotrstapp/image/upload/c_scale,w_640/v1411544922/azure-endpoint_ecggjb.png)
 
-##SSH using putty
+## SSH using putty
 
 1. Open putty and in host name write: YOURMACHINE.cloudapp.net
 2. In port set 443 instead of 22

@@ -18,10 +18,10 @@ Be serious in IT we fail. Than we get up. Than we fail again.
 But every time we fail there should not be "ouch", but the new lesson learned. 
 
 
-##Thanks or not
+## Thanks or not
 We you change a lot usually you make a lot of problems. I'm exactly person like that. Som
  
-##Thing to remember
+## Thing to remember
 
 http://judoinfo.com/quotes1.htm
 

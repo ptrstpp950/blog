@@ -10,7 +10,7 @@ tags:
 ---
 
 Setup Vagrant with Azure is not complicated, but require a lot of steps, especially if you never configure azure using command line  
-##Prerequisites 
+## Prerequisites 
 First of all we need some tools:
 
 - Vagrant (https://www.vagrantup.com/downloads.html) (at least 1.7.2)
@@ -19,7 +19,7 @@ First of all we need some tools:
 - Azure account :)
 - Powershell or other command line tool :)
 
-##Setup Azure CLI
+## Setup Azure CLI
 [Azure CLI](http://azure.microsoft.com/en-us/documentation/articles/command-line-tools/) will help us to create virtual machine in Azure. We will setup credentials and certificate, which we use in vagrant.
 Installation is quite simple:
 
@@ -58,7 +58,7 @@ We will also need location, so let's run:
 
 And choose one. In my case it will be `North Europe`
 
-##Generate keys for Azure
+## Generate keys for Azure
 Now we need to generate key pair for Azure. We will need `pem` file with public-private key pair and `cer` file to upload with public key. 
 Generation can be done with `openssl.exe` (located in `C:\Program Files (x86)\Git\bin\openssl.exe`) or `puttygen.exe`. 
 Command for openssl are straightforward, so I will use them. First set openssl config file as environment variable, than run generation (assuming that openssl.exe is in PATH):
@@ -72,12 +72,12 @@ Command for openssl are straightforward, so I will use them. First set openssl c
     
 Now we need to upload  `azurevagrant.cer` to azure. Open in browser https://manage.windowsazure.com/#Workspaces/AdminTasks/ListManagementCertificates and click *Upload certificate* button. Select file from `$HOME/.ssh/azurevagrant.cer`
 
-##Vagrant install azure plugin
+## Vagrant install azure plugin
 It is simple command (unless you are not in the proxy environment):
 
     vagrant plugin install vagrant-azure
 
-##Vagrant file
+## Vagrant file
 We are almost in the end. Now we need to create vagrant file like following:
 
 
@@ -124,7 +124,7 @@ And install azure-vagrant plugin with
 
      vagrant plugin install vagrant-azure
 
-##Final command
+## Final command
 Enter the directory with `Vagrantfile`. Modify subscription id and run:
 
     vagrant up --provider=azure

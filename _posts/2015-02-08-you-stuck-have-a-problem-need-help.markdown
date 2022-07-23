@@ -14,12 +14,12 @@ For first three, usually we have to deal with it alone or ask [our wives](https:
 
 I don't know why, but for last problem the "wife option" does not work.
 
-###Simple problem, simple solution
+## Simple problem, simple solution
 Our first choice is Google (or Bing) and we are redirect to StackOverflow/forum/blog. 30 seconds and we are happy.
 If problem is a little more complicated (or we didn't search enough) we can ask question. My case: Last week I need to calculate stats for **all** threads, which I was executing. SO was the perfect solution and I received a [full generic code](http://stackoverflow.com/questions/28366387/get-statistic-of-executed-tasks-in-c-sharp)
 
 
-###Complex stuff
+## Complex stuff
 Above stack works perfectly when we have a problem in code. But what about problem with external solution - it can be "black box", open-source, something mixed - especially when it is a performance solution.
 I suggest to do following:
 

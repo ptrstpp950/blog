@@ -23,5 +23,5 @@ function sudo
 
 Now we can run everything in PowerShell with `sudo command arg1 arg2  argX`. Hurray :)
 
-##Update
+## Update
 The above works only with programs and have a problem with PowerShell commands. The simple workaround is to use `sudo !!` (run last command as sudo). I describe this in the [sudo !! - run last command in elevated PowerShell prompt](https://stapp.space/run-last-command-in-elevated-powershell/)

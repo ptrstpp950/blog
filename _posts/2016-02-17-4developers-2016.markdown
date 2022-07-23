@@ -14,7 +14,7 @@ Even I have a presentation with Marcin Przekop about DevOps in mBank. It is avai
  
 This year is really near, but still you can send your __CFP till 22th February__.
 
-##2016 dotNet path 
+## 2016 dotNet path 
 Moreover dotNET path for sure there will have 2 great sessions:
 
 - __Azure Service Fabric__ by Sebastian Gębski
@@ -22,7 +22,7 @@ Moreover dotNET path for sure there will have 2 great sessions:
 
 I know both speakers well and I am sure that both sessions will be essential.
 
-##15% discount
+## 15% discount
 If you want to see above sessions and much much more, I can offer you 15% discount.
 Just use promo-code: **4dev_stappspace** on [registration page](http://2016.4developers.org.pl/en/)
 Let's **Make IT Grow**. See you there. 

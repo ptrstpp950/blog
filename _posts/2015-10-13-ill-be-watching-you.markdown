@@ -8,7 +8,7 @@ tags:
 - tools
 ---
 
-##Imagine
+## Imagine
 Imagine a perfect world, with your perfect system, when everything goes fine. 
 And fine.
 More fine
@@ -26,13 +26,13 @@ Then you check:
 
 So where is the problem? You check XYZ button and it is fine.
 
-##So what just happened?
+## So what just happened?
 The sad answer: now it is nothing. The problem was 2-3 hours ago and it is gone now. You just spent some of your time completely useless. 
 The question which suddenly comes to your mind is: what had happened and what changed?
 Moreover one more should appear: when it will happen again? 
 
 
-##Monitoring
+## Monitoring
 There are a lot of tools, you should use to measure your application:
 
 1. Performance counters or JMX - this is the base

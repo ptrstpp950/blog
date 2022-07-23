@@ -17,7 +17,7 @@ In the begging few assumptions:
 - I'm using the SeriLog library. Why? Let's say because I like it. A more serious reason it is because I log objects, and with included sink, it is easily parsable by Azure stuff. If you don't agree or know better logging lib for this purpose, just let me know in comments/email/twitter/facebook/[put something here]
 
 
-##The problem
+## The problem
 In Owin, or maybe I should write in LibOwin, request and response headers have type `IHeaderDictionary` which inherits `IDictionary<string, string[]>`. Above inheritance and [a pull request no 14 from 15 June 2016](https://github.com/serilog/serilog-sinks-applicationinsights/pull/14), produce the following result in [Analytics queries](https://docs.microsoft.com/en-us/azure/application-insights/app-insights-analytics)
 
 ![](/content/images/2017/07/org-headers-log.png)

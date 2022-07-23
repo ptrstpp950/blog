@@ -10,14 +10,14 @@ tags:
 
 In more complicated projects, simple F5 doesn't compile&debug. In cases where you're working with IIS (w3wp process), we need to attach the debugger manually.
 
-##Attaching debugger
+## Attaching debugger
 The simple gif below shows you how to attach it normally:
 ![Standard Visual Studio debugger attach](/content/images/2016/01/StandardAttach.gif)
 
 For the first time it's ok, but repeating this step 10 times in hour is painful. 
 Could this be done in one button or keyboard shortcut?
 
-##Tool to the rescue
+## Tool to the rescue
 ReAttach is a free tool which solves this exact issue. Just take a look at the picture below:
 
 ![Attach debugger using ReAttach](/content/images/2016/01/ReAttach.gif)

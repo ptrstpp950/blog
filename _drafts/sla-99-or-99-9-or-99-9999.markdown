@@ -5,7 +5,7 @@ title: SLA - 99% or 99.9% or 99.9999%?
 
 Almost every system has SLA today. SLA is every contract, even internal ones. Expectations are high. The number of "9" after a dot is so important. But the real question is that change anything for your system?
 
-##Simple SLA
+## Simple SLA
 For example, Microsoft Azure SQL Web and Business Tier has following SLA statement:
 >We guarantee at least 99.9% of the time customers will have connectivity between their Web or Business Microsoft Azure SQL Database and our Internet gateway.
 

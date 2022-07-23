@@ -6,14 +6,14 @@ tags:
 - speaker
 ---
 
-#Vagrant with windows
+# Vagrant with windows
 Slides: http://stapp.space/content/images/slides/vagrantwithwindows/ 
 
 Survey: http://j.mp/vagrantWithWindows
 
 Sources: https://github.com/ptrstpp950/vagrantDemoWin2012 
 
-#PowerIsHell - powershell 4 devs
+# PowerIsHell - powershell 4 devs
 
 Sildes: http://piotrstapp.azurewebsites.net/content/images/slides/powerishell/ 
 

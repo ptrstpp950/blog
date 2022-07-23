@@ -11,7 +11,7 @@ tags:
 A few days ago, a new tool came from the Facebook team: Yarn package manager. The results published on [the official Yarn web page](https://yarnpkg.com/en/compare) are fantastic. I'm using local NPM registry, so some of the NPM problems don't exist for me.  Still, the `npm install` command is quite slow. How the `yarn install` command performs? Can it be much better?
 Let's check it out.
 
-##Why is speed so important in CI?
+## Why is speed so important in CI?
 In the Continuous Integration systems, there are two types of build:
 
 - "git pull"
@@ -28,7 +28,7 @@ When I look at my build task a lot of time is consumed by dependency management.
 
 Goal defined. Now I'm ready to describe the environment setup.
 
-##Environment setup
+## Environment setup
 I have the following components in my environment:
 
 - [Artifactory](https://www.jfrog.com/open-source/)
@@ -37,7 +37,7 @@ I have the following components in my environment:
 
 Artifactory is really important for this tests because using it I have the stable connection to all packages. They are cached there.
 
-##Certificate
+## Certificate
 Up to yarn@16.0, it was impossible to use a custom certificate. To use it now just type:
 ```
 yarn config set cert.pem
@@ -45,7 +45,7 @@ yarn config set cert.pem
 After that, you will find it in the `.yarnrc` file in your home directory. On Windows, its location is `C:\Users\[username]\.yarnrc`
 
 
-##What will I test?
+## What will I test?
 I decide to use below `packages.json` file. It has only some dev dependencies.
 ```
 {
@@ -97,7 +97,7 @@ I decide to use below `packages.json` file. It has only some dev dependencies.
 }
 ```
 
-##The methodology
+## The methodology
 I decided to test `npm install` including following options:
 
 - delete npm cache before restore or not
@@ -117,7 +117,7 @@ The `yarn.lock` file stores all dependencies links. The best definition is on [t
 
 Above allows the Yarn to download modules without checking dependencies. It knows it up front.
 
-##The results
+## The results
 
 The results for NPM are:
 
@@ -253,13 +253,13 @@ And for the Yarn:
 </table>
 <br/>
 
-#What about bower/jspm/...?
+# What about bower/jspm/...?
 Bower is more front-end focused than NPM. First versions of Yarn support it, but with some problems. Unfortunately, they decided to [remove Bower support](https://github.com/yarnpkg/yarn/pull/1441):
 >Bower support isn't something we document or support very well. We should just get rid of it since it has a lot of issues. Bower is on it's way out and we shouldn't be supporting it. If you want to continue to use Bower then just use it's CLI. We initially had support for it to support Polymer but since they're migrating entirely to npm there's not much use.
 
 The rest of the tools, like jspm, aren't supported as well. They decided to concentrate on NPM only. In my opinion, it is a good decision especially that latest Tech Radar set the trial status for "NPM for all the things" ([read more](https://www.thoughtworks.com/radar/techniques/npm-for-all-the-things)). Probably one package manager for JavaScript is enough. Especially if it can be fast.
 
-##To sum up
+## To sum up
 Speed in the Continuous Integration is important. We want to know as fast as possible that everything is OK. If the tool slows us, we have a problem. NPM is exactly such problem. It slows our builds. But now we have an alternative - Yarn.
 
 As we can see Yarn is much faster than NPM. Moreover, it can produce repeatable build with `yarn.lock` file. 

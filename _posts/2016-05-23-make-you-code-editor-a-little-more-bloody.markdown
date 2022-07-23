@@ -13,7 +13,7 @@ Your Integrated Development Environment(IDE) is Your main tool. Anything that ca
 Nowadays we are using usually more than one IDE. For example Visual Studio for backend and Sublime for the frontend. Or maybe You prefer IntelliJ/WebStorm/PyCharm/PhpStorm with Vim?
 Also, Xcode with TextMate and Visual Studio Code is an interesting combo.
 
-##Black or white?
+## Black or white?
 A long time ago Michael Jackson sing:
 > But, if you're thinkin' about my baby
 >
@@ -27,7 +27,7 @@ For me, the biggest problem was with colors during switching between different e
 The second problem is key scheme, but this is a different story :)
 I always set black/dark theme but differences irritate me.
 
-#Blood is good
+# Blood is good
 Sometime ago at least I found solution: [__Dracula theme__](http://zenorocha.github.io/dracula-theme/) for all editors. If you favourite is missing you can add it, because it is open-source. Sweet is it? 
 Just check it out:
 ![](/content/images/2016/05/vs-1.png)

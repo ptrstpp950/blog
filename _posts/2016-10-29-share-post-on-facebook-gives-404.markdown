@@ -11,11 +11,11 @@ A few days ago, I tried to share my own post on Facebook. But instead of post mi
 
 ![](/content/images/2016/10/404-facebook-min.png)
 
-##Quick fix
+## Quick fix
 A quick fix was simple: I added a query string into URL. And magically Facebook read my post without problems.
 But a few days later my friend wants to share my post on his timeline. And he gets the exactly same result as me before.
 
-##Facebook developers tools
+## Facebook developers tools
 The real solution is simple, but not well known. Moreover is as easy as the quick fix. 
 
 1. Go to https://developers.facebook.com/tools/debug/

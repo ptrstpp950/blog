@@ -119,10 +119,10 @@ do-while negative loop	0,5451	0,92	1,085	73,28	0,54	0,575	49,555	0,46	0,544	2,85
 do-while negative loop	0,565	0,93	1,095	73,206	0,52	0,575	48,515	0,46	0,557	2,81
 ```
 
-##God is in the detail
+## God is in the detail
 
 
-##First test
+## First test
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.2/Chart.bundle.min.js"></script>
 
 
@@ -158,7 +158,7 @@ var myChart = new Chart(ctx, {
 });
 </script>
 
-##Base timing
+## Base timing
 Operating system:  Windows 7 
 CPU: i7-3770 @3.40GHz
 

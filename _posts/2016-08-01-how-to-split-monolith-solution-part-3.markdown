@@ -30,13 +30,13 @@ Again 1000 words:
 ![](/content/images/2016/07/no_relation.png)
 How above can happen? I wrote about this in the [previous article](/how-to-split-monolith-solution-part-2/). In most cases, there is a run-time dependency instead of build dependency. The second option is simpler: projects just don't relate to each other at all. For example database migration tool and mobile app. They just don't have any relation.
 
-##Definition
+## Definition
 We can define compilation tier as:
 > Compilation tier is a subset of all projects without artifact dependencies to each other. The only artifact dependency can be to previous compilation tier.
 
 Making above simpler: ==You can compile solutions from one compilation tier in parallel==.
 
-##Real life
+## Real life
 Find first seam is quite easy. First split probably also. But month or two pass away and You will start to worry if You did a good job. Are you compilation tiers correct?
 To find out you will have to create a checklist:
 
@@ -46,7 +46,7 @@ To find out you will have to create a checklist:
 4. You didn't create too many tiers. I think a number between 5 and 10 is maximum. In most projects, it should be below 5.
 
 
-##Next time
+## Next time
 Next time I will try to introduce contracts (interfaces) between solutions. 
 But if you wish something else please let me know in comments.
 

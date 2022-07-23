@@ -8,7 +8,7 @@ date: '2017-01-03 20:57:42'
 I have been busy in 2016. I did a lot for a community, my job and myself also. 
 Moreover, I didn't realize what I achieved until today.
 
-##Speaking
+## Speaking
 Last year I was speaking on:
 
 - 1 grand finale of [Daj się poznać](http://devstyle.pl/daj-sie-poznac/gala/)
@@ -17,14 +17,14 @@ Last year I was speaking on:
 
 That is in average one talk per month. Awesome!
 
-##Writing
+## Writing
 
 - 32 posts in 52 weeks on my blog. More stats: [TOP in 2016 - some stats](https://stapp.space/top-in-2016-some-stats/). I should write more often.
 - MVB award and 4 articles on DZone. For more check [my DZone profile](https://dzone.com/users/2733004/ptrstpp950.html)
 - ~850 tweets on Twitter with ~200K impressions
 - and [new Facebook account](https://www.facebook.com/piotr.stapp) :)
 
-##StackOverflow
+## StackOverflow
 Amazing stats. I'm shocked. My post reached ~1.2m people. Can you imagine 1.2 million people?
 
 The rest is also impressive. I'm in:
@@ -35,11 +35,11 @@ The rest is also impressive. I'm in:
 
 For more check out my [StackOverflow profile](http://stackoverflow.com/users/1749895)
 
-##DevWarsztaty
+## DevWarsztaty
 With Jakub Gutkowski and Paweł Łukasik we organized 10 meetings last year. 10 amazing, hands-on, all-day workshops in Warsaw and Wrocław.
 Want to be a member? [Sign up now](https://www.meetup.com/devWarsztaty/) to our meetup.
 
-##French
+## French
 I'm learning French on [DuoLingo](http://duolingo.com). I decide to learn French to be more romantic. For example I can say:
 >La chaussette rouge
 
@@ -47,20 +47,20 @@ If you don't know what it is, just [google this](https://www.google.pl/search?q=
 I had 450+ days streak, but in the 29th of December, I forgot to do my lesson. Moreover, I forgot to buy a "code freeze". Gosh.
 So here I go again. Wish me luck. 
 
-##My job
+## My job
 Last year I learned that my job is top secret banking stuff 8 hours a day, 5 days a week. 
 Next year will bring something new and more exciting.
 
-##Management
+## Management
 Being the manager of 9 people team is exhausting. Moreover when you want to code from time to time. But I did it with a few successes. I'm really proud of myself. But to be fair, I still think that I'm better in coding than management. Or to be more precise I much more like development.
 
-##Code
+## Code
 Last year I created some code in C#, JavaScript, TypeScript (new stuff), CSS+LESS (fight versus code), PowerShell, Java (stream in Java 8 are pure fun), bash and even in PHP on [devwarsztaty](http://devwarsztaty.pl). That is an awesome list. 
 And still, I'm web guy with DevOps skills. Funny mix :) 
 
-##Fun
+## Fun
 In the last day of 2016, I learned how to ice skating backward. Can you believe it?
 
-##Awesome
+## Awesome
 Last year was busy for me. I have worked a lot for a community, my job and myself. Moreover, I didn't realize what I did until today.
 I'm really proud of myself. I still cannot believe that I did so many things. It is awesome! 

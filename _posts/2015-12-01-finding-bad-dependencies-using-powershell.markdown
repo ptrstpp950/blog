@@ -9,10 +9,10 @@ tags:
 - c
 ---
 
-##Difficult upgrade
+## Difficult upgrade
 From time to time we want (or have) to upgrade our old application to a new version of framework. Usually for core libraries it goes quite fast but finding, which dependency is using previous version of assembly which is used by ... - it isn't trivial
 
-##PowerShell to the rescue
+## PowerShell to the rescue
 First we need to find out all exe and dll files in our `bin` folder and load them using reflection into array. We can use below script:
 ```
 $references = Get-ChildItem . -Recurse -Include @("*.exe","*.dll")| % {

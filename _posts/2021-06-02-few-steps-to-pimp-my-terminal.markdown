@@ -85,7 +85,7 @@ Kubernetes config I described in [my last post](https://stapp.space/pskube-conte
 
 Anyway, the dotnet command is easy:
 ```
-#dotnet completion
+# dotnet completion
 Register-ArgumentCompleter -Native -CommandName dotnet -ScriptBlock {
     param($commandName, $wordToComplete, $cursorPosition)
     dotnet complete --position $cursorPosition "$wordToComplete" | ForEach-Object {
@@ -208,7 +208,7 @@ $global:MagicTooltipsSettings = @{
 Import-Module MagicTooltips
 
 
-#dotnet completion
+# dotnet completion
 Register-ArgumentCompleter -Native -CommandName dotnet -ScriptBlock {
     param($commandName, $wordToComplete, $cursorPosition)
     dotnet complete --position $cursorPosition "$wordToComplete" | ForEach-Object {

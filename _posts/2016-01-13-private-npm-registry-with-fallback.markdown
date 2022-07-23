@@ -8,7 +8,7 @@ tags:
 - devops
 ---
 
-##The requirement
+## The requirement
 From time to time we need to use npm packages on following machines:
 
 - Continuous Integration build agent
@@ -17,7 +17,7 @@ From time to time we need to use npm packages on following machines:
 
 Moreover as Windows developers we have Windows servers.
 
-##Prerequisites
+## Prerequisites
 There are few mostly obvious prerequisites. I will list them to make sure You won't forget about anything:
 
 - Windows server (or Linux one) - can be a simple virtual machine
@@ -25,7 +25,7 @@ There are few mostly obvious prerequisites. I will list them to make sure You wo
 - Installed and configured CTLM (if your proxy need this)
 
 
-##Sinopia
+## Sinopia
 [Sinopia](https://www.npmjs.com/package/sinopia) is a private/caching npm repository server.
 To install it just run:
 ```
@@ -48,7 +48,7 @@ Config in global dir is cool but useless. So let's copy it to current dir and ru
 sinopia.cmd --config .\config.yaml
 ```
 
-##Useful configuration
+## Useful configuration
 There are some points we should add or change in configuration:
 
 - Changing the port to "normal" one like 80 or 8080. In the end of `config.yaml` we need to add:
@@ -70,12 +70,12 @@ To verify if everything above is working just run again:
 sinopia.cmd --config .\config.yaml
 ```
 
-##Create a Windows service
+## Create a Windows service
 Because I mainly work on Windows environment I need to run above a Windows service.
 I decided to use [winser package](https://www.npmjs.com/package/winser). 
 The easiest usage is to create `package.json` and add commands in it.
 
-##Sum up
+## Sum up
 All above stuff and changes I put in simple [github repo](https://github.com/ptrstpp950/sinopia-windows). If you find any error contact me and I will fix it. Just clone, fix port if you need and run `npm install` as windows administrator.
 
 

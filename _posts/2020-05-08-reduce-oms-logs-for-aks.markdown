@@ -162,7 +162,7 @@ I'm not using OMS scraping for Prometheus, so it won't help in my case at all.
 ## Perf - table
 For perf table we have to wait. You can find following code:
 ```
-#Kubernetes perf
+# Kubernetes perf
 <source>
 type kubeperf
 tag oms.api.KubePerf
@@ -173,7 +173,7 @@ log_level debug
 But this doesn't work. And we have to wait until AKS team gives us possibility to tune settings.
 
 
-#Sum up
+# Sum up
 I saved a lot of data, just checkout following diagram:
 
 ![](/content/images/2020/05/Screenshot-2020-05-08-at-08-47-23.png)

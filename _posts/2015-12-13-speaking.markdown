@@ -9,14 +9,14 @@ I pretend to be an IT speaker and I really like it. In my opinion sharing knowle
 
 My goal is to share my knowledge and experience in building stuff. From time to time sharing crap to make sure that someone will learn from my mistakes.
 
-##Invitation to talk
+## Invitation to talk
 
 If I sound like an interesting person and you would like to invite me for a talk, then feel free to email me and I would love to attend.
 
-##Upcoming events
+## Upcoming events
 1. DevConf x 3
 
-##Previous events
+## Previous events
 1. Chmura jak alkohol - 2018-05-26 - [Rzemiosło IT](http://rzemioslo.it/schedule/)
 1. Ciemna strona krypto-walut - 2018-05-25 - [rg-dev](https://www.meetup.com/rg-dev/events/248672239/)
 1. Chmura jak alkohol - 2018-05-23 - [Infoshare](https://infoshare.pl/#outline-agenda) with Łukasz Dziekan
@@ -63,7 +63,7 @@ If I sound like an interesting person and you would like to invite me for a talk
 1. [Cook your Vagrant](http://crossweb.pl/wydarzenia/warsjawa-2014/) - 2014-04-26 [Warsjava](http://warsjawa.pl/)
 1. [about.mbank](http://www.wg.net.pl/aktualnosci/zaproszeniena72spotkaniewgnet) - 2014-02-27 [Warszawska grupa .NET](http://www.wg.net.pl/)
 
-##Slides from previous events
+## Slides from previous events
 In random order:
 
 1. __PowerIShell - Powershell for developers__ - some useful tips&trick in PowerShell for not only developers :)

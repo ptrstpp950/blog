@@ -8,7 +8,7 @@ tags:
 - visual-studio
 ---
 
-##Simple code
+## Simple code
 I am developer so let's start with following C# code:
 
         public static void Main()
@@ -52,7 +52,7 @@ So let's extend above code to full implementation:
 
 Now it starts to look tricky and dangerous. But again you will don't have any warning in Visual Studio.
 
-##Resharper to the rescue
+## Resharper to the rescue
 If you use R# you will see following warning:
 ![](/content/images/2015/10/warning.png)
 
@@ -77,7 +77,7 @@ But imagine that instead of `FirstOrDefault()` the developer used `First()`, so 
 
 In above case it won't be any warning even in Resharper :(
 
-##Sum up
+## Sum up
 
 ![](/content/images/2015/10/55730792.jpg)
 

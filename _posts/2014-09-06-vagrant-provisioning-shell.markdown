@@ -9,7 +9,7 @@ tags:
 - storm
 ---
 
-###Provisioning in Vagrant
+## Provisioning in Vagrant
 There is a lot of choices when you want to provision your virtual machine with vagrant:
 1. Run scripts manually - completely **insane** idea
 2. Run shell scripts inline or not
@@ -23,7 +23,7 @@ Today I will try to present how to setup [storm project](https://storm.incubator
 1000 words which describe my work looks like:
 ![setup storm with vagrant in bash](http://res.cloudinary.com/piotrstapp/image/upload/c_scale,w_600/v1410034157/vagrant_storm2_ha7xwb.png)
 
-###Step .0. Choosing and preparing machine
+## Step .0. Choosing and preparing machine
 First we need to create directory and init vagrant so let's do this:
 ```
 mkdir storm-vagrant
@@ -37,7 +37,7 @@ I will use centos box which I downloaded before (you can use URL instead of file
 ```
 In vagrant file we need to change our box name so 
 `config.vm.box = "base"` becomes `config.vm.box = "centos-6.5"`
-###Step .1. Configure network
+## Step .1. Configure network
 We will need network access to guest machine. It can be done in two ways:
 1. Using port forwarding
 2. Setting IP adress for guest machine.
@@ -69,7 +69,7 @@ vagrant up
 After the above command is complete (don't worry about read color on console), let's explore our box. Run `vagrant ssh` and you are inside. Check what you want and logout from the machine.
 
 
-###Step .2. Installing storm rpms.
+## Step .2. Installing storm rpms.
 According to [" Chapter 1. Getting Ready to Install"](http://docs.hortonworks.com/HDPDocuments/HDP2/HDP-2.1-latest/bk_installing_manually_book/content/rpm-chap1.html) we need to configure remote repositories. For Centos 6 the line is:
 ```
 wget -nv http://public-repo-1.hortonworks.com/HDP/centos6/2.x/updates/2.1.5.0/hdp.repo -O /etc/yum.repos.d/hdp.repo 
@@ -192,7 +192,7 @@ Both above modification in vagrantfile:
 
 The last step is to add proper exports in `direstories.sh` file:
 ```
-#storm local dir
+# storm local dir
 export STORM_LOCAL_DIR="/tmp/storm/local";
 ```
 To validate install we should login to guest and run:
@@ -209,7 +209,7 @@ Running: java -server -Dstorm.options= -Dstorm.home=/usr/lib/storm   [...snip...
 Don't be afraid about first line. We won't need Hadoop at all, but Hortonworks installation files assume that we install it everywhere.
 
 
-###Step .5.  Configure Process Controller 
+## Step .5.  Configure Process Controller 
 The optional 3 chapter I omit because we don't need it now - we didn't secure zookeeper. What is interesting we didn't do anything about zookeeper - let's back to this later. Just believe me.
 
 In chapter [4. Configure Process Controller](http://docs.hortonworks.com/HDPDocuments/HDP2/HDP-2.1-latest/bk_installing_manually_book/content/ch_rpm_storm-4.html) there is a mention about tool called *supervisord*. If we check it using `yum search supervisord` we won't find it in enabled repositories. To install it we need EPEL repo with

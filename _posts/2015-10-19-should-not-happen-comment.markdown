@@ -7,7 +7,7 @@ tags:
 - code
 ---
 
-##The code & the comment
+## The code & the comment
 Today I found the simple code with the even more simple comment:
 
     [...]
@@ -15,23 +15,23 @@ Today I found the simple code with the even more simple comment:
            return; // should not happen
     [...]
 
-##What if the "if" just happened?
+## What if the "if" just happened?
 
 The [Finagle's law](https://en.wikipedia.org/wiki/Finagle%27s_law) is:
 > Anything that can go wrong, will—at the worst possible moment.
 
 Especially in IT it is true. Unfortunately I saw variation of above code many times, which is completely sad.
 
-##Fail fast
+## Fail fast
 In my private opinion the best way is to fail fast. I know that user/system/boss will be sad/broke/angry, but if abnormal situation happen even once you will be know about it.
 So the easiest way is to 
     
     if (variable == null)
         throw new Exception("Oh my god the universe just doomed: entry is null");
 
-##but I cannot 
+## but I cannot 
 If you really cannot throw an `Exception`, log this error. Log it in standard way with **all** needed information like: stack trace, context, etc. It should be easy to access as all your logs.
 
-##The perfect solution
+## The perfect solution
 The perfect solution is simple: combine logging and exception. This should allow to track fast what exactly happened, which should not happened
 

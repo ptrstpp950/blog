@@ -4,10 +4,10 @@ title: What is an Enviroment?
 date: '2014-05-06 07:08:54'
 ---
 
-####Introduction
+#### Introduction
 Yesterday our team have about domain model in our company. It wasn't the first one and probably not the last one :) Anyway we spent more than an hour ~~fighting~~ discussing what is an **Enviroment**. Everybody knows what it is, but everybody knows something else
 
-####Simple case - one small project
+#### Simple case - one small project
 Let's assume that we develop simple project: website (asp.net,php,etc.) with database (SQL, NoSQL, files,...). We separate website machine with database machine for security, performance, scaling, (put here whatever you want). So we have at least **2** machines
 We can have following environments (whatever it is):
 
@@ -20,7 +20,7 @@ So what is an environment? First try: "set of machines". This option is very pop
 So "set of machines" doesn't work for environment.
 
 
-####More complicated case
+#### More complicated case
 To complicate our solution, let's add one more dimension: TIME. So we have now following environments:
 
 * Production with version 1.0.0.333
@@ -30,7 +30,7 @@ To complicate our solution, let's add one more dimension: TIME. So we have now f
 Moreover "environment" sometimes needs different prerequisites, because we can for example upgrade our framework form version 3.5 to 4.5 our we upgrade our database version (e.g.: SQL Server 2008 to SQL Server 2012) and we need some migration.
 
 
-####Conclusion
+#### Conclusion
 To define an environment at least we have to include:
 
 - machine (virtual or physical)

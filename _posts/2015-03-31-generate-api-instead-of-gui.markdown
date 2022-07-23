@@ -4,7 +4,7 @@ title: Generate API instead of GUI
 date: '2015-03-31 19:38:44'
 ---
 
-###Report system is a requirement    
+## Report system is a requirement    
 Sooner or later every organization/solution/group needs a reporting system. The story usually begins like this: someone from "business part" come and say "we need simple report system, which will show us simple stats"
 Most of use believe above statement and create MVP up which fulfill above requirements.
 But than something completely strange happened. The same person from "business" part say something similar to: 
@@ -14,7 +14,7 @@ But than something completely strange happened. The same person from "business" 
 - ...
 My reaction was always: ARGH
 
-###External generic report interface to the rescue
+## External generic report interface to the rescue
 Today we can use some external report GUI, instead of build our own. There are plenty solutions available on the market. Some of them are free in part, some are very expensive, some have both options. The systems you could look for are for example:
 - Qlick Sense - Desktop is for free: http://www.qlik.com/Sense-Desktop‎
 - Tableau - Not very cheap but online version is not so expensive https://tableau.secure.force.com/webstore

@@ -17,7 +17,7 @@ or
 
 Few days ago above statements __outdated__. <mark>Are you ready to run it on your Windows 10? </mark>
 
-##Prerequisites
+## Prerequisites
 To have fun with Windows containers you need Windows 10 Insider Preview. I describe how to get it in [How to setup Bash and Ubuntu on Windows - step by step guide](http://stapp.space/how-to-setup-bash-on-windows/)
 After you have it check out if you already install version 14352 or greater.
 
@@ -25,10 +25,10 @@ The second way is to install Windows Server 2016 technical preview - as I rememb
 
 Having one of above versions we are ready to deploy a simple Hyper-V container. 
 
-##Small tip before we start
+## Small tip before we start
 Most commands we will run in elevated PowerShell. I usually, forget to run it. But few months ago I described how to [run `sudo` command in Windows](https://stapp.space/sudo-under-windows/). Using `sudo` I can run `sudo powershell` and use `up arrow` to rerun command as admin.
 
-##Enable Hyper-v and containers feature
+## Enable Hyper-v and containers feature
 If you didn't play with Hyper-v on your machine before, this step is most complicated.
 To enable Hyper-v in modern laptops usually we have to access BIOS. For example in Lenovo, I have to find a special hidden button to enter BIOS. Tricky!
 
@@ -40,7 +40,7 @@ Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V –All
 The first command will install containers feature and the second Hyper-v stuff.
 Now reboot if needed :)
 
-##Install docker
+## Install docker
 Containers needs docker. To install it we can run following commands:
 ```
 $dockerDir = "$env:ProgramFiles\docker\"
@@ -61,7 +61,7 @@ dockerd --register-service
 Start-Service Docker
 ```
 
-##Base image - NanoServer
+## Base image - NanoServer
 
 We are ready now to install base container image: NanoServer. NanoServer is the "smallest" version on Windows Server 2016. It doesn't have GUI :)
 Few simple commands and we are ready:
@@ -82,7 +82,7 @@ REPOSITORY   TAG              IMAGE ID      CREATED      SIZE
 nanoserver   10.0.14300.1010  9db95268a387  9 weeks ago  817.1 MB
 ```
 
-##Deploy
+## Deploy
 Now we are ready to deploy container. At first, we need to mark our image as `latest` using:
 ```
 docker tag nanoserver:10.0.14300.1010 nanoserver:latest
@@ -100,7 +100,7 @@ docker run --isolation=hyperv --rm  -it nanoserver powershell
 ```
 Which will run `powershell` on NanoServer image. For example use `ls` and find out what directories you have on Nano Server
 
-##What's next?
+## What's next?
 
 Next time I will show how to deploy normal IIS and old .NET version (like 3.5 or 4.5) on docker images. Follow me on twitter, facebook or RRS.
 Stay tuned!

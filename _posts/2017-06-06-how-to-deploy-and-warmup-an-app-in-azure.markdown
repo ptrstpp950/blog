@@ -56,7 +56,7 @@ param(
     $rootUrl
 )
 
-#Make sure that website is alive
+# Make sure that website is alive
 for($tryIndex=0; $tryIndex -le 10; $tryIndex++){
     try{
         $time =  Measure-Command{Invoke-WebRequest $rootUrl -UseBasicParsing -ErrorAction Stop -ErrorVariable siteIsNotAlive}
@@ -70,7 +70,7 @@ for($tryIndex=0; $tryIndex -le 10; $tryIndex++){
     }
 }
 
-#url suffixes
+# url suffixes
 $suffixes = @("/", "/url_1", "url_2")
 
 $suffixes | ForEach-Object{

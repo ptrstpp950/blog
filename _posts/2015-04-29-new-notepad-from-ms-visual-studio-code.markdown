@@ -4,8 +4,7 @@ title: New notepad from MS - Visual Studio Code
 date: '2015-04-29 18:59:25'
 ---
 
-First time form original Notepad Microsoft created a lightweight tool for coders:
-#####Visual Studio Code (Preview)
+First time form original Notepad Microsoft created a lightweight tool for coders: **Visual Studio Code (Preview)**
 
 There is a lot of amazing stuff what has changed:
 

@@ -11,18 +11,18 @@ tags:
 
 In the first part [How to split monolith solution - part 1: common myths](https://stapp.space/how-to-split-monolit-solution-part-1/) I wrote about common myths. In this post I will try to find the "seams" to cut, using the Visual Studio and the ReSharper. Let's go!
 
-##Assumptions
+## Assumptions
 1. Big solution :)
 2. Time :D
 3. Will for change
 
 I will use .NET solution and tools because I know them the best.
 
-##Tools
+## Tools
 1. Visual Studio
 2. ReSharper from JetBrains (https://www.jetbrains.com/resharper/) - be careful it is addictive
 
-##My solution
+## My solution
 Overview:
 
 1. 67 projects
@@ -68,7 +68,7 @@ The most interesting point is 2. Why do I have unrelated projects? I see followi
 
 As you think about first 2 groups we can easily move out. In my case, it is 9 projects from 67. It is ~13% of all projects in the solution. If I exclude tests projects it is ~18%. So I just make my solution a bit smaller.
 
-#Sum up
+# Sum up
 After quite simple above steps I noticed that:
 
 1. I have parts that can be easily separated

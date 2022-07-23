@@ -9,7 +9,7 @@ Probably everybody knows below meme:
 <iframe src="//giphy.com/embed/5xaOcLQwK7I3YAA9eEw?html5=true" width="480" height="418" frameBorder="0" style="display:block;margin: 0 auto;" class="giphy-embed" allowFullScreen></iframe>
 But why are we so afraid?
 
-##New requirement
+## New requirement
 Imagine that your boss just gave you a new requirement. He wants to include twitter alias in `login` method. 
 
 You open the file and see below code:
@@ -49,7 +49,7 @@ The funniest thing is that without refactoring we only delay errors.
 
 Yes, sure, it won't be _me_, in 95% it will be _future me_.
 
-#Names and ifs
+# Names and ifs
 Cool names like `us`, `p` or `r`are completely unreadable. The `us` is "perfect name" for email, id, alias and of course ~~United States of America~~  username. 
 Fortunately `p` is for password. It could be `temp` or `x1`. Maybe be `agent007` or `secret_agent` will be better? ;)
 
@@ -60,10 +60,10 @@ When we see code which could be better, we shouldn't wait, but fix it ASAP. Real
  
 If you are afraid or you aren't sure, talk to your boss or team leader. There is a big probability that nobody before said it to him, because adding a new `else if` was always easier. 
 
-##What more?
+## What more?
 There are other well know cases like: hell in CSS, hell in dependencies, unreadable class/method names, etc. And we have a lot of ways to fix it. Sometimes even with rewriting the part or changing technology to something better. Like switch from CSS to LESS or SASS. And teach everybody around you how to use the new technology. The coolest technologies don't bring good code. You do!
 
-##Be a craftsman
+## Be a craftsman
 There are wise words by Sandro Mancuso in The Software Craftsman:
 >[In a well-crafted codebase] adding or changing features does not take longer than it used to take at the beginning of the project.
 

@@ -13,7 +13,7 @@ In most cases, I tried to override `ToString` method. But it isn't always possib
 Default tooltip is useless. Just look on it:
 ![](/content/images/2016/09/rangeWithoutAttribute.png)
 
-##Adding an attribute
+## Adding an attribute
 Probably You won't believe me, but a few years ago, in .NET 2.0 times, Microsoft introduced `DebuggerDisplayAttribute`, which is very useful. Just add it like below:
 ```
 [DebuggerDisplay("Range=<{RangeStart}; {RangeEnd})")]
@@ -29,5 +29,5 @@ Now, tooltip looks great. Moreover, your class doesn't change at all. Just check
 ![](/content/images/2016/09/rangeWithAttribute.png)
 
 
-##More awesome stuff
+## More awesome stuff
 Another great attribute is `DebuggerBrowsableAttribute` and `DebuggerTypeProxyAttribute`. Just take a look on [MSDN](https://msdn.microsoft.com/en-us/library/ms228992%28v=vs.110%29.aspx?f=255&MSPPError=-2147217396) to find out more.

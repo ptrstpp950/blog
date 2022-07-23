@@ -8,7 +8,7 @@ tags:
 - devops
 ---
 
-####Prerequisites 
+## Prerequisites 
 1. Windows machine :)
 2. Install vagrant form https://www.vagrantup.com/downloads.html
 3. Install git with tools (or other ssh.exe client) + add folder to PATH. In powershell just invoke 
@@ -19,7 +19,7 @@ It is useful when you want to work in offline mode. The easy way is to create mk
 5. Download Oracle VM VirtualBox from https://www.virtualbox.org/ (or other prefered virtualization product). Vagrant already supports Virtualbox, VMWare and Hyper-V :)
 
 
-####Validate instalation
+## Validate instalation
 1. Create new folder. Let's call it test-vagrant
 2. Enter it and type: `vagrant init`
 3. Open Vagrantfile in your favorite notepad and:

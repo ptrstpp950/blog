@@ -4,7 +4,7 @@ title: Better SourceTree with Mono.Cecil
 date: '2014-03-27 14:01:37'
 ---
 
-###Introduction
+### Introduction
 I am using Git for a while, but I hate git console for Windows. But some time ago Scott Hanselman published how to [integrate Git with PowerShell](http://www.hanselman.com/blog/PromptsAndDirectoriesEvenBetterGitAndMercurialWithPowerShell.aspx) which is exactly what I need. Instead of old *cmd* I have all features from **PowerShell**.
 
 Sometime ago my friends show me [SourceTree](http://sourcetreeapp.com/), which is quite nice tool. But it has a one irritating button: **Terminal**, which opens *Git console* or *cmd*. But I hate git console and I hate cmd, I would like to open PowerShell instead. I look all the options but I cannot find anyway to change this button action, or at least hide it.
@@ -26,7 +26,7 @@ SourceTree is .NET application, so we can restore "our" code using some  dedicat
 
 All the stings are **hardcoded**, so there isn't an easy way to replace them.
 
-###Mono.Cecil to the rescue.
+### Mono.Cecil to the rescue.
 Quoting [offical site](http://mono-project.com/Cecil) (the most importat part is bolded): 
 >Cecil is a library written by Jb Evain to generate and inspect programs and libraries in the ECMA CIL format. It has full support for generics, and support some debugging symbol format.
 

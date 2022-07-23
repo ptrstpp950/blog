@@ -9,7 +9,7 @@ tags:
 
 The most important thing I learn in 2015 is about clean code. It is everything. You can have a bad performance or logical errors or even security issues. But without clean code, you cannot fix it. Unless you don't understand the code, you won't fix it.
 
-##Regexp versus clean code
+## Regexp versus clean code
 The regular expressions were always dramatic for fast reading. I always need a lot of time to understand what exactly is going on. The only help was in the variable name.
 
 Take a look on example from StackOverflow question [Regular expression for matching account numbers](http://stackoverflow.com/questions/34588143/regular-expression-for-matching-account-numbers):
@@ -32,7 +32,7 @@ The only rescue is in tools like [Jex Regulex](https://jex.im/regulex) to visual
 ![Example Regexp visualization](/content/images/2016/01/download.png)
 
 
-##How about the code?
+## How about the code?
 Such solution has one problem. We need an additional tool or plugin to see what is going on in one line in the code. Which make this solution useless until we are debugging an error. A few unit tests can make above regexp cleaner. But isn't more readable. It just makes it easier to investigate.
 Can you image that above code will look like following?
 

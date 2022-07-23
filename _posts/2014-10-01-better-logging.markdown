@@ -4,7 +4,7 @@ title: How to analyze log files (part 1)
 date: '2014-10-01 07:34:07'
 ---
 
-##Log files 
+## Log files 
 In the beginning I start I would like to present some very simple error log
 ```
 [2014-09-30 20:00:00] ERROR Exception: Client doesn't have Facebook id
@@ -18,7 +18,7 @@ In the beginning I start I would like to present some very simple error log
 
 All above errors are different cases, all should we treat differently. I will try to go through them case by case. **Why?** To help operators and automatic monitoring help discover what is wrong with system.
 
-##Case 1: Business exception
+## Case 1: Business exception
 ```
 [2014-09-30 20:00:00] ERROR Exception: Client doesn't have Facebook id
 ```
@@ -34,7 +34,7 @@ To sum up first error type you should:
 - try to separate business exceptions from other ones. Most logging libraries allow to log different errors to different targets quite easy.
 
 
-##Case 2: Complex errors
+## Case 2: Complex errors
 ```
 [2014-09-30 20:01:00] ERROR NetworkException: connection is down. Reconnecting
 ```
@@ -42,7 +42,7 @@ Above exception is very difficult to analyze. Why? Because it depends on context
 Anyway, as a developer/designer, it is **Your responsibility**  to sit with them and analyze what frequency is dangerous.
 
 
-##Case 3: External system errors (like SQLExceptions)
+## Case 3: External system errors (like SQLExceptions)
 ```
 [2014-09-30 20:02:00] ERROR SQLException: no such column: p.p_id
 [...]

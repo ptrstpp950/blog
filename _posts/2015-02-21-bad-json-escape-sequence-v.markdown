@@ -4,7 +4,7 @@ title: 'Bad JSON escape sequence: \v - the war stories'
 date: '2015-02-21 11:09:21'
 ---
 
-###Introduction 
+## Introduction 
 Yesterday I did a small C# program for hash data in JSON. The are many files, which contains a lot of lines with JSON :)
 I was using [Json.NET](http://www.newtonsoft.com/json) the most popular JSON library for .NET. 
 
@@ -36,16 +36,16 @@ I was looking for phrase like this: `bad JSON escape sequence: \v.`. The first r
 
 More over I found a source of above quote: https://www.json.com/json-object
 
-###Next step: question on SO about Newtosoft.Json
+## Next step: question on SO about Newtosoft.Json
 I created a new question on SO: [Newtosoft.Json Bad JSON escape sequence: \v.](http://stackoverflow.com/questions/28607899/newtosoft-json-bad-json-escape-sequence-v)
 Because I didn't receive any useful answer I decided to fix Newtosoft.Json. My decision appears as a [pull request](https://github.com/JamesNK/Newtonsoft.Json/pull/489)
 Unexpectedly James Newton-King reject it and point me that `\v` is not valid according to spec on http://json.org/.
 
-###WHAT???
+## WHAT???
 
 Moreover he is right. According to both: [RFC 4627](http://www.ietf.org/rfc/rfc4627.txt) and http://json.org/ which is same as [ECMA-404 The JSON Data Interchange Standard](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf) the **\v is not valid**
 
-###Sum up
+## Sum up
 The unlucky escaped char took one day of my life. But I learn something new, so it is not a lost day
 
 I also created a comment on https://www.json.com/json-object#object-with-strings and I hope they fix the definition. 

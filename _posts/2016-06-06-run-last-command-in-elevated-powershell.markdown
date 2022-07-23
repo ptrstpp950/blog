@@ -12,7 +12,7 @@ Last week I have a lot of fun with [docker on windows](https://stapp.space/docke
 A few months ago I described how to run `sudo` command in PowerShell (more in [Run sudo in Windows](https://stapp.space/sudo-under-windows/)). But I was still missing `sudo !!`.
 Today I found a solution. 
 
-##Using Get-History
+## Using Get-History
 I need a good name for my function. I decided to name it: `f--k`. I usually say this word, when I forgot about admin rights.
 
 It is really easy to create we just need to get last invoked command using `Get-History` ‎Cmdlet:
@@ -26,7 +26,7 @@ function f--k
 }
 ```
 
-##Linux style
+## Linux style
 Now we can modify original `sudo` function to accept `!!`:
 ```
 function sudo  

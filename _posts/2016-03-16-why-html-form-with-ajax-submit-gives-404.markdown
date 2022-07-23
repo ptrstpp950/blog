@@ -39,13 +39,13 @@ $("#loginForm").submit(function(e) {
 If you want to run above code just use bellow snippet: <a class="embedly-card" href="https://jsfiddle.net/ptrstpp950/3o0d892g/">AJAX form causes 404 - JSFiddle</a>
 <script async src="//cdn.embedly.com/widgets/platform.js" charset="UTF-8"></script>
 
-##The problem
+## The problem
 From time to time, a small and random group of users sends a bug:
 > After I log in, I have 404 error
 
 You check your landing page, error handling, etc. - but there isn't anything causing `404`. 
 Desperately you decide to search your _www servers_ like Apache or IIS. You find out that some users have `404` error on `POST` request to `/Login` page. 
-##What? Why? When?
+## What? Why? When?
 Let's check the script. The only `POST` should go to `/ajaxLogin` -in fiddler example it is `/echo/json`. This URL is responsible for handling the form. The `/Login` page can be a static HTML resource or method with only `GET` implemented.
 
 So what just happened? There are few similar possibilities:
@@ -54,7 +54,7 @@ So what just happened? There are few similar possibilities:
  - there is an error in the script, which happens occasionally
  - if **You** have any other idea just put it in the comments
 
-##The solutions
+## The solutions
 Below my ideas for above problems:
 
 **Option 1:** accept `POST` on `/Login` and handle form correctly.
@@ -68,7 +68,7 @@ It will work perfectly even if there is a problem with JavaScript. But there is 
 
 If you have more options please put it in the comments or write me a message.
 
-##Updated status - what caused my problem
+## Updated status - what caused my problem
 I found out that some chrome extensions broke my JavaScript. It is not compatible with Require.JS and causes bug like below:
 
 ![](/content/images/2016/03/screen.png)

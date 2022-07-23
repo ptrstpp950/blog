@@ -14,23 +14,23 @@ A few days ago I read a beautiful comment:
 
 Did you have same feelings? Me too. Many times, probably too many.
 
-##Issues and time
+## Issues and time
 The agile development should be simple. Someone, for example, a product owner or the boss decides what has the top priority. In Kanban, it is very simple. The team put an issue on the top and do it as the next one. 
 In Scrum situation is a bit more complicated. We need to wait for the next sprint or to the next-next sprint. Sometimes even the next-next-...-next sprint. Because some issues aren't as much important after few weeks/days/hours. In theory, we should delete such issues, but real life isn't so simple.
 
 Anyway, we start doing the issue. Of course, we also start logging time. Good guys log time as soon as possible (ASAP). For example in the end of the day. Bad guys log it using different ASAP- "Around September August Probably".
 
-##The sum must equal
+## The sum must equal
 The time has passed. And suddenly once a year/quarter/month the team leader receive a notification. Probably you cannot believe this, but a total number of hours doesn't equal to proper sum. 
 A poor team leader with his own team search where is an error or who forget to log some time.
 Two hours later everything is correct. A total sum equal to the proper total. Hallelujah!
 
-##What for?
+## What for?
 Now hold down for a while. What happens next? Is anybody looking at this data and analyze them?
 If the answer is *yes*, you are a happy man. Time spend on time tracking is useful and important. Because creating conclusions, based on it can be really useful. Especially in future, for making estimations about next tasks/projects/issues.
 The problem is when the answer is *no*. Then the whole time tracking is just a waste of time. 
 
-##Measure or not?
+## Measure or not?
 
 ![](/content/images/2017/01/74516613.jpg)
 

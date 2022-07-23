@@ -9,7 +9,7 @@ tags:
 
 This year I was attempting [Craft Conf](http://craft-conf.com) for the first time. A lot of people told me that it is the awesome conference. So I was expecting a lot. Especially that "craf is for crafters". How was it this year?
 
-##Place, food & stuff
+## Place, food & stuff
 If You don't know craft is in Budapest. I love this city. Unfortunately, I didn't have a lot of time to sightseeing, because my flight was canceled. 
 Anyway, the conference was in the Hungarian Railway History Park, with a lot of historical trains. In every break, we can look at a lot of historical trains. That was so cool.
 
@@ -19,7 +19,7 @@ The organization was great. Even queues during lunch break weren't long. WiFi wa
 
 Above is not much important when you came to listen, but congratulations for organizers for their huge job.
 
-##Topics
+## Topics
 To be precise most sessions were about 3 topics:
 
 1. Docker
@@ -32,7 +32,7 @@ I don't know why there wasn't almost anything on:
 2. .NET - there was exactly one session by Bart De Smet
 3. mobile - maybe two sessions
 
-##Sessions
+## Sessions
 I'm still impressed. To be fair I marked during two days only two sessions on average 3 out of 5. Most of them were gets more than 4 in 5 categories. There were __16 slots__. It is really impressive.
 The best sessions for me in appearance order:
 
@@ -40,7 +40,7 @@ The best sessions for me in appearance order:
 2. _What I Wish I Knew Before Scaling Uber to 1,000 Services_ by Matt Ranney
 3. _Under the hood of the C# programming language_ by Bart De Smet 
 
-##Summary
+## Summary
 It was awesome. I was exactly like Minions:
 <iframe src="//giphy.com/embed/MOWPkhRAUbR7i" width="100%" height="300" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
 

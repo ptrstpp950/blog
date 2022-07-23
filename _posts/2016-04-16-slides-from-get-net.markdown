@@ -8,10 +8,10 @@ tags:
 - devops
 ---
 
-##Abstract
+## Abstract
 
 DevOps is a buzz word for last few years. It associate with other buzz words like: cloud, agile, fast deployment. Moreover in DevOps stuff we usually talk about Linux tools. But is it possible to have DevOps in company like bank? Can we do all fancy stuff on Windows? Is bank really something different than Google or Facebook?
 
-##Slides
+## Slides
 http://stapp.space/content/images/slides/devopsinbanking/
 more: http://stapp.space/speaking/

@@ -10,7 +10,7 @@ tags:
 - firebug
 ---
 
-##The problem
+## The problem
 Selenium test are difficult to debug, especially when they are run on CI server. To diagnose why a test failed, sometimes we need something more than a simple screenshot.
 
 In my opinion we need 3 things:
@@ -21,7 +21,7 @@ In my opinion we need 3 things:
 
 The easiest way to get last two is to use Firebug in Firefox.
 
-##Run Firebug in Selenium
+## Run Firebug in Selenium
 To get results from firebug we need two more extensions:
 
  - netExport https://github.com/ptrstpp950/netexport (my changes are not merged yet)
@@ -29,7 +29,7 @@ To get results from firebug we need two more extensions:
 
 You can compile both using ant :)
 
-##The C# code
+## The C# code
 The final code:
 
     var fireBugLogDir = "somewhere";

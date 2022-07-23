@@ -11,7 +11,7 @@ tags:
 Do you have a big and heavy solution? Do you want to split it? Are you afraid? 
 I will try to help. Be for we start we should answer a few questions.
 
-##Why should I split?
+## Why should I split?
 Before I show how to split, I have to deal with common myths:
 
 >My solution is not so big. It has only 10/20/100/100/X projects/classes inside
@@ -37,7 +37,7 @@ Explain it to him using following words: it won't take long and after this chang
 
 What if he doesn't understand? Maybe it is time to quit your job ;)
 
-##What next?
+## What next?
 In near future I will show how we can use ReSharper and Visual Studio to split our solution to smaller ones. 
 
 Second part is available. Check it out on [How to split monolith solution - part 2 - find cut lines](https://stapp.space/how-to-split-monolith-solution-part-2/)
