@@ -45,10 +45,10 @@ social:
   links:
     # The first element serves as the copyright owner's link
     - https://twitter.com/ptrstpp950      # change to your twitter homepage
-    - https://github.com/ptrstpp950       # change to your github homepage
     - https://www.linkedin.com/in/piotr.stapp
+    - https://github.com/ptrstpp950       # change to your github homepage
     - https://www.facebook.com/stapp.space
-    
+   
 google_site_verification:               # fill in to your verification string
 
 # ↑ --------------------------
