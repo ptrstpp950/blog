@@ -11,7 +11,7 @@ Project.json is a celeb in .NET world. But its status is rather "famous for bein
 
 ## TL;DR;
 The history of the package management in .NET world is long and rather turbulent. Getting always the latest version for many years was just impossible. 
-If know NuGet history and structure, you can skip first few paragraphs up to [Episode IV: A new hope](#episodeivanewhope). The solution description starts there. I hope you will find it useful.
+If know NuGet history and structure, you can skip first few paragraphs up to [Episode IV: A new hope](#episode-iv-a-new-hope). The solution description starts there. I hope you will find it useful.
 
 ## Where are we from?
 I don't know anybody who hasn't copied/included/committed external libraries into a project. Even today JavaScript libraries are frequently included in web projects. Well, in the beginning of this century it was a standard.

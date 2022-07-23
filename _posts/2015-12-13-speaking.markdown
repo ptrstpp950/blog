@@ -51,7 +51,7 @@ If I sound like an interesting person and you would like to invite me for a talk
 1. [PowerIsHell – czyli PowerShell dla dewelopera](http://careercon.pl/konferencja/kariera-it-warszawa-17-10-2015/) - 2015-10-17 [Kariera IT](http://careercon.pl/)
 1. [Jak dojrzewał DevOps w mBanku - teoria i praktyka :)](http://www.meetup.com/dev-LDZ/events/224955668/) - 2015-09-30 [Dev@LDZ](http://www.meetup.com/dev-LDZ/)
 1. [Unit tests workshop in .NET](http://devwarsztaty.pl/warsztaty/2015-05-30/) - 2015-05-30 [DevWarsztaty](http://devwarsztaty.pl/) 
-1. [DevOps in mBank - lesson learned](http://2015.4developers.org.pl/pl/agenda/lecture/devops-in-mbank-lesson-learned/) - 2015-05-18 [Atmosphere conference](atmosphere-conference.com) - [Video](https://www.youtube.com/watch?v=WOPI_afhYTM)  
+1. [DevOps in mBank - lesson learned](http://2015.4developers.org.pl/pl/agenda/lecture/devops-in-mbank-lesson-learned/) - 2015-05-18 [Atmosphere conference](http://atmosphere-conference.com) - [Video](https://www.youtube.com/watch?v=WOPI_afhYTM)  
 1. [DevOps in mBank - lesson learned](http://2015.4developers.org.pl/pl/agenda/lecture/devops-in-mbank-lesson-learned/) - 2015-04-20 [4developers](http://4developers.org.pl/) - [Video](https://www.youtube.com/watch?v=PdyJlmATdtc)
 1.[Vagrant with Windows](http://dotnetconf.pl/2015) - 2015-10-31 [dotNetConfPL](http://dotnetconf.pl) - [Video](https://www.youtube.com/watch?v=EHFpMHhUFXQ)
 1. [Vagrant with Windows](https://www.facebook.com/events/160965000911545/) - 2015-09-23 [Białostocka Grupa .NET](https://www.facebook.com/groups/bstoknet/)

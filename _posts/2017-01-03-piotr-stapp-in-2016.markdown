@@ -13,7 +13,7 @@ Last year I was speaking on:
 
 - 1 grand finale of [Daj się poznać](http://devstyle.pl/daj-sie-poznac/gala/)
 - 5 user groups including [SysOps/DevOps Polska](https://www.meetup.com/SysOpsPolska), [Dev@ZG](https://www.meetup.com/DEV-ZG), [Dev@LDZ](https://www.meetup.com/dev-LDZ) and [Warsaw Web Performance Group](https://www.meetup.com/Warsaw-Web-Performance-Group)
-- 6 conferences including [Get.NET](konferencjaget.net), [IT w bankowości](http://gigacon.org/event/bankowosc_warszawa_2016/), [IT career summit](http://itcareersummit.pl/2016/?page_id=811), [BBQ4IT](http://bbq4.it/), [High Load Strategy LT](http://www.highloadstrategy.lt/) and [DotNetConfPL](http://dotnetconf.pl)
+- 6 conferences including [Get.NET](http://konferencjaget.net), [IT w bankowości](http://gigacon.org/event/bankowosc_warszawa_2016/), [IT career summit](http://itcareersummit.pl/2016/?page_id=811), [BBQ4IT](http://bbq4.it/), [High Load Strategy LT](http://www.highloadstrategy.lt/) and [DotNetConfPL](http://dotnetconf.pl)
 
 That is in average one talk per month. Awesome!
 
