@@ -53,6 +53,8 @@ build() {
 
   # build
   JEKYLL_ENV=production bundle exec jekyll b -d "$SITE_DIR$_baseurl" --config "$_config"
+  cp $SITE/tags/index.html $SITE/tag/index.html
+  cp -r $SITE/tag/* $SITE/tags/
 }
 
 test() {
