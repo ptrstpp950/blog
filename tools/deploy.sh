@@ -62,6 +62,7 @@ test() {
     --disable-external \
     --check-html \
     --allow_hash_href \
+    --file-ignore "/slides/" \
     "$SITE_DIR"
 }
 
