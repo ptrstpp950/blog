@@ -40,14 +40,14 @@ twitter:
 social:
   # Change to your full name.
   # It will be displayed as the default author of the posts and the copyright owner in the Footer
-  name: your_full_name
-  email: example@doamin.com             # change to your email address
+  name: Piotr Stapp
+  email: hello@stapp.space             # change to your email address
   links:
     # The first element serves as the copyright owner's link
     - https://twitter.com/ptrstpp950      # change to your twitter homepage
     - https://github.com/ptrstpp950       # change to your github homepage
-    - https://www.facebook.com/stapp.space
     - https://www.linkedin.com/in/piotr.stapp
+    - https://www.facebook.com/stapp.space
     
 google_site_verification:               # fill in to your verification string
 
