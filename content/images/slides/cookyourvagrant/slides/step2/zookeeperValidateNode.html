@@ -1,0 +1,15 @@
+<h3>Simple validation</h3>
+<p>
+In vagrant file we have to add one more recipe with:
+<pre><code class="ruby">chef.add_recipe "storm::zookeeper"</code></pre>
+</p>
+<p>
+And we are ready to validate state of zookeeper
+<pre><code class="bash">vagrant provision
+vagrant ssh
+sudo bash
+/etc/init.d/zookeeper status
+cat /var/log/zookeeper/zookeeper.log</code></pre>
+</p>
+
+<span class="commit" data-repo="vagrant-chef" data-commit="fd446db05aa8affeb94b546fc3f1aa938627817f"></span>

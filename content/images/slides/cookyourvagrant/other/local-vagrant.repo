@@ -1,0 +1,5 @@
+[vagrant-local]
+name=vagrant local repo
+baseurl=file:///vagrant_localrepo/
+gpgcheck=0 
+enabled=1 

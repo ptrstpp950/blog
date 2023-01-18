@@ -1,0 +1,17 @@
+<h3>Adding second node</h3>
+<p>Because zookeeper cannot connect to second node let's create it in vagrant file
+<pre><code class="ruby">  config.vm.define "worker" do |worker|
+    worker.vm.network "private_network", ip: "192.168.33.11"
+    worker.vm.hostname = "worker"
+    worker.vm.provision "chef_solo" do |chef|
+      chef.cookbooks_path = "cookbooks"
+      chef.add_recipe "storm::localrepo"
+      chef.add_recipe "storm::java"
+      chef.add_recipe "storm::zookeeper"
+    end
+  end</code></pre>
+
+  And run <pre><code class="ruby">vagrant up</code></pre>
+
+  <span class="commit" data-repo="vagrant-chef" data-commit="cc6f2237ece7bf68f838996162f804064cf4f456"></span>
+</p>

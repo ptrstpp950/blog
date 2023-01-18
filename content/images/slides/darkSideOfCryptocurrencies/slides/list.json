@@ -1,0 +1,24 @@
+[
+    "index.md",
+    "ja.md",
+    [
+        "01-ja/00-craftmen.md",
+        "01-ja/01-pradziad.leon.md",
+        "01-ja/02-pradziad.leopold.md",
+        "01-ja/03-most.md",
+        "01-ja/04-rodzice.md",
+        "01-ja/05-ja.md"
+    ],
+    [
+        "03-usage/01-wannacry.md",
+        "03-usage/02-buy.md"
+    ],
+    [
+        "02-energy/01-bitcoin.md",
+        "02-energy/02-bitcoin-total.md",
+        "02-energy/03-bitcoin-chart.md",
+        "02-energy/04-bitcoin-visa.md",
+        "02-energy/05-azure.md"
+    ],
+    "end.md"
+]

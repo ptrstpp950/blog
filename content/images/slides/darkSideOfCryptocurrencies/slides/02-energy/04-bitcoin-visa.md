@@ -1,0 +1,1 @@
+![](./resources/img/bitcoin-vs-visa.svg)

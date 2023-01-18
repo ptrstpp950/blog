@@ -1,0 +1,27 @@
+[   
+    "slide-title.html",
+    ["prerequisites.html","prerequisites2.html"],
+    ["step0/definition-fun.html","step0/basic.html", "step0/whatFor.html", "step0/whatFor2.html", 
+        "step0/createEnviroment.html", "step0/basicCmds.html", 
+    	"step0/basicCmds2.html", "step0/basicCmds3.html"
+    ],
+    ["step1/introduction.html","step1/storm.html", "step1/storm2.html", "step1/zookeeper.html", "step1/whatWeWillDo.html", 
+        "step1/simplifiedEnviroment.html" ,"step1/yumrepos.html",
+    	"step1/yumrepoconfigure.html","step1/vagrantFolderPrepare.html","step1/configureBox.html", 
+    	"step1/configureBox2.html", "step1/yumOnlyLocalRepo.html", "step1/yumCheck.html",
+    	"step1/zookeeperInstall.html", "step1/stormInstall.html", "step1/supervisorInstall.html", "step1/reloadAndRun.html",
+        "step1/sumup.html"],
+    ["step2/start.html", "step2/chefIntroduction.html", "step2/vagrantFolderPrepare.html", "step2/createCookbook.html",
+        "step2/configureMachine.html", "step2/configureMachine2.html", "step2/firstRecipe.html", "step2/firstRecipe2.html",
+        "step2/firstRecipe3.html", "step2/installJava.html",
+        "step2/zookeeperInstall.html","step2/zookeeperCluster.html", "step2/zookeeperCluster2.html", 
+        "step2/zookeeperCluster3.html", "step2/zookeeperCluster4.html", "step2/zookeeperValidateNode.html",
+        "step2/zookeeperSecondNode.html", "step2/zookeeperSecondNode2.html", "step2/stopIptables.html",
+        "step2/stormCommon.html", "step2/nimbus.html", "step2/worker.html", "step2/stormTemplates.html",
+        "step2/upAndRunning.html"],
+    ["step3/introduction.html", "step3/removeHardcoded.html", "step3/removeHardcoded2.html", "step3/demo.html"],
+    ["step4/introduction.html", "step4/setupEnviroment.html", "step4/installCookbooks.html", "step4/removeDepsFromGit.html",
+        "step4/prepareRecipe.html", "step4/prepareVagrantfile.html"],
+    "buildBox.html",
+    ["beforeEnd.html","theEnd.html"]
+]

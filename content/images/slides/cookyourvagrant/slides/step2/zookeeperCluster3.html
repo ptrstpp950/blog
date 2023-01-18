@@ -1,0 +1,31 @@
+<h3>Zookeeper cluster c.d</h3>
+<p>Update <code>zookeeper.rb</code> under <code>cookVagrant/vagrantchef/cookbooks/storm/recipes</code> with content (<b> use scroll</b> to see all code):
+<pre><code class="ruby">
+nodes = "192.168.33.10,192.168.33.11".split(",")
+ip = node[:network][:interfaces][:eth1][:addresses].detect{|k,v| v[:family] == "inet" }.first
+log "current node ip= "+ip
+
+node_index = Hash[nodes.map.with_index.to_a][ip]+1
+
+log "current node index= "+node_index.to_s()
+
+template "/etc/zookeeper/conf/zoo.cfg" do
+	source "zoo.cfg.erb"
+	mode "0755"
+	variables({
+      :nodes => nodes,
+      :index=> node_index
+    })
+end
+
+template "/var/lib/zookeeper/myid" do
+  mode "0755"
+  source "myid.erb"
+  variables({
+      :index=> node_index
+    })
+end
+
+</code></pre>
+
+</p>

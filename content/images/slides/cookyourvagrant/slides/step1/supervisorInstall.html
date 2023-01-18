@@ -1,0 +1,16 @@
+<h3>Installing &amp; configure supervisor with storm</h3>
+<p>Two needed files for configure supervisor are <a href="other/supervisord-storm-nimbus.ini" target="_blank">supervisord-storm-nimbus.ini</a> 
+(<a href="https://github.com/ptrstpp950/vagrant-shell-bash/blob/e65e3b9fab0bfa78a1f040d7c97f1ba8e126268e/supervisord-storm-nimbus.ini" target="_blank">github</a>) 
+and <a href="other/supervisord-storm-supervisor.ini" target="_blank">supervisord-storm-supervisor.ini</a>
+(<a href="https://github.com/ptrstpp950/vagrant-shell-bash/blob/e65e3b9fab0bfa78a1f040d7c97f1ba8e126268e/supervisord-storm-supervisor.ini" target="_blank">github</a>) 
+
+<br/>And changes in Vagrantfile are below
+<pre><code class="ruby">config.vm.provision :shell, :inline  => '
+	yum install -y storm
+	yum install -y supervisor
+
+	cp /vagrant/*.ini /etc/supervisord.d/
+	/etc/init.d/supervisord start'	
+</code></pre>
+</p>
+<span class="commit" data-repo="vagrant-shell-bash" data-commit="e65e3b9fab0bfa78a1f040d7c97f1ba8e126268e"></span>
