@@ -1,3 +1,14 @@
+---
+layout: post
+title: 6 steps to pimp my terminal
+image: "/content/images/2023/01/cover.png"
+date: '2023-01-18 08:30:12'
+tags:
+- GitHub
+- GitHub Actions
+- DevOps
+---
+
 ## How to get secrets from GitHub Actions
 Working with secrets can be hard. Especially when you forget their values, and you would like to retrieve them. In my case I didn't store Azure service principal for test environment anywhere.  Moreover I wanted to move them from project level into organization level. Unfortunately reading them from GitHub is not possible, but the actions have them.  What have left? Of course some hacking.
 
@@ -66,3 +77,6 @@ Last try! We can write it to the file and upload it as an artifact. It shocked m
 The uploaded file had all the data.
 Only remember to delete the workflow run after test 😀
 
+That's all folks
+p.s Cover image by <a href="https://unsplash.com/@mbaumi?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Mika Baumeister</a> on <a href="https://unsplash.com/photos/J5yoGZLdpSI?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+  
