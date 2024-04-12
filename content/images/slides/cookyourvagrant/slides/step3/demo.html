@@ -1,0 +1,6 @@
+<h2>Change in Vagrantfile</h2>
+<p>Replace both IP's (add 10 to last int)</p>
+<p>Also add following code in both chef provisioning</p>
+<pre><code class="ruby">chef.json = { storm: {host:"192.168.33.20"}, zookeeper: {nodes:"192.168.33.20,192.168.33.21"} }</code></pre>
+<p>We are ready to do <code>vagrant up</code> again</p>
+<span class="commit" data-repo="vagrant-chef" data-commit="29064fb133b8c58afbfeef522f476dd0e71ee8a2"></span>

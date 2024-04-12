@@ -1,0 +1,1 @@
+## Skąd brać wiedzę?

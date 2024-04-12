@@ -1,0 +1,9 @@
+<h2>Prerequisites - configure GIT on windows</h2>
+<p>After installing git client you have to add ssh.exe to path. The easiest way is to do it in PowerShell with</p>
+<pre><code class="shell">$env:Path+=";"+"C:\Program Files (x86)\Git\bin"</code></pre>
+<p>You can also add this line to profile</p>
+<pre><code class="bash">#open profile for edit
+notepad $PROFILE
+
+#reload profile
+. $PROFILE</code></pre>

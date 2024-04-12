@@ -1,0 +1,15 @@
+<h3>Yum repo verification</h3>
+<p> Run following (the last 2 are inside VM)
+<pre><code class="bash">vagrant provision
+vagrant ssh
+yum repolist
+sudo yum install storm
+</code></pre></p>
+<p class="fragment">Unfortunately error happened. To "repair" it reload the machine with
+<pre class="fragment"><code class="bash">vagrant reload
+</code></pre>
+</p>
+<p class="fragment">Do I have always reload VM it is so time consuming? <b>No.</b> We will go through this:)
+</p>
+
+<span class="commit" data-repo="vagrant-shell-bash" data-commit="65ec87ce2cdcdcd70d18779eb45499e943c3c441"></span>

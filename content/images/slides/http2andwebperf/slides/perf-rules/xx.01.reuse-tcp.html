@@ -1,0 +1,19 @@
+<h2>Reuse TCP connection - not official rule :D</h2>
+<p>TCP connection is expensive:</p>
+<ul>
+    <li>handshake latency</li>
+    <li>resource overhead</li>
+</ul>
+<div class="fragment confirmed"/>
+<aside class="notes">
+    https://www.igvita.com/2011/10/04/optimizing-http-keep-alive-and-pipelining/
+    The last major update to the HTTP spec dates back to 1999, at which time RFC 2616 standardized HTTP 1.1 and introduced the
+    much needed keep-alive and pipelining support. Whereas HTTP 1.0 required strict "single request per connection" model,
+    HTTP 1.1 reversed this behavior: by default, an HTTP 1.1 client and server keep the connection open, unless the client
+    indicates otherwise (via Connection: close header).<br/> Why bother? Setting up a TCP connection is very expensive!
+    Even in an optimized case, a full one-way route between the client and server can take 10-50ms. Now multiply that three
+    times to complete the TCP handshake, and we're already looking at a 150ms ceiling! Keep-alive allows us to reuse the
+    same connection between different requests and amortize this cost.<br/> The only problem is, more often than not, as
+    developers we tend to forget this. Take a look at your own code, how often do you reuse an HTTP connection? Same problem
+    is found in most API wrappers, and even standard HTTP libraries of most languages, which disable keepalive by default.
+</aside>

@@ -1,0 +1,21 @@
+<h3>Storm &amp; supervisor- common parts</h3>
+<p>We need to install: storm, supervisor, so in the new file <code>stormCommon.rb</code> under <code>recipes</code> code is easy:</p>
+<pre><code class="ruby">package "supervisor" do
+	action :install
+end
+
+package "storm" do
+	action :install
+end
+
+template "/etc/storm/conf/storm.yaml" do
+	source "storm.yaml.erb"
+	owner "storm"
+	group "storm"
+	mode "0644"
+end
+</code></pre>
+
+<p>Content of template file <code>templates/default/storm.yaml.erb</code> is very simple:</p>
+<pre><code class="ruby">nimbus.host: "192.168.33.10"
+</code></pre>

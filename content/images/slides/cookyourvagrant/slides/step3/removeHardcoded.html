@@ -1,0 +1,10 @@
+<h3>Remove hard-coded IP</h3>
+<p>In <code>storm/attributes</code> directory create <code>default.rb</code> file with:</p>
+<pre><code class="ruby">
+#nimbus host
+default[:storm][:host]="192.168.33.10"
+
+#zookeeper hosts
+default[:zookeeper][:nodes]="192.168.33.10,192.168.33.11"
+default[:zookeeper][:eth]="eth1"
+</code></pre>

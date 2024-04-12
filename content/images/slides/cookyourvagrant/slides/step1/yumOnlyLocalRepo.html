@@ -1,0 +1,16 @@
+<h3>Configure yum local repository</h3>
+<ul>
+<li>
+	We need to create file for local repo. You can download it form <a href="other/local-vagrant.repo">local-vagrant.repo</a>) and save it into <code>vagrantshell</code> folder
+<li>To configuring repo we need to copy it under <code>/etc/yum.repos.d</code></li>
+<li>The last change we have to do now is to add additional shared folder to virtual machine.</li>
+<li>So changes to vagrantfile are:
+<pre><code class="ruby">config.vm.synced_folder "../internal-repo", "/vagrant_localrepo"
+config.vm.provision :shell, :inline  => '
+mkdir -p /etc/yum.repos.d/disabled
+mv -f /etc/yum.repos.d/*.repo /etc/yum.repos.d/disabled/;
+cp -f /vagrant/local-vagrant.repo /etc/yum.repos.d/'
+</code></pre>
+</li>
+</ul>
+<span class="commit" data-repo="vagrant-shell-bash" data-commit="65ec87ce2cdcdcd70d18779eb45499e943c3c441"></span>

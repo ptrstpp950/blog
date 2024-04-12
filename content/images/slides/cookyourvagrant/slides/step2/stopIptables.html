@@ -1,0 +1,13 @@
+<h3>Stop iptables</h3>
+<p>We already created" and "strated"  a "service in chef. Now we just need to "stop" it. The new file is <code>iptables.rb</code> under <code>recipes</code> directory, with following content:</p>
+<pre><code class="ruby">
+service "iptables" do
+	supports :status => true, :restart => true, :reload => true
+	action [ :disable, :stop ]
+end
+</code></pre>
+<p>Now add invoke of this recipe in under both machines in vagrantfile with:
+<pre><code class="ruby">chef.add_recipe "storm::iptables"</code></pre>
+<p>After <code>vagrant provision</code> everything should be OK:)</p>
+
+<span class="commit" data-repo="vagrant-chef" data-commit="b4403ddf615d342ace239c733504fd400e487767"></span>

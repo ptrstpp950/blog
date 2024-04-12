@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+
+        <title>Myth busters - HTTP/2 and web performance</title>
+
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+        <link rel="stylesheet" href="bower_components/reveal.js/css/reveal.css">
+    
+        <link rel="stylesheet" href="bower_components/reveal.js/css/theme/blood.css" id="theme">
+    
+
+        <!-- For syntax highlighting -->
+        <link rel="stylesheet" href="bower_components/highlightjs/styles/zenburn.css">
+        <link rel="stylesheet" href="resources/styles/stamp.css">
+
+
+        <!-- Printing and PDF exports -->
+        <script>
+            var link = document.createElement( 'link' );
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            link.href = window.location.search.match( /print-pdf/gi ) ? 'bower_components/reveal.js/css/print/pdf.css' : 'bower_components/reveal.js/css/print/paper.css';
+            document.getElementsByTagName( 'head' )[0].appendChild( link );
+        </script>
+
+        <!--[if lt IE 9]>
+        <script src="bower_components/reveal.js/lib/js/html5shiv.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+		<img src="./resources/img/stappspacelogo.png" style="position:absolute; top:5px; right: 5px;"/>
+
+        <div class="reveal">
+
+            <div class="slides">
+
+                
+                    
+                        
+    <section data-html="slides/index.html"></section>
+
+
+                    
+                    
+                
+                    
+                    
+                        <section>
+                            
+                                
+    <section data-html="slides/history/1.http-history.html"></section>
+
+
+                            
+                                
+    <section data-html="slides/history/2.demo.html"></section>
+
+
+                            
+                                
+    <section data-html="slides/history/3.spdy.html"></section>
+
+
+                            
+                                
+    <section data-html="slides/history/4.spdy-die.html"></section>
+
+
+                            
+                                
+    <section data-html="slides/history/5.spdy-die-2.html"></section>
+
+
+                            
+                        </section>
+                    
+                
+                    
+                    
+                        <section>
+                            
+                                
+    <section data-html="slides/http2theory/0.intro.html"></section>
+
+
+                            
+                                
+    <section data-html="slides/http2theory/1.ishttp2ready.html"></section>
+
+
+                            
+                                
+    <section data-html="slides/http2theory/2.caniusehttp2.html"></section>
+
+
+                            
+                                
+    <section data-html="slides/http2theory/3.righthere.html"></section>
+
+
+                            
+                                
+    <section data-html="slides/http2theory/4.latency.html"></section>
+
+
+                            
+                                
+    <section data-html="slides/http2theory/5.definition.html"></section>
+
+
+                            
+                                
+    <section data-html="slides/http2theory/6.definition.1.html"></section>
+
+
+                            
+                        </section>
+                    
+                
+                    
+                    
+                        <section>
+                            
+                                
+    <section data-html="slides/perf-rules/00.all-rules.html"></section>
+
+
+                            
+                                
+    <section data-html="slides/perf-rules/00.all-rules.1.html"></section>
+
+
+                            
+                                
+    <section data-html="slides/perf-rules/01.fewer-http-requests.html"></section>
+
+
+                            
+                                
+    <section data-html="slides/perf-rules/02.use-cdn.html"></section>
+
+
+                            
+                                
+    <section data-html="slides/perf-rules/03.13.14.expire-header_etag_ajax-cache.html"></section>
+
+
+                            
+                                
+    <section data-html="slides/perf-rules/04.gzip-hpack.1.html"></section>
+
+
+                            
+                                
+    <section data-html="slides/perf-rules/04.gzip-hpack.2.html"></section>
+
+
+                            
+                                
+    <section data-html="slides/perf-rules/04.gzip-hpack.3.html"></section>
+
+
+                            
+                                
+    <section data-html="slides/perf-rules/04.gzip-hpack.4.html"></section>
+
+
+                            
+                                
+    <section data-html="slides/perf-rules/04.gzip-hpack.5.html"></section>
+
+
+                            
+                                
+    <section data-html="slides/perf-rules/05.06.07.rendering.html"></section>
+
+
+                            
+                                
+    <section data-html="slides/perf-rules/08.skiprule.html"></section>
+
+
+                            
+                                
+    <section data-html="slides/perf-rules/09.dnslookups.html"></section>
+
+
+                            
+                                
+    <section data-html="slides/perf-rules/xx.01.reuse-tcp.html"></section>
+
+
+                            
+                                
+    <section data-html="slides/perf-rules/xx.08.external.html"></section>
+
+
+                            
+                                
+    <section data-html="slides/perf-rules/xx.08.external.2.html"></section>
+
+
+                            
+                                
+    <section data-html="slides/perf-rules/xx.08.external.3.html"></section>
+
+
+                            
+                                
+    <section data-html="slides/perf-rules/xx.08.external.4.html"></section>
+
+
+                            
+                                
+    <section data-html="slides/perf-rules/xx.08.external.5.html"></section>
+
+
+                            
+                        </section>
+                    
+                
+                    
+                    
+                        <section>
+                            
+                                
+    <section data-html="slides/more-perf-stuff/00.intro.html"></section>
+
+
+                            
+                                
+    <section data-html="slides/more-perf-stuff/01.more.html"></section>
+
+
+                            
+                                
+    <section data-html="slides/more-perf-stuff/02.css.html"></section>
+
+
+                            
+                                
+    <section data-html="slides/more-perf-stuff/03.html.html"></section>
+
+
+                            
+                                
+    <section data-html="slides/more-perf-stuff/04.images.html"></section>
+
+
+                            
+                                
+    <section data-html="slides/more-perf-stuff/04.images.1.html"></section>
+
+
+                            
+                                
+    <section data-html="slides/more-perf-stuff/05.webp.html"></section>
+
+
+                            
+                                
+    <section data-html="slides/more-perf-stuff/06.flif.html"></section>
+
+
+                            
+                        </section>
+                    
+                
+                    
+                    
+                        <section>
+                            
+                                
+    <section data-html="slides/perf-rules-changes/00.intro.html"></section>
+
+
+                            
+                                
+    <section data-html="slides/perf-rules-changes/01.sum-up.html"></section>
+
+
+                            
+                                
+    <section data-html="slides/perf-rules-changes/02.i-dont-want-http2.html"></section>
+
+
+                            
+                                
+    <section data-html="slides/perf-rules-changes/03.setup-iis.html"></section>
+
+
+                            
+                                
+    <section data-html="slides/perf-rules-changes/04.setup-development.html"></section>
+
+
+                            
+                                
+    <section data-html="slides/perf-rules-changes/05.final-sumup.html"></section>
+
+
+                            
+                        </section>
+                    
+                
+                    
+                        
+    <section data-html="slides/end.html"></section>
+
+
+                    
+                    
+                
+            </div>
+
+        </div>
+
+        <script src="bower_components/reveal.js/lib/js/head.min.js"></script>
+        <script src="bower_components/reveal.js/js/reveal.js"></script>
+        <script>
+
+          // Full list of configuration options available at:
+          // https://github.com/hakimel/reveal.js#configuration
+          Reveal.initialize({
+            controls: true,
+            progress: true,
+            history: true,
+            center: true,
+
+            transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+            // Optional reveal.js plugins
+            dependencies: [
+              { src: 'bower_components/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+              { src: 'bower_components/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+              { src: 'bower_components/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+              { src: 'bower_components/reveal.js/plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( '[data-html]' ) || !!document.querySelector( 'pre code' ) || !!document.querySelector( '[data-markdown]' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+              { src: 'bower_components/reveal.js/plugin/zoom-js/zoom.js', async: true },
+              { src: 'bower_components/reveal.js/plugin/notes/notes.js', async: true },
+              { src: 'js/loadhtmlslides.js', condition: function() { return !!document.querySelector( '[data-html]' ); } }
+            ]
+          });
+
+        </script>
+    </body>
+
+</html>

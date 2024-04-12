@@ -1,0 +1,19 @@
+<h2>Rule 8 - Make JS and CSS External</h2>
+<p>
+	This rule is not always true for HTTP 1.1.
+	<br/>Inlining and bundling are:
+	<ul>
+		<li>parallelism workaround for HTTP/1.x</li>
+		<li>eliminates full request roundtrip </li>
+	</ul><br/>
+	<strong>but:</strong><br/>
+	<ul>
+		<li>complicates our workflows, code and applications</li>
+		<li>breaks granular caching, updates, and revalidation</li>
+		<li>forces frequent and expensive invalidations</li>
+	</ul>
+</p>
+
+<aside class="notes">
+
+</aside>

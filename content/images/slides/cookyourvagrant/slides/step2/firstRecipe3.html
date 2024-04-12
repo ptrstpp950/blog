@@ -1,0 +1,18 @@
+<h3>First recipe - yum c.d.</h3>
+<p>The last changes are in vagrant file</p>
+<pre><code class="diff">
+    config.vm.box = "centos-6.4"
++++ config.vm.synced_folder "../internal-repo", "/vagrant_localrepo"
+	
+    config.vm.define "nimbus" do |nimbus|
+      nimbus.vm.network "private_network", ip: "192.168.33.10"
+      nimbus.vm.hostname = "nimbus"
+      nimbus.vm.provision "chef_solo" do |chef|
+        chef.cookbooks_path = "cookbooks"
++++     chef.add_recipe "storm::localrepo"
+      end
+    end
+</code></pre>
+
+<p>So let's run <pre><code>vagrant reload --provision</code></pre>
+<span class="commit" data-repo="vagrant-chef" data-commit="f9f20ceba9d6d9b439ead203c52a9dcbce759a77"></span>

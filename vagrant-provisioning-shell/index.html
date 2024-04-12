@@ -1,0 +1,241 @@
+<!DOCTYPE html><html lang="en" ><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><meta name="generator" content="Jekyll v4.2.2" /><meta property="og:title" content="Vagrant provisioning using shell - how to setup storm project" /><meta property="og:locale" content="en" /><meta name="description" content="Provisioning in Vagrant There is a lot of choices when you want to provision your virtual machine with vagrant: Run scripts manually - completely insane idea Run shell scripts inline or not Use chef or puppet" /><meta property="og:description" content="Provisioning in Vagrant There is a lot of choices when you want to provision your virtual machine with vagrant: Run scripts manually - completely insane idea Run shell scripts inline or not Use chef or puppet" /><link rel="canonical" href="/vagrant-provisioning-shell/" /><meta property="og:url" content="/vagrant-provisioning-shell/" /><meta property="og:site_name" content="Reset your code" /><meta property="og:type" content="article" /><meta property="article:published_time" content="2014-09-06T08:16:00+00:00" /><meta name="twitter:card" content="summary" /><meta property="twitter:title" content="Vagrant provisioning using shell - how to setup storm project" /><meta name="twitter:site" content="@ptrstpp950" /> <script type="application/ld+json"> {"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-07-23T12:51:26+00:00","datePublished":"2014-09-06T08:16:00+00:00","description":"Provisioning in Vagrant There is a lot of choices when you want to provision your virtual machine with vagrant: Run scripts manually - completely insane idea Run shell scripts inline or not Use chef or puppet","headline":"Vagrant provisioning using shell - how to setup storm project","mainEntityOfPage":{"@type":"WebPage","@id":"/vagrant-provisioning-shell/"},"url":"/vagrant-provisioning-shell/"}</script><title>Vagrant provisioning using shell - how to setup storm project | Reset your code</title><link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png"><link rel="manifest" href="/assets/img/favicons/site.webmanifest"><link rel="shortcut icon" href="/assets/img/favicons/favicon.ico"><meta name="apple-mobile-web-app-title" content="Reset your code"><meta name="application-name" content="Reset your code"><meta name="msapplication-TileColor" content="#da532c"><meta name="msapplication-config" content="/assets/img/favicons/browserconfig.xml"><meta name="theme-color" content="#ffffff"><link rel="preconnect" href="https://fonts.googleapis.com" ><link rel="dns-prefetch" href="https://fonts.googleapis.com" ><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="dns-prefetch" href="https://fonts.gstatic.com" crossorigin><link rel="preconnect" href="https://fonts.googleapis.com" ><link rel="dns-prefetch" href="https://fonts.googleapis.com" ><link rel="preconnect" href="https://cdn.jsdelivr.net" ><link rel="dns-prefetch" href="https://cdn.jsdelivr.net" ><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato&family=Source+Sans+Pro:wght@400;600;700;900&display=swap"><link rel="preconnect" href="https://www.google-analytics.com" crossorigin="use-credentials"><link rel="dns-prefetch" href="https://www.google-analytics.com"><link rel="preconnect" href="https://www.googletagmanager.com" crossorigin="anonymous"><link rel="dns-prefetch" href="https://www.googletagmanager.com"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.11.2/css/all.min.css"><link rel="stylesheet" href="/assets/css/style.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@1.0.1/dist/bootstrap-toc.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/magnific-popup@1/dist/magnific-popup.min.css"> <script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script> <script type="text/javascript"> class ModeToggle { static get MODE_KEY() { return "mode"; } static get MODE_ATTR() { return "data-mode"; } static get DARK_MODE() { return "dark"; } static get LIGHT_MODE() { return "light"; } static get ID() { return "mode-toggle"; } constructor() { if (this.hasMode) { if (this.isDarkMode) { if (!this.isSysDarkPrefer) { this.setDark(); } } else { if (this.isSysDarkPrefer) { this.setLight(); } } } let self = this; /* always follow the system prefers */ this.sysDarkPrefers.addEventListener("change", () => { if (self.hasMode) { if (self.isDarkMode) { if (!self.isSysDarkPrefer) { self.setDark(); } } else { if (self.isSysDarkPrefer) { self.setLight(); } } self.clearMode(); } self.notify(); }); } /* constructor() */ get sysDarkPrefers() { return window.matchMedia("(prefers-color-scheme: dark)"); } get isSysDarkPrefer() { return this.sysDarkPrefers.matches; } get isDarkMode() { return this.mode === ModeToggle.DARK_MODE; } get isLightMode() { return this.mode === ModeToggle.LIGHT_MODE; } get hasMode() { return this.mode != null; } get mode() { return sessionStorage.getItem(ModeToggle.MODE_KEY); } /* get the current mode on screen */ get modeStatus() { if (this.isDarkMode || (!this.hasMode && this.isSysDarkPrefer)) { return ModeToggle.DARK_MODE; } else { return ModeToggle.LIGHT_MODE; } } setDark() { $('html').attr(ModeToggle.MODE_ATTR, ModeToggle.DARK_MODE); sessionStorage.setItem(ModeToggle.MODE_KEY, ModeToggle.DARK_MODE); } setLight() { $('html').attr(ModeToggle.MODE_ATTR, ModeToggle.LIGHT_MODE); sessionStorage.setItem(ModeToggle.MODE_KEY, ModeToggle.LIGHT_MODE); } clearMode() { $('html').removeAttr(ModeToggle.MODE_ATTR); sessionStorage.removeItem(ModeToggle.MODE_KEY); } /* Notify another plugins that the theme mode has changed */ notify() { window.postMessage({ direction: ModeToggle.ID, message: this.modeStatus }, "*"); } } /* ModeToggle */ const toggle = new ModeToggle(); function flipMode() { if (toggle.hasMode) { if (toggle.isSysDarkPrefer) { if (toggle.isLightMode) { toggle.clearMode(); } else { toggle.setLight(); } } else { if (toggle.isDarkMode) { toggle.clearMode(); } else { toggle.setDark(); } } } else { if (toggle.isSysDarkPrefer) { toggle.setLight(); } else { toggle.setDark(); } } toggle.notify(); } /* flipMode() */ </script><body data-spy="scroll" data-target="#toc" data-topbar-visible="true"><div id="sidebar" class="d-flex flex-column align-items-end"><div class="profile-wrapper text-center"><div id="avatar"> <a href="/" class="mx-auto"> <img src="https://pl.gravatar.com/userimage/48672464/c50835d7095c6bf97f05a434fa54cfca.jpg?size=256" alt="avatar" onerror="this.style.display='none'"> </a></div><div class="site-title mt-3"> <a href="/">Reset your code</a></div><div class="site-subtitle font-italic">Stapp space :)</div></div><ul class="w-100"><li class="nav-item"> <a href="/" class="nav-link"> <i class="fa-fw fas fa-home ml-xl-3 mr-xl-3 unloaded"></i> <span>HOME</span> </a><li class="nav-item"> <a href="/categories/" class="nav-link"> <i class="fa-fw fas fa-stream ml-xl-3 mr-xl-3 unloaded"></i> <span>CATEGORIES</span> </a><li class="nav-item"> <a href="/tags/" class="nav-link"> <i class="fa-fw fas fa-tag ml-xl-3 mr-xl-3 unloaded"></i> <span>TAGS</span> </a><li class="nav-item"> <a href="/archives/" class="nav-link"> <i class="fa-fw fas fa-archive ml-xl-3 mr-xl-3 unloaded"></i> <span>ARCHIVES</span> </a><li class="nav-item"> <a href="/about/" class="nav-link"> <i class="fa-fw fas fa-info-circle ml-xl-3 mr-xl-3 unloaded"></i> <span>ABOUT</span> </a></ul><div class="sidebar-bottom mt-auto d-flex flex-wrap justify-content-center align-items-center"> <button class="mode-toggle btn" aria-label="Switch Mode"> <i class="fas fa-adjust"></i> </button> <span class="icon-border"></span> <a href="https://github.com/ptrstpp950" aria-label="github" target="_blank" rel="noopener"> <i class="fab fa-github"></i> </a> <a href="https://www.linkedin.com/in/piotrstapp" aria-label="linkedin" target="_blank" rel="noopener"> <i class="fab fa-linkedin"></i> </a> <a href="https://twitter.com/ptrstpp950" aria-label="twitter" target="_blank" rel="noopener"> <i class="fab fa-twitter"></i> </a> <a href="/feed.xml" aria-label="rss" > <i class="fas fa-rss"></i> </a></div></div><div id="topbar-wrapper"><div id="topbar" class="container d-flex align-items-center justify-content-between h-100 pl-3 pr-3 pl-md-4 pr-md-4"> <span id="breadcrumb"> <span> <a href="/"> Home </a> </span> <span>Vagrant provisioning using shell - how to setup storm project</span> </span> <i id="sidebar-trigger" class="fas fa-bars fa-fw"></i><div id="topbar-title"> Post</div><i id="search-trigger" class="fas fa-search fa-fw"></i> <span id="search-wrapper" class="align-items-center"> <i class="fas fa-search fa-fw"></i> <input class="form-control" id="search-input" type="search" aria-label="search" autocomplete="off" placeholder="Search..."> </span> <span id="search-cancel" >Cancel</span></div></div><div id="main-wrapper" class="d-flex justify-content-center"><div id="main" class="container pl-xl-4 pr-xl-4"><div class="row"><div id="core-wrapper" class="col-12 col-lg-11 col-xl-9 pr-xl-4"><div class="post pl-1 pr-1 pl-md-2 pr-md-2"><h1 data-toc-skip>Vagrant provisioning using shell - how to setup storm project</h1><div class="post-meta text-muted"> <span> Posted <em class="" data-ts="1409991360" data-df="ll" data-toggle="tooltip" data-placement="bottom"> Sep 6, 2014 </em> </span> <span> Updated <em class="" data-ts="1658580686" data-df="ll" data-toggle="tooltip" data-placement="bottom"> Jul 23, 2022 </em> </span><div class="d-flex justify-content-between"> <span> By <em> <a href="https://twitter.com/ptrstpp950">Piotr Stapp</a> </em> </span><div> <span class="readtime" data-toggle="tooltip" data-placement="bottom" title="1631 words"> <em>9 min</em> read</span></div></div></div><div class="post-content"><h2 id="provisioning-in-vagrant"><span class="mr-2">Provisioning in Vagrant</span><a href="#provisioning-in-vagrant" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><p>There is a lot of choices when you want to provision your virtual machine with vagrant:</p><ol><li>Run scripts manually - completely <strong>insane</strong> idea<li>Run shell scripts inline or not<li>Use chef or puppet</ol><p>The first one is good only for testing, trying, …, but it is insane if you want to provision all machines like this.</p><p>The second one is looks quite optimistic, especially if you don’t know what are tools from third point.</p><p>Today I will try to present how to setup <a href="https://storm.incubator.apache.org/">storm project</a> on vagrant machine using only shell provisioning. To simplify the operation I will use tutorial from Hortonworks: http://docs.hortonworks.com/HDPDocuments/HDP2/HDP-2.1-latest/bk_installing_manually_book/content/ch_rpm_storm.html 1000 words which describe my work looks like: <img data-src="http://res.cloudinary.com/piotrstapp/image/upload/c_scale,w_600/v1410034157/vagrant_storm2_ha7xwb.png" alt="setup storm with vagrant in bash" data-proofer-ignore></p><h2 id="step-0-choosing-and-preparing-machine"><span class="mr-2">Step .0. Choosing and preparing machine</span><a href="#step-0-choosing-and-preparing-machine" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><p>First we need to create directory and init vagrant so let’s do this:</p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre><td class="rouge-code"><pre>mkdir storm-vagrant
+cd  storm-vagrant
+vagrant init
+</pre></table></code></div></div><p>I will use centos box which I downloaded before (you can use URL instead of file). Why Centos you asked? Because in many companies the only allowed Linux is Red Hat. Centos is closed enough. So let’s add the box:</p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre><td class="rouge-code"><pre> vagrant box add "centos-6.5" file:///c:/vagrantfiles/CentOS-6.4-i386-v20131103.box
+</pre></table></code></div></div><p>In vagrant file we need to change our box name so <code class="language-plaintext highlighter-rouge">config.vm.box = "base"</code> becomes <code class="language-plaintext highlighter-rouge">config.vm.box = "centos-6.5"</code></p><h2 id="step-1-configure-network"><span class="mr-2">Step .1. Configure network</span><a href="#step-1-configure-network" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><p>We will need network access to guest machine. It can be done in two ways:</p><ol><li>Using port forwarding<li>Setting IP adress for guest machine.</ol><p>I will add code to enable private network in machine so vagrantfile will look like below.:</p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+</pre><td class="rouge-code"><pre># -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+# Vagrantfile API/syntax version. Don't touch unless you know what you're doing!
+VAGRANTFILE_API_VERSION = "2"
+
+Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+  # All Vagrant configuration is done here. The most common configuration
+  # options are documented and commented below. For a complete reference,
+  # please see the online documentation at vagrantup.com.
+
+  # Every Vagrant virtual environment requires a box to build off of.
+  config.vm.box = "centos-6.5"
+  config.vm.network "private_network", ip: "192.168.33.10"
+</pre></table></code></div></div><p><strong>Caution:</strong> In next code listings I will only append above lines.</p><p>Now we are ready to run:</p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre><td class="rouge-code"><pre>vagrant up
+</pre></table></code></div></div><p>After the above command is complete (don’t worry about read color on console), let’s explore our box. Run <code class="language-plaintext highlighter-rouge">vagrant ssh</code> and you are inside. Check what you want and logout from the machine.</p><h2 id="step-2-installing-storm-rpms"><span class="mr-2">Step .2. Installing storm rpms.</span><a href="#step-2-installing-storm-rpms" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><p>According to <a href="http://docs.hortonworks.com/HDPDocuments/HDP2/HDP-2.1-latest/bk_installing_manually_book/content/rpm-chap1.html">” Chapter 1. Getting Ready to Install”</a> we need to configure remote repositories. For Centos 6 the line is:</p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre><td class="rouge-code"><pre>wget -nv http://public-repo-1.hortonworks.com/HDP/centos6/2.x/updates/2.1.5.0/hdp.repo -O /etc/yum.repos.d/hdp.repo 
+</pre></table></code></div></div><p>So let’s change our vagrant file to (first two lines already exist in our file):</p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre><td class="rouge-code"><pre>  config.vm.box = "centos-6.5"
+  config.vm.network "private_network", ip: "192.168.33.10"
+  config.vm.provision :shell, :inline  =&gt; "wget -nv http://public-repo-1.hortonworks.com/HDP/centos6/2.x/updates/2.1.5.0/hdp.repo -O /etc/yum.repos.d/hdp.repo"
+
+</pre></table></code></div></div><p>According to <a href="http://docs.hortonworks.com/HDPDocuments/HDP2/HDP-2.1-latest/bk_installing_manually_book/content/ch_rpm_storm-1.html"> Chapter 17.1 Install the Storm RPMs.</a> we can install storm rpm with</p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre><td class="rouge-code"><pre>yum install storm
+</pre></table></code></div></div><p>but above command will prompt as if we are sure to download storm + zookeeper (yes storm needs zookeeper to run). To avoid prompt just add <code class="language-plaintext highlighter-rouge">-y</code> to the command. So vagrant file will evolve to:</p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre><td class="rouge-code"><pre>config.vm.box = "centos-6.5"
+  config.vm.provision :shell, :inline  =&gt; "wget -nv http://public-repo-1.hortonworks.com/HDP/centos6/2.x/updates/2.1.5.0/hdp.repo -O /etc/yum.repos.d/hdp.repo"
+  config.vm.provision :shell, :inline  =&gt; "yum -y install storm"
+</pre></table></code></div></div><p>To call above provisioning we have to choices:</p><ol><li>Run <code class="language-plaintext highlighter-rouge">vagrant destroy</code> and again <code class="language-plaintext highlighter-rouge">vagrant up</code> - if we do too much manual changes in previous steps<li>Or just <code class="language-plaintext highlighter-rouge">vagrant provision</code> to run only provisioning on running box</ol><h3 id="step-3-running-zookeeper"><span class="mr-2">Step .3. Running zookeeper</span><a href="#step-3-running-zookeeper" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3><p><strong>Zookeeper? Why?</strong> -you think now. Storm need zookeeper to comunicate between its nodes. The second line of last chapter: <a href="http://docs.hortonworks.com/HDPDocuments/HDP2/HDP-2.1-latest/bk_installing_manually_book/content/ch_rpm_storm-5.html">5. Validate the Installation</a> is:</p><blockquote><p>You must start ZooKeeper before starting Storm.</p></blockquote><p>First we need Java (for storm and zookeeper). I prefer Java 7 form Sun, so I just downloaded rpm form <a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">official page</a> to vagrant folder. In recipe please add:</p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre><td class="rouge-code"><pre> config.vm.provision :shell, :inline  =&gt; '
+	javarpm="$(ls /vagrant/ | grep "^jdk.*.rpm" | tail -1)"
+	echo $javarpm
+	rpm -Uvh /vagrant/$javarpm
+	java -version'
+</pre></table></code></div></div><p>Please notice that I have to change <code class="language-plaintext highlighter-rouge">"</code> into <code class="language-plaintext highlighter-rouge">'</code>. The second option will be escape <code class="language-plaintext highlighter-rouge">"</code> with <code class="language-plaintext highlighter-rouge">\"</code></p><p>Then we need to create dirs as it is explain in <a href="http://docs.hortonworks.com/HDPDocuments/HDP2/HDP-2.1-latest/bk_installing_manually_book/content/rpm-zookeeper-2.html">Chapter 5.2: Set Directories and Permissions</a>. I created a file <code class="language-plaintext highlighter-rouge">directories.sh</code> with below content. It should be placed side-by-side to Vagrantfile:</p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre><td class="rouge-code"><pre>#!/bin/sh
+
+# Directory where ZooKeeper will store data. For example, /grid1/hadoop/zookeeper/data
+export ZOOKEEPER_DATA_DIR="/grid1/hadoop/zookeeper/data";
+# Directory to store the ZooKeeper configuration files.
+export ZOOKEEPER_CONF_DIR="/etc/zookeeper/conf";
+# Directory to store the ZooKeeper logs.
+export ZOOKEEPER_LOG_DIR="/var/log/zookeeper";
+# Directory to store the ZooKeeper process ID.
+export ZOOKEEPER_PID_DIR="/var/run/zookeeper";
+</pre></table></code></div></div><p><em>Caution:</em> If you are on Windows host, remember to change line ending to Unix style to avoid <code class="language-plaintext highlighter-rouge">: command not found</code> printing on console during login to guest machine</p><p>And do provisioning below with all steps mention in zookeeper chapter (creating dirs, set zookeeper node id and start it).</p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+</pre><td class="rouge-code"><pre>config.vm.provision :shell, :inline   =&gt; "
+	yes | cp /vagrant/directories.sh /etc/profile.d/directories.sh
+	chmod 755 /etc/profile.d/directories.sh"
+
+config.vm.provision :shell, :inline  =&gt; "
+	mkdir -p $ZOOKEEPER_LOG_DIR;
+	chown -R $ZOOKEEPER_USER:$HADOOP_GROUP $ZOOKEEPER_LOG_DIR;
+	chmod -R 755 $ZOOKEEPER_LOG_DIR;
+	
+	mkdir -p $ZOOKEEPER_PID_DIR;
+	chown -R $ZOOKEEPER_USER:$HADOOP_GROUP $ZOOKEEPER_PID_DIR;
+	chmod -R 755 $ZOOKEEPER_PID_DIR;
+	
+	mkdir -p $ZOOKEEPER_DATA_DIR;
+	chmod -R 755 $ZOOKEEPER_DATA_DIR;
+	chown -R $ZOOKEEPER_USER:$HADOOP_GROUP $ZOOKEEPER_DATA_DIR
+	
+	echo '1' &gt;&gt; $ZOOKEEPER_DATA_DIR/myid
+	
+	su - zookeeper -c 'source /etc/zookeeper/conf/zookeeper-env.sh ; export ZOOCFGDIR=/etc/zookeeper/conf;/usr/lib/zookeeper/bin/zkServer.sh start &gt;&gt; /var/log/zookeeper/zoo.out 2&gt;&amp;1'"
+</pre></table></code></div></div><p>To check if ZooKeeper is running we need to login to our box and run:</p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre><td class="rouge-code"><pre>ps aux | grep zookeeper
+</pre></table></code></div></div><p>Is process does not exist just check:</p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre><td class="rouge-code"><pre>cat /var/log/zookeeper/zoo.out
+</pre></table></code></div></div><h3 id="step-4-configure-storm"><span class="mr-2">Step .4. Configure Storm</span><a href="#step-4-configure-storm" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3><p>After reading <a href="http://docs.hortonworks.com/HDPDocuments/HDP2/HDP-2.1-latest/bk_installing_manually_book/content/ch_rpm_storm-3.html">17.2. Configure Storm</a> a new file is needed: <code class="language-plaintext highlighter-rouge">storm.yaml</code>. Because everything will be on one machine I will set <code class="language-plaintext highlighter-rouge">ZOOKEEPER_SERVERS</code> and <code class="language-plaintext highlighter-rouge">NIMBUS_HOSTNAME</code> to <code class="language-plaintext highlighter-rouge">localhost</code>. Create a <code class="language-plaintext highlighter-rouge">storm.yaml</code> again side-by-side to vagrantfile with following content:</p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre><td class="rouge-code"><pre>storm.zookeeper.servers:
+    - localhost
+
+nimbus.host: localhost
+
+drpc.servers:
+    - "localhost"
+
+storm.local.dir: /tmp/storm/local
+
+logviewer.port: 8081
+</pre></table></code></div></div><p>and copy it into <code class="language-plaintext highlighter-rouge">/etc/storm/conf/storm.yaml</code>. The above file is located in shared <code class="language-plaintext highlighter-rouge">/vagrant</code> directory.</p><p>Both above modification in vagrantfile:</p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre><td class="rouge-code"><pre>[...]
+  config.vm.provision :shell, :inline  =&gt; "yum -y install storm"
+  config.vm.provision :shell, :inline  =&gt; "
+    mkdir -p  $STORM_LOCAL_DIR
+    chown -R storm:storm $STORM_LOCAL_DIR
+   chmod -R 755 $STORM_LOCAL_DIR
+   
+   cp -f /vagrant/storm.yaml /etc/storm/conf/storm.yaml"
+</pre></table></code></div></div><p><strong>Attention:</strong> I added <code class="language-plaintext highlighter-rouge">mkdir -p $STORM_LOCAL_DIR</code> because this folder wasn’t create on destination machine.</p><p>The last step is to add proper exports in <code class="language-plaintext highlighter-rouge">direstories.sh</code> file:</p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre><td class="rouge-code"><pre># storm local dir
+export STORM_LOCAL_DIR="/tmp/storm/local";
+</pre></table></code></div></div><p>To validate install we should login to guest and run:</p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre><td class="rouge-code"><pre>sudo su - storm
+storm nimbus
+</pre></table></code></div></div><p>The expected output is something similar to:</p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre><td class="rouge-code"><pre>/usr/bin/storm: line 2: /etc/default/hadoop: No such file or directory
+
+Running: java -server -Dstorm.options= -Dstorm.home=/usr/lib/storm   [...snip...] backtype.storm.daemon.nimbus
+</pre></table></code></div></div><p>Don’t be afraid about first line. We won’t need Hadoop at all, but Hortonworks installation files assume that we install it everywhere.</p><h2 id="step-5--configure-process-controller"><span class="mr-2">Step .5. Configure Process Controller</span><a href="#step-5--configure-process-controller" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><p>The optional 3 chapter I omit because we don’t need it now - we didn’t secure zookeeper. What is interesting we didn’t do anything about zookeeper - let’s back to this later. Just believe me.</p><p>In chapter <a href="http://docs.hortonworks.com/HDPDocuments/HDP2/HDP-2.1-latest/bk_installing_manually_book/content/ch_rpm_storm-4.html">4. Configure Process Controller</a> there is a mention about tool called <em>supervisord</em>. If we check it using <code class="language-plaintext highlighter-rouge">yum search supervisord</code> we won’t find it in enabled repositories. To install it we need EPEL repo with</p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre><td class="rouge-code"><pre>cd /tmp
+wget http://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm
+sudo rpm -Uhv epel-release-6-8.noarch.rpm
+</pre></table></code></div></div><p>and then run: <code class="language-plaintext highlighter-rouge">yum install -y supervisor</code>. Because <code class="language-plaintext highlighter-rouge">supervisor.conf</code> can contain password it is suggested to mark it with <em>600</em></p><p>So in vagrant file we have to add above (remember with <code class="language-plaintext highlighter-rouge">-y</code> in yum command):</p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre><td class="rouge-code"><pre>config.vm.provision :shell, :inline  =&gt; "
+	cd /tmp  
+	wget http://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm  
+	sudo rpm -Uhv epel-release-6-8.noarch.rpm  
+	yum install -y supervisor
+ 	sudo chmod 600 /etc/supervisord.conf"
+</pre></table></code></div></div><p>Let’s run the machine (with <code class="language-plaintext highlighter-rouge">vagrant provision</code>), login to it and copy default conf file: <code class="language-plaintext highlighter-rouge">sudo cp /etc/supervisord.conf /vagrant</code>. In copied file we can append lines from <a href="http://docs.hortonworks.com/HDPDocuments/HDP2/HDP-2.1-latest/bk_installing_manually_book/content/ch_rpm_storm-4.html">4. Configure Process Controller</a>.</p><p>After this step we need to add copy back this file in provisioning:</p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre><td class="rouge-code"><pre>config.vm.provision :shell, :inline  =&gt; "
+	yes | cp /vagrant/supervisord.conf /etc/supervisord.conf
+	/etc/init.d/supervisord restart"
+</pre></table></code></div></div><p><strong>Remember</strong>: <code class="language-plaintext highlighter-rouge">supervisord.conf</code>, <code class="language-plaintext highlighter-rouge">storm.yaml</code> and <code class="language-plaintext highlighter-rouge">vagrantfile</code> are integral parts of our recipe</p><h3 id="step6-opening-ports"><span class="mr-2">Step.6. Opening ports</span><a href="#step6-opening-ports" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3><p>The last part will be open ports for storm-ui, which is by default 8080. We should add line in <code class="language-plaintext highlighter-rouge">/etc/sysconfig/iptables</code> file and restart iptables. The file will look like (remember about UNIX line endings):</p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+</pre><td class="rouge-code"><pre># Firewall configuration written by system-config-firewall
+# Manual customization of this file is not recommended.
+*filter
+:INPUT ACCEPT [0:0]
+:FORWARD ACCEPT [0:0]
+:OUTPUT ACCEPT [0:0]
+-A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
+-A INPUT -p icmp -j ACCEPT
+-A INPUT -i lo -j ACCEPT
+-A INPUT -m state --state NEW -m tcp -p tcp --dport 22 -j ACCEPT
+-A INPUT -m state --state NEW -m tcp -p tcp --dport 8080 -j ACCEPT
+-A INPUT -j REJECT --reject-with icmp-host-prohibited
+-A FORWARD -j REJECT --reject-with icmp-host-prohibited
+COMMIT
+</pre></table></code></div></div><p>And provisioning is:</p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre><td class="rouge-code"><pre>  config.vm.provision :shell, :inline  =&gt; "
+	yes | cp /vagrant/iptables /etc/sysconfig/iptables
+	/etc/init.d/iptables restart"
+</pre></table></code></div></div><p>Then run <code class="language-plaintext highlighter-rouge">vagrant provision</code> for the last time.</p><h3 id="step7-check-installation"><span class="mr-2">Step.7. Check installation</span><a href="#step7-check-installation" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3><p>At least we check if everything is working. Just open your favorite browser on http://192.168.33.10:8080/ and you should see Storm UI web page. If there is a connection error you can:</p><ol><li>Wait a while - it need some time to start :)<li>Check logs in <code class="language-plaintext highlighter-rouge">/var/log/storm</code> and <code class="language-plaintext highlighter-rouge">/var/log/zookeeper</code><li>Recreate your machine with running <code class="language-plaintext highlighter-rouge">vagrant destroy</code> and then <code class="language-plaintext highlighter-rouge">vagrant up</code></ol><p>That all. Next time I will show how to use better provisiong than shell, because as you probably notice shell provisionig works, but is quite <em>ugly</em> and has a lot of harcoded stuff.</p></div><div class="post-tail-wrapper text-muted"><div class="post-tags"> <i class="fa fa-tags fa-fw mr-1"></i> <a href="/tags/vagrant/" class="post-tag no-text-decoration" >vagrant</a> <a href="/tags/tutorial/" class="post-tag no-text-decoration" >tutorial</a> <a href="/tags/devops/" class="post-tag no-text-decoration" >devops</a> <a href="/tags/storm/" class="post-tag no-text-decoration" >storm</a></div><div class="post-tail-bottom d-flex justify-content-between align-items-center mt-3 pt-5 pb-2"><div class="license-wrapper"> This post is licensed under <a href="https://creativecommons.org/licenses/by/4.0/"> CC BY 4.0 </a> by the author.</div><div class="share-wrapper"> <span class="share-label text-muted mr-1">Share</span> <span class="share-icons"> <a href="https://twitter.com/intent/tweet?text=Vagrant+provisioning+using+shell+-+how+to+setup+storm+project+-+Reset+your+code&url=%2Fvagrant-provisioning-shell%2F" data-toggle="tooltip" data-placement="top" title="Twitter" target="_blank" rel="noopener" aria-label="Twitter"> <i class="fa-fw fab fa-twitter"></i> </a> <a href="https://www.facebook.com/sharer/sharer.php?title=Vagrant+provisioning+using+shell+-+how+to+setup+storm+project+-+Reset+your+code&u=%2Fvagrant-provisioning-shell%2F" data-toggle="tooltip" data-placement="top" title="Facebook" target="_blank" rel="noopener" aria-label="Facebook"> <i class="fa-fw fab fa-facebook-square"></i> </a> <a href="https://t.me/share/url?url=%2Fvagrant-provisioning-shell%2F&text=Vagrant+provisioning+using+shell+-+how+to+setup+storm+project+-+Reset+your+code" data-toggle="tooltip" data-placement="top" title="Telegram" target="_blank" rel="noopener" aria-label="Telegram"> <i class="fa-fw fab fa-telegram"></i> </a> <i id="copy-link" class="fa-fw fas fa-link small" data-toggle="tooltip" data-placement="top" title="Copy link" data-title-succeed="Link copied successfully!"> </i> </span></div></div></div></div></div><div id="panel-wrapper" class="col-xl-3 pl-2 text-muted"><div class="access"><div id="access-lastmod" class="post"><div class="panel-heading">Recently Updated</div><ul class="post-content pl-0 pb-1 ml-1 mt-2"><li><a href="/ACA-missing-yaml/">Exploring Azure Container Apps (ACA) and the Missing YAML Functionality</a><li><a href="/geting-secrets-from-github-actions/">6 steps to pimp my terminal</a><li><a href="/speaking/">Speaking</a><li><a href="/project-json-made-my-life-easier-and-it-is-not-a-joke/">Project.json made my life easier and it is not a joke</a><li><a href="/piotr-stapp-in-2016/">Piotr Stapp in 2016</a></ul></div><div id="access-tags"><div class="panel-heading">Trending Tags</div><div class="d-flex flex-wrap mt-3 mb-1 mr-3"> <a class="post-tag" href="/tags/code/">code</a> <a class="post-tag" href="/tags/azure/">azure</a> <a class="post-tag" href="/tags/visual-studio/">visual-studio</a> <a class="post-tag" href="/tags/javascript/">javascript</a> <a class="post-tag" href="/tags/devops/">devops</a> <a class="post-tag" href="/tags/dotnet/">dotnet</a> <a class="post-tag" href="/tags/speaker/">speaker</a> <a class="post-tag" href="/tags/windows/">windows</a> <a class="post-tag" href="/tags/c/">c</a> <a class="post-tag" href="/tags/powershell/">powershell</a></div></div></div><script src="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@1.0.1/dist/bootstrap-toc.min.js"></script><div id="toc-wrapper" class="pl-0 pr-4 mb-5"><div class="panel-heading pl-3 pt-2 mb-2">Contents</div><nav id="toc" data-toggle="toc"></nav></div></div></div><div class="row"><div id="tail-wrapper" class="col-12 col-lg-11 col-xl-9 pl-3 pr-3 pr-xl-4"><div id="related-posts" class="mt-5 mb-2 mb-sm-4"><h3 class="pt-2 mt-1 mb-4 ml-1" data-toc-skip>Further Reading</h3><div class="card-deck mb-4"><div class="card"> <a href="/run-vagrant-on-your-windows/"><div class="card-body"> <em class="small" data-ts="1409950800" data-df="ll" > Sep 5, 2014 </em><h3 class="pt-0 mt-1 mb-3" data-toc-skip>Run vagrant on your Windows</h3><div class="text-muted small"><p> Prerequisites Windows machine :) Install vagrant form https://www.vagrantup.com/downloads.html Install git with tools (or other ssh.exe client) + add folder to PATH. In powershell just invok...</p></div></div></a></div><div class="card"> <a href="/setup-vagrant-with-azure/"><div class="card-body"> <em class="small" data-ts="1446034351" data-df="ll" > Oct 28, 2015 </em><h3 class="pt-0 mt-1 mb-3" data-toc-skip>Setup vagrant with Azure - step by step guide</h3><div class="text-muted small"><p> Setup Vagrant with Azure is not complicated, but require a lot of steps, especially if you never configure azure using command line Prerequisites First of all we need some tools: Vagrant (https...</p></div></div></a></div><div class="card"> <a href="/restart-start-and-stop-all-azure-web-apps-in-resource-group-using-powershell/"><div class="card-body"> <em class="small" data-ts="1553009419" data-df="ll" > Mar 19, 2019 </em><h3 class="pt-0 mt-1 mb-3" data-toc-skip>Restart, start and stop all Azure Web Apps in resource group using PowerShell</h3><div class="text-muted small"><p> This post is short but useful. We need just two lines (we can combine it to one): 1 2 $allSites = Get-AzureRmWebApp -ResourceGroupName resource-group-name @($allSites).GetEnumerator() | Restart-Azu...</p></div></div></a></div></div></div><div class="post-navigation d-flex justify-content-between"> <a href="/run-vagrant-on-your-windows/" class="btn btn-outline-primary" prompt="Older"><p>Run vagrant on your Windows</p></a> <a href="/about-mbank-devs-for-devs-meet-me-on-16-08-2014/" class="btn btn-outline-primary" prompt="Newer"><p>[about.mbank] devs for devs: meet me on 16.08.2014 at Wrocław .NET UG</p></a></div></div></div><footer class="row pl-3 pr-3"><div class="col-12 d-flex justify-content-between align-items-center text-muted pl-0 pr-0"><div class="footer-left"><p class="mb-0"> © 2024 <a href="https://twitter.com/ptrstpp950">Piotr Stapp</a>. <span data-toggle="tooltip" data-placement="top" title="Except where otherwise noted, the blog posts on this site are licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0) License by the author.">Some rights reserved.</span></p></div><div class="footer-right"><p class="mb-0"> Powered by <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a> with <a href="https://github.com/cotes2020/jekyll-theme-chirpy" target="_blank" rel="noopener">Chirpy</a> theme.</p></div></div></footer></div><div id="search-result-wrapper" class="d-flex justify-content-center unloaded"><div class="col-12 col-sm-11 post-content"><div id="search-hints"><div id="access-tags"><div class="panel-heading">Trending Tags</div><div class="d-flex flex-wrap mt-3 mb-1 mr-3"> <a class="post-tag" href="/tags/code/">code</a> <a class="post-tag" href="/tags/azure/">azure</a> <a class="post-tag" href="/tags/visual-studio/">visual-studio</a> <a class="post-tag" href="/tags/javascript/">javascript</a> <a class="post-tag" href="/tags/devops/">devops</a> <a class="post-tag" href="/tags/dotnet/">dotnet</a> <a class="post-tag" href="/tags/speaker/">speaker</a> <a class="post-tag" href="/tags/windows/">windows</a> <a class="post-tag" href="/tags/c/">c</a> <a class="post-tag" href="/tags/powershell/">powershell</a></div></div></div><div id="search-results" class="d-flex flex-wrap justify-content-center text-muted mt-3"></div></div></div></div><div id="mask"></div><a id="back-to-top" href="#" aria-label="back-to-top" class="btn btn-lg btn-box-shadow" role="button"> <i class="fas fa-angle-up"></i> </a><div id="notification" class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-animation="true" data-autohide="false"><div class="toast-header"> <button type="button" class="ml-2 ml-auto close" data-dismiss="toast" aria-label="Close"> <span aria-hidden="true">&times;</span> </button></div><div class="toast-body text-center pt-0"><p class="pl-2 pr-2 mb-3">A new version of content is available.</p><button type="button" class="btn btn-primary" aria-label="Update"> Update </button></div></div><script src="https://cdn.jsdelivr.net/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js"></script> <script> SimpleJekyllSearch({ searchInput: document.getElementById('search-input'), resultsContainer: document.getElementById('search-results'), json: '/assets/js/data/search.json', searchResultTemplate: '<div class="pl-1 pr-1 pl-sm-2 pr-sm-2 pl-lg-4 pr-lg-4 pl-xl-0 pr-xl-0"> <a href="{url}">{title}</a><div class="post-meta d-flex flex-column flex-sm-row text-muted mt-1 mb-1"> {categories} {tags}</div><p>{snippet}</p></div>', noResultsText: '<p class="mt-5">Oops! No results found.</p>', templateMiddleware: function(prop, value, template) { if (prop === 'categories') { if (value === '') { return `${value}`; } else { return `<div class="mr-sm-4"><i class="far fa-folder fa-fw"></i>${value}</div>`; } } if (prop === 'tags') { if (value === '') { return `${value}`; } else { return `<div><i class="fa fa-tag fa-fw"></i>${value}</div>`; } } } }); </script> <script src="https://cdn.jsdelivr.net/combine/npm/magnific-popup@1/dist/jquery.magnific-popup.min.js,npm/lozad/dist/lozad.min.js,npm/clipboard@2/dist/clipboard.min.js"></script> <script src="https://cdn.jsdelivr.net/combine/npm/dayjs@1/dayjs.min.js,npm/dayjs@1/locale/en.min.js,npm/dayjs@1/plugin/relativeTime.min.js,npm/dayjs@1/plugin/localizedFormat.min.js"></script> <script defer src="/assets/js/dist/post.min.js"></script> <script src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.bundle.min.js"></script> <script defer src="/app.js"></script> <script defer src="https://www.googletagmanager.com/gtag/js?id=UA-53928517-1"></script> <script> document.addEventListener("DOMContentLoaded", function(event) { window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-53928517-1'); }); </script>

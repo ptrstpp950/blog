@@ -1,0 +1,267 @@
+<!DOCTYPE html><html lang="en" ><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><meta name="generator" content="Jekyll v4.2.2" /><meta property="og:title" content="6 steps to pimp my terminal" /><meta property="og:locale" content="en" /><meta name="description" content="Tools" /><meta property="og:description" content="Tools" /><link rel="canonical" href="/few-steps-to-pimp-my-terminal/" /><meta property="og:url" content="/few-steps-to-pimp-my-terminal/" /><meta property="og:site_name" content="Reset your code" /><meta property="og:image" content="/content/images/2021/06/cover.png" /><meta property="og:type" content="article" /><meta property="article:published_time" content="2021-06-02T09:15:12+00:00" /><meta name="twitter:card" content="summary_large_image" /><meta property="twitter:image" content="/content/images/2021/06/cover.png" /><meta property="twitter:title" content="6 steps to pimp my terminal" /><meta name="twitter:site" content="@ptrstpp950" /> <script type="application/ld+json"> {"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-07-23T12:51:26+00:00","datePublished":"2021-06-02T09:15:12+00:00","description":"Tools","headline":"6 steps to pimp my terminal","image":"/content/images/2021/06/cover.png","mainEntityOfPage":{"@type":"WebPage","@id":"/few-steps-to-pimp-my-terminal/"},"url":"/few-steps-to-pimp-my-terminal/"}</script><title>6 steps to pimp my terminal | Reset your code</title><link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png"><link rel="manifest" href="/assets/img/favicons/site.webmanifest"><link rel="shortcut icon" href="/assets/img/favicons/favicon.ico"><meta name="apple-mobile-web-app-title" content="Reset your code"><meta name="application-name" content="Reset your code"><meta name="msapplication-TileColor" content="#da532c"><meta name="msapplication-config" content="/assets/img/favicons/browserconfig.xml"><meta name="theme-color" content="#ffffff"><link rel="preconnect" href="https://fonts.googleapis.com" ><link rel="dns-prefetch" href="https://fonts.googleapis.com" ><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="dns-prefetch" href="https://fonts.gstatic.com" crossorigin><link rel="preconnect" href="https://fonts.googleapis.com" ><link rel="dns-prefetch" href="https://fonts.googleapis.com" ><link rel="preconnect" href="https://cdn.jsdelivr.net" ><link rel="dns-prefetch" href="https://cdn.jsdelivr.net" ><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato&family=Source+Sans+Pro:wght@400;600;700;900&display=swap"><link rel="preconnect" href="https://www.google-analytics.com" crossorigin="use-credentials"><link rel="dns-prefetch" href="https://www.google-analytics.com"><link rel="preconnect" href="https://www.googletagmanager.com" crossorigin="anonymous"><link rel="dns-prefetch" href="https://www.googletagmanager.com"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.11.2/css/all.min.css"><link rel="stylesheet" href="/assets/css/style.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@1.0.1/dist/bootstrap-toc.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/magnific-popup@1/dist/magnific-popup.min.css"> <script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script> <script type="text/javascript"> class ModeToggle { static get MODE_KEY() { return "mode"; } static get MODE_ATTR() { return "data-mode"; } static get DARK_MODE() { return "dark"; } static get LIGHT_MODE() { return "light"; } static get ID() { return "mode-toggle"; } constructor() { if (this.hasMode) { if (this.isDarkMode) { if (!this.isSysDarkPrefer) { this.setDark(); } } else { if (this.isSysDarkPrefer) { this.setLight(); } } } let self = this; /* always follow the system prefers */ this.sysDarkPrefers.addEventListener("change", () => { if (self.hasMode) { if (self.isDarkMode) { if (!self.isSysDarkPrefer) { self.setDark(); } } else { if (self.isSysDarkPrefer) { self.setLight(); } } self.clearMode(); } self.notify(); }); } /* constructor() */ get sysDarkPrefers() { return window.matchMedia("(prefers-color-scheme: dark)"); } get isSysDarkPrefer() { return this.sysDarkPrefers.matches; } get isDarkMode() { return this.mode === ModeToggle.DARK_MODE; } get isLightMode() { return this.mode === ModeToggle.LIGHT_MODE; } get hasMode() { return this.mode != null; } get mode() { return sessionStorage.getItem(ModeToggle.MODE_KEY); } /* get the current mode on screen */ get modeStatus() { if (this.isDarkMode || (!this.hasMode && this.isSysDarkPrefer)) { return ModeToggle.DARK_MODE; } else { return ModeToggle.LIGHT_MODE; } } setDark() { $('html').attr(ModeToggle.MODE_ATTR, ModeToggle.DARK_MODE); sessionStorage.setItem(ModeToggle.MODE_KEY, ModeToggle.DARK_MODE); } setLight() { $('html').attr(ModeToggle.MODE_ATTR, ModeToggle.LIGHT_MODE); sessionStorage.setItem(ModeToggle.MODE_KEY, ModeToggle.LIGHT_MODE); } clearMode() { $('html').removeAttr(ModeToggle.MODE_ATTR); sessionStorage.removeItem(ModeToggle.MODE_KEY); } /* Notify another plugins that the theme mode has changed */ notify() { window.postMessage({ direction: ModeToggle.ID, message: this.modeStatus }, "*"); } } /* ModeToggle */ const toggle = new ModeToggle(); function flipMode() { if (toggle.hasMode) { if (toggle.isSysDarkPrefer) { if (toggle.isLightMode) { toggle.clearMode(); } else { toggle.setLight(); } } else { if (toggle.isDarkMode) { toggle.clearMode(); } else { toggle.setDark(); } } } else { if (toggle.isSysDarkPrefer) { toggle.setLight(); } else { toggle.setDark(); } } toggle.notify(); } /* flipMode() */ </script><body data-spy="scroll" data-target="#toc" data-topbar-visible="true"><div id="sidebar" class="d-flex flex-column align-items-end"><div class="profile-wrapper text-center"><div id="avatar"> <a href="/" class="mx-auto"> <img src="https://pl.gravatar.com/userimage/48672464/c50835d7095c6bf97f05a434fa54cfca.jpg?size=256" alt="avatar" onerror="this.style.display='none'"> </a></div><div class="site-title mt-3"> <a href="/">Reset your code</a></div><div class="site-subtitle font-italic">Stapp space :)</div></div><ul class="w-100"><li class="nav-item"> <a href="/" class="nav-link"> <i class="fa-fw fas fa-home ml-xl-3 mr-xl-3 unloaded"></i> <span>HOME</span> </a><li class="nav-item"> <a href="/categories/" class="nav-link"> <i class="fa-fw fas fa-stream ml-xl-3 mr-xl-3 unloaded"></i> <span>CATEGORIES</span> </a><li class="nav-item"> <a href="/tags/" class="nav-link"> <i class="fa-fw fas fa-tag ml-xl-3 mr-xl-3 unloaded"></i> <span>TAGS</span> </a><li class="nav-item"> <a href="/archives/" class="nav-link"> <i class="fa-fw fas fa-archive ml-xl-3 mr-xl-3 unloaded"></i> <span>ARCHIVES</span> </a><li class="nav-item"> <a href="/about/" class="nav-link"> <i class="fa-fw fas fa-info-circle ml-xl-3 mr-xl-3 unloaded"></i> <span>ABOUT</span> </a></ul><div class="sidebar-bottom mt-auto d-flex flex-wrap justify-content-center align-items-center"> <button class="mode-toggle btn" aria-label="Switch Mode"> <i class="fas fa-adjust"></i> </button> <span class="icon-border"></span> <a href="https://github.com/ptrstpp950" aria-label="github" target="_blank" rel="noopener"> <i class="fab fa-github"></i> </a> <a href="https://www.linkedin.com/in/piotrstapp" aria-label="linkedin" target="_blank" rel="noopener"> <i class="fab fa-linkedin"></i> </a> <a href="https://twitter.com/ptrstpp950" aria-label="twitter" target="_blank" rel="noopener"> <i class="fab fa-twitter"></i> </a> <a href="/feed.xml" aria-label="rss" > <i class="fas fa-rss"></i> </a></div></div><div id="topbar-wrapper"><div id="topbar" class="container d-flex align-items-center justify-content-between h-100 pl-3 pr-3 pl-md-4 pr-md-4"> <span id="breadcrumb"> <span> <a href="/"> Home </a> </span> <span>6 steps to pimp my terminal</span> </span> <i id="sidebar-trigger" class="fas fa-bars fa-fw"></i><div id="topbar-title"> Post</div><i id="search-trigger" class="fas fa-search fa-fw"></i> <span id="search-wrapper" class="align-items-center"> <i class="fas fa-search fa-fw"></i> <input class="form-control" id="search-input" type="search" aria-label="search" autocomplete="off" placeholder="Search..."> </span> <span id="search-cancel" >Cancel</span></div></div><div id="main-wrapper" class="d-flex justify-content-center"><div id="main" class="container pl-xl-4 pr-xl-4"><div class="row"><div id="core-wrapper" class="col-12 col-lg-11 col-xl-9 pr-xl-4"><div class="post pl-1 pr-1 pl-md-2 pr-md-2"><h1 data-toc-skip>6 steps to pimp my terminal</h1><div class="post-meta text-muted"> <span> Posted <em class="" data-ts="1622625312" data-df="ll" data-toggle="tooltip" data-placement="bottom"> Jun 2, 2021 </em> </span> <span> Updated <em class="" data-ts="1658580686" data-df="ll" data-toggle="tooltip" data-placement="bottom"> Jul 23, 2022 </em> </span><div class="d-flex justify-content-between"> <span> By <em> <a href="https://twitter.com/ptrstpp950">Piotr Stapp</a> </em> </span><div> <span class="readtime" data-toggle="tooltip" data-placement="bottom" title="1114 words"> <em>6 min</em> read</span></div></div></div><div class="post-content"><h2 id="tools"><span class="mr-2">Tools</span><a href="#tools" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><p>My current setup is mixed of tools from following list:</p><ul><li>oh-my-posh + powerlevel10k_rainbow (with mods) theme + custom font<li>posh-git<li>Set-PSReadlineKeyHandler for “bash style” search + autocomplete<li>PSKubectlCompletion with PSKubeContext for kubernetes<li>Register-ArgumentCompleter for dotnet<li>MagicTooltips which is responsible for displaying tooltips for kubectl and az</ul><p>If you just want to copy-paste, scroll down to the end and copy what you need from my $PROFILE file 😅</p><h2 id="step-1---standard--small-hacks"><span class="mr-2">Step 1 - standard + small hacks</span><a href="#step-1---standard--small-hacks" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><p>The posh-git and oh-my-posh modules are quite popular, but will intruce them shortly:</p><ul><li>posh-git displays info about git status<li>oh-my-posh allows to displays a lot of segments (like: time, battery, last exit code, kubernetes, aws, az, ….)</ul><p>There are numerous themes for oh-my-posh. I’m using <a href="https://ohmyposh.dev/docs/themes/#powerlevel10k rainbow">powerlevel10k rainbow</a>, but there are missing icons even on the oh-my-posh website. You’ll need a unique typeface to get this appearance. Oh-my-posh recommends <a href="https://ohmyposh.dev/docs/fonts">Meslo LGM NF</a>, but I went with <a href="https://github.com/adam7/delugia-code">Delugia Nerd Font Complete</a>. Is is a Cascadia Code “Extended”, which includes Nerd Fonts and powerline glyphs.</p><p>You must “force it” in Windows Terminal JSON after installation (to access settings, press CTRL+, then the gear icon on the left):</p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre><td class="rouge-code"><pre> "profiles": 
+    {
+        "defaults": 
+        {
+            "fontFace": "Delugia Nerd Font Complete"
+        },
+</pre></table></code></div></div><p>The final outcome is awesome:</p><p><img data-src="/content/images/2021/06/basic.png" alt="terminal" data-proofer-ignore></p><p>Finally, remember to include your $PROFILE file (the best approach is to modify it using <code class="language-plaintext highlighter-rouge">code $PROFILE</code> if you have VS Code installed):</p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre><td class="rouge-code"><pre># posh git
+Import-Module-With-Measure posh-git
+
+# oh-my-posh
+Import-Module-With-Measure oh-my-posh
+Set-PoshPrompt -Theme powerlevel10k_rainbow
+</pre></table></code></div></div><h2 id="step-2-bash-style-history-search-and-autocomplete"><span class="mr-2">Step 2: bash style history search and autocomplete</span><a href="#step-2-bash-style-history-search-and-autocomplete" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><p>Do you get tired of typing CTRL+R to look up commands in the history? Is it easier to just use arrows to find the last invocation of <code class="language-plaintext highlighter-rouge">kubectl get</code>, for example? I was one of them. Simply add the following to your profile:</p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre><td class="rouge-code"><pre># up&amp;down arrow for history search
+Set-PSReadLineKeyHandler -Key UpArrow -Function HistorySearchBackward
+Set-PSReadLineKeyHandler -Key DownArrow -Function HistorySearchForward
+</pre></table></code></div></div><p>Add one more if you’d like to view all autocomplete options after pressing TAB:</p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre><td class="rouge-code"><pre># menu complete using TAB instead of CTRL+SPACE
+Set-PSReadlineKeyHandler -Chord Tab -Function MenuComplete
+</pre></table></code></div></div><p>Still not convinced? It’s time for a little demonstration:</p><iframe width="560" height="315" src="https://www.youtube.com/embed/CZOwAJEZf0M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe><p>Yummy 😋</p><h2 id="step-3-autocomplete"><span class="mr-2">Step 3: Autocomplete</span><a href="#step-3-autocomplete" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><p>Today I’m only using dotnet and kubernetes autocomplete. I hope that soon I could use also <code class="language-plaintext highlighter-rouge">az</code>. Kubernetes config I described in <a href="https://stapp.space/pskube-context/">my last post</a>,</p><p>Anyway, the dotnet command is easy:</p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre><td class="rouge-code"><pre># dotnet completion
+Register-ArgumentCompleter -Native -CommandName dotnet -ScriptBlock {
+    param($commandName, $wordToComplete, $cursorPosition)
+    dotnet complete --position $cursorPosition "$wordToComplete" | ForEach-Object {
+        [System.Management.Automation.CompletionResult]::new($_, $_, 'ParameterValue', $_)
+    }
+}
+</pre></table></code></div></div><p>What about Az CLI? The proof of concept is easy, but it isn’t a top priority for Azure team 😥, just check <a href="https://github.com/Azure/azure-cli/pull/13576">GitHub</a>. The <a href="https://gist.github.com/travis-c-lagrone/3ea3393ba8f92b508ee24e237d37bfe2">gist</a> is the only thing I’ve found, but I’m not using it.</p><p>If you need more stuff for autocomplete, just search, implement or rewrite bash to PowerShell. No shorthands, sorry 😥</p><h2 id="step-4-magic-tooltips"><span class="mr-2">Step 4: Magic tooltips</span><a href="#step-4-magic-tooltips" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><p>That’s great for displaying dynamic segments. What does this imply? When I type <code class="language-plaintext highlighter-rouge">kubectl&lt;SPACE&gt;</code>, for example, I want to see information about Kubernetes context, but I don’t need it most of the time. The same goes for <code class="language-plaintext highlighter-rouge">az</code> and <code class="language-plaintext highlighter-rouge">aws</code>. The oh-my-posh author <a href="https://github.com/JanDeDobbeleer/oh-my-posh/discussions/772">guides me</a> to a <a href="https://github.com/TravisTX/MagicTooltips/">MagicTooltips module</a>. I’ll probably have to submit a PR there to include namespace as well. Anyway, I choose to set it up as follows:</p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre><td class="rouge-code"><pre>$global:MagicTooltipsSettings = @{
+    VerticalOffset = 0
+    HorizontalOffset = 4
+    HorizontalAlignment = "Right"
+    Providers= @{
+        Kubernetes = @{
+            Commands = "kubectl,helm,kubens,kubectx,k9s,k"
+        }
+    }
+}
+Import-Module MagicTooltips
+</pre></table></code></div></div><p>However, to make your theme seem good, you’ll probably need to set <code class="language-plaintext highlighter-rouge">HorizontalOffset</code> and <code class="language-plaintext highlighter-rouge">VerticalOffset</code>.</p><p>My powerlevel 10k setup looks like this (the cluster name is under the clock): <img data-src="/content/images/2021/06/magic-tool-tip.png" alt="" data-proofer-ignore></p><h2 id="step-5-find-slow-modulessegments"><span class="mr-2">Step 5: find slow modules/segments</span><a href="#step-5-find-slow-modulessegments" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><p>I noticed performance issues after installing various extensions. To repair it, I chose to do the following:</p><ul><li>remove unused segments in powerlevel theme<li>measure Import-Module</ul><h2 id="step-6-having-sudo-mode"><span class="mr-2">Step 6: having “sudo” mode</span><a href="#step-6-having-sudo-mode" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><p>Isn’t it awesome to use sudo in a terminal? I used two functions to implement it:</p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+</pre><td class="rouge-code"><pre>function fcuk {
+    $cmd = (Get-History ((Get-History).Count))[0].CommandLine
+    Write-Host "Running $cmd in $PWD"
+    start-process pwsh -verb runas -WorkingDirectory $PWD -ArgumentList "-NoExit -Command pushd $PWD; Write-host 'cmd to run: $cmd'; $cmd"
+}
+
+function sudo {
+    if ($first -eq '!!') {
+        fcuk;
+    }
+    else {
+        $file=$args[0];
+        [string]$arguments = "";
+        if ($args.Count -gt 1) {
+            $c = $args.Count - 1;
+            [string]$arguments = $args[1..$c]
+        }
+        Write-Host "file = $file args = $arguments";
+        start-process $file -verb runas -WorkingDirectory $PWD -ArgumentList $arguments;
+    }
+}
+</pre></table></code></div></div><h2 id="my-profile-file"><span class="mr-2">My $PROFILE file</span><a href="#my-profile-file" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><p>Finally, here’s what my $PROFILE file looks like:</p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+</pre><td class="rouge-code"><pre># helper
+function Import-Module-With-Measure {
+    param ($ModuleName)
+    $import = Measure-Command {
+        Import-Module $ModuleName
+    }
+    Write-Host "$ModuleName import $($import.TotalMilliseconds) ms"
+}
+
+# posh git
+Import-Module-With-Measure posh-git
+
+# oh-my-posh
+Import-Module-With-Measure oh-my-posh
+Set-PoshPrompt -Theme powerlevel10k_rainbow
+
+# menu complete using TAB instead of CTRL+SPACE
+Set-PSReadlineKeyHandler -Chord Tab -Function MenuComplete
+# up&amp;down arrow for history search
+Set-PSReadLineKeyHandler -Key UpArrow -Function HistorySearchBackward
+Set-PSReadLineKeyHandler -Key DownArrow -Function HistorySearchForward
+
+# kubectl + stuff 
+Import-Module-With-Measure PSKubectlCompletion
+Set-Alias k -Value kubectl
+Register-KubectlCompletion
+
+Import-Module-With-Measure PSKubeContext
+Set-Alias kubens -Value Select-KubeNamespace
+Set-Alias kubectx -Value Select-KubeContext
+Register-PSKubeContextComplete
+
+
+# magic tooltip config
+$global:MagicTooltipsSettings = @{
+    VerticalOffset = 0
+    HorizontalOffset = 4
+    HorizontalAlignment = "Right"
+    Providers= @{
+        Kubernetes = @{
+            Commands = "kubectl,helm,kubens,kubectx,k9s,k"
+        }
+    }
+}
+Import-Module MagicTooltips
+
+
+# dotnet completion
+Register-ArgumentCompleter -Native -CommandName dotnet -ScriptBlock {
+    param($commandName, $wordToComplete, $cursorPosition)
+    dotnet complete --position $cursorPosition "$wordToComplete" | ForEach-Object {
+        [System.Management.Automation.CompletionResult]::new($_, $_, 'ParameterValue', $_)
+    }
+}
+
+# SUDO functions
+function fcuk {
+    $cmd = (Get-History ((Get-History).Count))[0].CommandLine
+    Write-Host "Running $cmd in $PWD"
+    start-process pwsh -verb runas -WorkingDirectory $PWD -ArgumentList "-NoExit -Command pushd $PWD; Write-host 'cmd to run: $cmd'; $cmd"
+}
+
+function sudo {
+    if ($first -eq '!!') {
+        fcuk;
+    }
+    else {
+        $file=$args[0];
+        [string]$arguments = "";
+        if ($args.Count -gt 1) {
+            $c = $args.Count - 1;
+            [string]$arguments = $args[1..$c]
+        }
+        Write-Host "file = $file args = $arguments";
+        start-process $file -verb runas -WorkingDirectory $PWD -ArgumentList $arguments;
+    }
+}
+</pre></table></code></div></div><h2 id="what-comes-next"><span class="mr-2">What comes next?</span><a href="#what-comes-next" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><p>You can also find some interesting configurations at:</p><ul><li>Terminal-Icons module - check <a href="https://github.com/devblackops/Terminal-Icons#screenshots">screenshot</a><li><a href="https://dominikjeske.github.io/pimp-my-terminal/">Pimp my terminal</a> by Dominik Jeske - check shortcuts</ul><p>Maybe you have something useful in your setup? If yes please share!</p></div><div class="post-tail-wrapper text-muted"><div class="post-tags"> <i class="fa fa-tags fa-fw mr-1"></i> <a href="/tags/windows/" class="post-tag no-text-decoration" >windows</a> <a href="/tags/terminal/" class="post-tag no-text-decoration" >terminal</a> <a href="/tags/powershell/" class="post-tag no-text-decoration" >powershell</a> <a href="/tags/pwsh/" class="post-tag no-text-decoration" >pwsh</a></div><div class="post-tail-bottom d-flex justify-content-between align-items-center mt-3 pt-5 pb-2"><div class="license-wrapper"> This post is licensed under <a href="https://creativecommons.org/licenses/by/4.0/"> CC BY 4.0 </a> by the author.</div><div class="share-wrapper"> <span class="share-label text-muted mr-1">Share</span> <span class="share-icons"> <a href="https://twitter.com/intent/tweet?text=6+steps+to+pimp+my+terminal+-+Reset+your+code&url=%2Ffew-steps-to-pimp-my-terminal%2F" data-toggle="tooltip" data-placement="top" title="Twitter" target="_blank" rel="noopener" aria-label="Twitter"> <i class="fa-fw fab fa-twitter"></i> </a> <a href="https://www.facebook.com/sharer/sharer.php?title=6+steps+to+pimp+my+terminal+-+Reset+your+code&u=%2Ffew-steps-to-pimp-my-terminal%2F" data-toggle="tooltip" data-placement="top" title="Facebook" target="_blank" rel="noopener" aria-label="Facebook"> <i class="fa-fw fab fa-facebook-square"></i> </a> <a href="https://t.me/share/url?url=%2Ffew-steps-to-pimp-my-terminal%2F&text=6+steps+to+pimp+my+terminal+-+Reset+your+code" data-toggle="tooltip" data-placement="top" title="Telegram" target="_blank" rel="noopener" aria-label="Telegram"> <i class="fa-fw fab fa-telegram"></i> </a> <i id="copy-link" class="fa-fw fas fa-link small" data-toggle="tooltip" data-placement="top" title="Copy link" data-title-succeed="Link copied successfully!"> </i> </span></div></div></div></div></div><div id="panel-wrapper" class="col-xl-3 pl-2 text-muted"><div class="access"><div id="access-lastmod" class="post"><div class="panel-heading">Recently Updated</div><ul class="post-content pl-0 pb-1 ml-1 mt-2"><li><a href="/ACA-missing-yaml/">Exploring Azure Container Apps (ACA) and the Missing YAML Functionality</a><li><a href="/geting-secrets-from-github-actions/">6 steps to pimp my terminal</a><li><a href="/speaking/">Speaking</a><li><a href="/project-json-made-my-life-easier-and-it-is-not-a-joke/">Project.json made my life easier and it is not a joke</a><li><a href="/piotr-stapp-in-2016/">Piotr Stapp in 2016</a></ul></div><div id="access-tags"><div class="panel-heading">Trending Tags</div><div class="d-flex flex-wrap mt-3 mb-1 mr-3"> <a class="post-tag" href="/tags/code/">code</a> <a class="post-tag" href="/tags/azure/">azure</a> <a class="post-tag" href="/tags/visual-studio/">visual-studio</a> <a class="post-tag" href="/tags/javascript/">javascript</a> <a class="post-tag" href="/tags/devops/">devops</a> <a class="post-tag" href="/tags/dotnet/">dotnet</a> <a class="post-tag" href="/tags/speaker/">speaker</a> <a class="post-tag" href="/tags/windows/">windows</a> <a class="post-tag" href="/tags/c/">c</a> <a class="post-tag" href="/tags/powershell/">powershell</a></div></div></div><script src="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@1.0.1/dist/bootstrap-toc.min.js"></script><div id="toc-wrapper" class="pl-0 pr-4 mb-5"><div class="panel-heading pl-3 pt-2 mb-2">Contents</div><nav id="toc" data-toggle="toc"></nav></div></div></div><div class="row"><div id="tail-wrapper" class="col-12 col-lg-11 col-xl-9 pl-3 pr-3 pr-xl-4"><div id="related-posts" class="mt-5 mb-2 mb-sm-4"><h3 class="pt-2 mt-1 mb-4 ml-1" data-toc-skip>Further Reading</h3><div class="card-deck mb-4"><div class="card"> <a href="/finding-bad-dependencies-using-powershell/"><div class="card-body"> <em class="small" data-ts="1448964306" data-df="ll" > Dec 1, 2015 </em><h3 class="pt-0 mt-1 mb-3" data-toc-skip>Finding bad dependencies using PowerShell</h3><div class="text-muted small"><p> Difficult upgrade From time to time we want (or have) to upgrade our old application to a new version of framework. Usually for core libraries it goes quite fast but finding, which dependency is us...</p></div></div></a></div><div class="card"> <a href="/repeatable-way-to-setup-your-pc/"><div class="card-body"> <em class="small" data-ts="1449344220" data-df="ll" > Dec 5, 2015 </em><h3 class="pt-0 mt-1 mb-3" data-toc-skip>Repeatable way to setup Your PC</h3><div class="text-muted small"><p> Imagine Imagine following situations: My Windows is soo slow. I need to reinstall it or I bought a new PC, but I don’t have time to setup it for 2 weeks or [put here your last reason o...</p></div></div></a></div><div class="card"> <a href="/top-news-from-build-2016/"><div class="card-body"> <em class="small" data-ts="1459704060" data-df="ll" > Apr 3, 2016 </em><h3 class="pt-0 mt-1 mb-3" data-toc-skip>Top news from Build 2016 - my private ranking</h3><div class="text-muted small"><p> Build 2016 just ended. I wasn’t lucky to watch it live. Fortunately live streaming, twitter, and news were available. There were a lot of sessions and news. I decided to present my favorites. Bash...</p></div></div></a></div></div></div><div class="post-navigation d-flex justify-content-between"> <a href="/pskube-context/" class="btn btn-outline-primary" prompt="Older"><p>Make PowerShell with k8s great again</p></a> <a href="/geting-secrets-from-github-actions/" class="btn btn-outline-primary" prompt="Newer"><p>6 steps to pimp my terminal</p></a></div></div></div><footer class="row pl-3 pr-3"><div class="col-12 d-flex justify-content-between align-items-center text-muted pl-0 pr-0"><div class="footer-left"><p class="mb-0"> © 2024 <a href="https://twitter.com/ptrstpp950">Piotr Stapp</a>. <span data-toggle="tooltip" data-placement="top" title="Except where otherwise noted, the blog posts on this site are licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0) License by the author.">Some rights reserved.</span></p></div><div class="footer-right"><p class="mb-0"> Powered by <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a> with <a href="https://github.com/cotes2020/jekyll-theme-chirpy" target="_blank" rel="noopener">Chirpy</a> theme.</p></div></div></footer></div><div id="search-result-wrapper" class="d-flex justify-content-center unloaded"><div class="col-12 col-sm-11 post-content"><div id="search-hints"><div id="access-tags"><div class="panel-heading">Trending Tags</div><div class="d-flex flex-wrap mt-3 mb-1 mr-3"> <a class="post-tag" href="/tags/code/">code</a> <a class="post-tag" href="/tags/azure/">azure</a> <a class="post-tag" href="/tags/visual-studio/">visual-studio</a> <a class="post-tag" href="/tags/javascript/">javascript</a> <a class="post-tag" href="/tags/devops/">devops</a> <a class="post-tag" href="/tags/dotnet/">dotnet</a> <a class="post-tag" href="/tags/speaker/">speaker</a> <a class="post-tag" href="/tags/windows/">windows</a> <a class="post-tag" href="/tags/c/">c</a> <a class="post-tag" href="/tags/powershell/">powershell</a></div></div></div><div id="search-results" class="d-flex flex-wrap justify-content-center text-muted mt-3"></div></div></div></div><div id="mask"></div><a id="back-to-top" href="#" aria-label="back-to-top" class="btn btn-lg btn-box-shadow" role="button"> <i class="fas fa-angle-up"></i> </a><div id="notification" class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-animation="true" data-autohide="false"><div class="toast-header"> <button type="button" class="ml-2 ml-auto close" data-dismiss="toast" aria-label="Close"> <span aria-hidden="true">&times;</span> </button></div><div class="toast-body text-center pt-0"><p class="pl-2 pr-2 mb-3">A new version of content is available.</p><button type="button" class="btn btn-primary" aria-label="Update"> Update </button></div></div><script src="https://cdn.jsdelivr.net/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js"></script> <script> SimpleJekyllSearch({ searchInput: document.getElementById('search-input'), resultsContainer: document.getElementById('search-results'), json: '/assets/js/data/search.json', searchResultTemplate: '<div class="pl-1 pr-1 pl-sm-2 pr-sm-2 pl-lg-4 pr-lg-4 pl-xl-0 pr-xl-0"> <a href="{url}">{title}</a><div class="post-meta d-flex flex-column flex-sm-row text-muted mt-1 mb-1"> {categories} {tags}</div><p>{snippet}</p></div>', noResultsText: '<p class="mt-5">Oops! No results found.</p>', templateMiddleware: function(prop, value, template) { if (prop === 'categories') { if (value === '') { return `${value}`; } else { return `<div class="mr-sm-4"><i class="far fa-folder fa-fw"></i>${value}</div>`; } } if (prop === 'tags') { if (value === '') { return `${value}`; } else { return `<div><i class="fa fa-tag fa-fw"></i>${value}</div>`; } } } }); </script> <script src="https://cdn.jsdelivr.net/combine/npm/magnific-popup@1/dist/jquery.magnific-popup.min.js,npm/lozad/dist/lozad.min.js,npm/clipboard@2/dist/clipboard.min.js"></script> <script src="https://cdn.jsdelivr.net/combine/npm/dayjs@1/dayjs.min.js,npm/dayjs@1/locale/en.min.js,npm/dayjs@1/plugin/relativeTime.min.js,npm/dayjs@1/plugin/localizedFormat.min.js"></script> <script defer src="/assets/js/dist/post.min.js"></script> <script src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.bundle.min.js"></script> <script defer src="/app.js"></script> <script defer src="https://www.googletagmanager.com/gtag/js?id=UA-53928517-1"></script> <script> document.addEventListener("DOMContentLoaded", function(event) { window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-53928517-1'); }); </script>
