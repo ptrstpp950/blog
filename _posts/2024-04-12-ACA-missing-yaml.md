@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Exploring Azure Container Apps (ACA) and the Missing YAML Functionality
-image: "/content/images/2024/04/aca.png"
+image: "/content/images/2024/04/aca-aks.png"
 date: '2024-04-09 08:30:12'
 tags:
 - FinOps
